@@ -7,10 +7,12 @@
       class="slide {% if forloop.first %}active{% endif %}"
       style="background-image: url('{{ block.settings.image_desktop | img_url: '1440x600' }}');"
     >
-      <div class="slide-content">
-        <h1>{{ block.settings.heading }}</h1>
-        <p>{{ block.settings.description }}</p>
-        <a href="#" class="button">{{ block.settings.button_label }}</a>
+      <div class="slide-content {{ block.settings.content_position }}">
+        <div class="glassmorph-heading"><span class="bullet">•</span>{{ block.settings.heading }}</div>
+        <div class="slide-content-description {{ block.settings.text_alignment }}">
+          {{ block.settings.description }}
+        </div>
+        <a href="#" class="button-slider-button">{{ block.settings.button_label }}</a>
       </div>
     </div>
   {% endfor %}
@@ -30,7 +32,7 @@
 
 {% schema %}
 {
-  "name": "hero slider",
+  "name": "Hero Slider",
   "tag": "section",
   "class": "hero-slider",
   "settings": [],
@@ -42,7 +44,7 @@
         {
           "type": "image_picker",
           "id": "image_desktop",
-          "label": "Desktop image",
+          "label": "Desktop Image",
           "info": "Recommended dimensions: 1440 x 600"
         },
         {
@@ -60,8 +62,40 @@
         {
           "type": "text",
           "id": "button_label",
-          "label": "Button label",
+          "label": "Button Label",
           "default": "Explore Now"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "center"
         }
       ]
     }

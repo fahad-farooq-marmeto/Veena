@@ -1,20 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     let slides = document.querySelectorAll('.slide');
+    let dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
-    let slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
 
     function nextSlide() {
-        goToSlide(currentSlide+1);
+        goToSlide(currentSlide + 1, "right");
     }
 
     function previousSlide() {
-        goToSlide(currentSlide-1);
+        goToSlide(currentSlide - 1, "left");
     }
 
-    function goToSlide(n) {
-        slides[currentSlide].className = 'slide';
-        currentSlide = (n+slides.length) % slides.length;
-        slides[currentSlide].className = 'slide active';
+    function goToSlide(n, direction) {
+        let nextSlideIndex = (n + slides.length) % slides.length;
+        slides[currentSlide].className = 'slide'; // Reset current slide
+        slides[nextSlideIndex].className = 'slide active'; // Prepare next slide to come in
+        slides[nextSlideIndex].style.transform = direction === "right" ? "translateX(100%)" : "translateX(-100%)"; // Position offscreen
+        setTimeout(() => {
+            slides[nextSlideIndex].style.transform = "translateX(0)"; // Slide into view
+        }, 20); // A small delay to ensure the transform applies
+        dots[currentSlide].className = 'dot';
+        dots[nextSlideIndex].className = 'dot active-dot';
+        currentSlide = nextSlideIndex;
     }
 
     let next = document.querySelector('.next-slide');
@@ -23,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
     next.onclick = function() {
         nextSlide();
     };
+
     previous.onclick = function() {
         previousSlide();
     };
 
-    let dots = document.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            goToSlide(index);
+            goToSlide(index, index > currentSlide ? "right" : "left");
         });
     });
 });

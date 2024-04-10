@@ -1,23 +1,38 @@
 .hero-slider {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 700px;
     /* Adjust based on your preference */
     overflow: hidden;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
 }
 
 .slide {
-    width: 100%;
+    width: 95%;
     height: 100%;
     background-size: cover;
     background-position: center;
     position: absolute;
     transition: opacity 0.5s ease;
     opacity: 0;
+    border-radius: 2rem;
+    transform: translateX(100%);
 }
 
 .slide.active {
     opacity: 1;
+    transform: translateX(0);
+}
+
+
+.hero-slider .prev-slide.active,
+.hero-slider .next-slide.active {
+    transform: translateX(-100%);
+
 }
 
 .slide-content {
@@ -27,7 +42,44 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    width: 600px;
 }
+
+.slide-content.center {
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide-content.left {
+    left: 30%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.slide-content-description {
+    font-size: 5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.slide-content-description.left {
+    text-align: left;
+}
+
+.slide-content-description.center {
+    text-align: center;
+}
+
 
 .button {
     padding: 10px 20px;
@@ -35,13 +87,16 @@
     color: white;
     text-decoration: none;
     display: inline-block;
+
 }
 
 .slider-controls {
     position: absolute;
-    width: 100%;
+    font-size: 3rem;
+    width: 20rem;
     bottom: 20px;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .prev-slide,
@@ -49,7 +104,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
@@ -67,7 +122,8 @@
 .dot {
     height: 15px;
     width: 15px;
-    background-color: #bbb;
+    background-color: transparent;
+    border: 1px solid #fff;
     display: inline-block;
     border-radius: 50%;
     margin: 0 5px;
@@ -75,5 +131,111 @@
 }
 
 .active-dot {
-    background-color: #717171;
+    background-color: #fff;
+    width: 4rem;
+    height: 1.4rem;
+    border-radius: 6px;
+}
+
+.glassmorph-heading {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0px 16px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.glassmorph-heading .bullet {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.button-slider-button {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 33px;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+.button-slider-button:hover {
+    cursor: pointer !important;
+    color: #d03c3f;
+    transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .slide-content {
+        gap: 2.5rem;
+        width: 400px;
+    }
+
+    .slide-content.left {
+        left: 60%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .slide-content-description {
+        font-size: 2.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .slide-content-description.left {
+        text-align: left;
+    }
+
+    .slide-content-description.center {
+        text-align: center;
+    }
+
+    .button-slider-button {
+        padding: 0.5rem 1.5rem;
+        font-size: 18px;
+    }
+
+    .glassmorph-heading {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 0px 8px;
+        border: 1px solid #fff;
+        color: #fff;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+    }
+
+    .glassmorph-heading .bullet {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .slide-content {
+        gap: 2.5rem;
+        width: 350px;
+    }
+
+    .slide-content.left {
+        left: 55%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .slide-content-description {
+        font-size: 2.5rem;
+    }
+
 }
