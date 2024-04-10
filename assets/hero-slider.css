@@ -13,7 +13,7 @@
 
 .slide {
     width: 95%;
-    height: 100%;
+    height: 80%;
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -46,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.8rem;
+    gap: 3rem;
     width: 600px;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .slide-content-description {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #fff;
     letter-spacing: 2px;
     font-weight: 600;
@@ -92,9 +92,9 @@
 
 .slider-controls {
     position: absolute;
-    font-size: 3rem;
-    width: 20rem;
-    bottom: 20px;
+    font-size: 1.5rem;
+    width: 18rem;
+    bottom: 100px;
     text-align: center;
     padding: 0 1rem;
 }
@@ -108,7 +108,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 24px;
+
 }
 
 .prev-slide {
@@ -120,8 +120,8 @@
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     background-color: transparent;
     border: 1px solid #fff;
     display: inline-block;
@@ -132,8 +132,8 @@
 
 .active-dot {
     background-color: #fff;
-    width: 4rem;
-    height: 1.4rem;
+    width: 3rem;
+    height: 1rem;
     border-radius: 6px;
 }
 
@@ -149,7 +149,7 @@
 
 .glassmorph-heading .bullet {
     margin-right: 8px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .button-slider-button {
@@ -158,12 +158,14 @@
     background-color: #fff;
     border-radius: 33px;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 20px;
+    padding: 1rem 1rem;
+    font-size: 17px;
     font-weight: 100;
     letter-spacing: 0.3px;
     cursor: pointer;
 }
+
+
 
 .button-slider-button:hover {
     cursor: pointer !important;
