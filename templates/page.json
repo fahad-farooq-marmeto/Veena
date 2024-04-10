@@ -6,9 +6,104 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "assignment_week5_ianygf": {
+      "type": "assignment-week5",
+      "blocks": {
+        "product_card_J89xeQ": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/1_2_2.png",
+            "card_title": "Real Feel",
+            "card_description": "Natural Skin on Skin Feeling",
+            "background_color": "#fff7e7",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_N9b4zD": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/2_1_1.jpg",
+            "image2": "shopify:\/\/shop_images\/3_1_2.jpg",
+            "card_title": "Climax Delay",
+            "card_description": "To Pleasure Both",
+            "background_color": "#ececec",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_YiBNCG": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/4_1_4.png",
+            "image2": "shopify:\/\/shop_images\/5_1_1.png",
+            "image3": "shopify:\/\/shop_images\/6_1_1.png",
+            "card_title": "Thin",
+            "card_description": "For Greater Sensitivity",
+            "background_color": "#effeff",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_89RGRk": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/7_2.png",
+            "card_title": "Intense",
+            "card_description": "For Tingling Sensation",
+            "background_color": "#fefbef",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_GN4dDG": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/8_1.png",
+            "image2": "shopify:\/\/shop_images\/9_1.png",
+            "card_title": "Stimulation",
+            "card_description": "Ribbed & Dotted to Pleasure Her",
+            "background_color": "#ffffff",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_EDfwrR": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/10_1.png",
+            "image2": "shopify:\/\/shop_images\/11_1.png",
+            "image3": "shopify:\/\/shop_images\/12_1_1_1.png",
+            "card_title": "Flavoured",
+            "card_description": "Feeling of Flavour",
+            "background_color": "#ffeef0",
+            "product_tag": "condoms"
+          }
+        },
+        "product_card_ctcUgG": {
+          "type": "product_card",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/1_ee3ca8de-cd00-4b00-a1c6-f48760231859.webp",
+            "card_title": "Intimate Lubricant",
+            "card_description": "Silicone Based Lube Gel for Men & Women",
+            "background_color": "#ffeef0",
+            "product_tag": "lubes"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_J89xeQ",
+        "product_card_N9b4zD",
+        "product_card_YiBNCG",
+        "product_card_89RGRk",
+        "product_card_GN4dDG",
+        "product_card_EDfwrR",
+        "product_card_ctcUgG"
+      ],
+      "settings": {
+        "button1_label": "Condoms",
+        "button2_label": "Lubes"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "assignment_week5_ianygf"
   ]
 }
