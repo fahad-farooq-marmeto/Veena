@@ -13,10 +13,10 @@
         "product_card_J89xeQ": {
           "type": "product_card",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/durexSkin.jpg",
+            "image1": "shopify:\/\/shop_images\/1_2_2.png",
             "card_title": "Real Feel",
             "card_description": "Natural Skin on Skin Feeling",
-            "background_color": "#FFFFFF",
+            "background_color": "#fff7e7",
             "product_tag": "condoms"
           }
         },
@@ -27,7 +27,7 @@
             "image2": "shopify:\/\/shop_images\/3_1_2.jpg",
             "card_title": "Climax Delay",
             "card_description": "To Pleasure Both",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "condoms"
           }
         },
@@ -39,7 +39,7 @@
             "image3": "shopify:\/\/shop_images\/6_1_1.png",
             "card_title": "Thin",
             "card_description": "For Greater Sensitivity",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "condoms"
           }
         },
@@ -49,7 +49,7 @@
             "image1": "shopify:\/\/shop_images\/7_2.png",
             "card_title": "Intense",
             "card_description": "For Tingling Sensation",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "condoms"
           }
         },
@@ -60,7 +60,7 @@
             "image2": "shopify:\/\/shop_images\/9_1.png",
             "card_title": "Stimulation",
             "card_description": "Ribbed & Dotted to Pleasure Her",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "condoms"
           }
         },
@@ -72,7 +72,7 @@
             "image3": "shopify:\/\/shop_images\/12_1_1_1.png",
             "card_title": "Flavoured",
             "card_description": "Feeling of Flavour",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "condoms"
           }
         },
@@ -82,7 +82,7 @@
             "image1": "shopify:\/\/shop_images\/1_ee3ca8de-cd00-4b00-a1c6-f48760231859.webp",
             "card_title": "Intimate Lubricant",
             "card_description": "Silicone Based Lube Gel for Men & Women",
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "product_tag": "lubes"
           }
         }
