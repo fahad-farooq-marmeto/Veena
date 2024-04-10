@@ -25,7 +25,8 @@
         "announcement_WghPwL"
       ],
       "custom_css": [
-        ".utility-bar__grid{padding:1rem 1rem;}"
+        ".utility-bar__grid {padding: 1rem 1rem; width: 40%;}",
+        "@media screen and (max-width: 600px) {.utility-bar__grid {width: 100% }}"
       ],
       "settings": {
         "color_scheme": "scheme-3",
