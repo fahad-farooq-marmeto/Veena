@@ -48,7 +48,7 @@ h1 {
 }
 
 .product-card h3 {
-    background-color: transparent;
+    background-color: #fff;
     position: absolute;
     top: -35px;
     left: 20px;
@@ -56,10 +56,6 @@ h1 {
     border-radius: 12px;
     border-bottom: 2px solid inherit;
     font-weight: 700;
-}
-
-.product-card h3:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-card p {
