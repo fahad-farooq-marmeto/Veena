@@ -230,7 +230,7 @@
 @media screen and (max-width: 600px) {
 
     .hero-slider {
-        height: 400px;
+        height: 281px;
     }
 
     .slide-content {
@@ -245,20 +245,21 @@
     }
 
     .slide-content-description {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 1.2;
+        width: 280px;
     }
 
     .slider-controls {
         font-size: 1rem;
-        bottom: 40px;
+        bottom: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .button-slider-button {
-        font-size: 12px;
+        font-size: 10px;
         margin-bottom: 5px;
     }
 
@@ -268,20 +269,20 @@
 
     .prev-slide,
     .next-slide {
-        top: 35%;
+        top: 40%;
     }
 
     .prev-slide {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .next-slide {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .dot {
-        height: 10px;
-        width: 10px;
+        height: 8px;
+        width: 8px;
         background-color: transparent;
         border: 1px solid #fff;
         display: inline-block;
@@ -293,9 +294,8 @@
     .active-dot {
         background-color: #fff;
         width: 2.5rem;
-        height: 0.8rem;
+        height: 0.7rem;
         border-radius: 6px;
-        margin-bottom: 1px;
     }
 
     .slider-controls {
@@ -303,11 +303,14 @@
     }
 
     .glassmorph-heading {
-        font-size: 12px;
-        font-weight: 600;
-        padding: 0px 8px;
+        font-size: 10px;
+        padding: 0px 7px;
     }
 
+    .glassmorph-heading .bullet {
+        margin-right: 8px;
+        font-size: 12px;
+    }
 
 
 }
