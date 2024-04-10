@@ -6,28 +6,34 @@
         "slide_DXjBcC": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/a-bridge-sitting-in-thick-pink-and-purple-fog.jpg",
-            "heading": "Business Formal Choices",
-            "description": "Explore our new arrivals of business formal wear.",
-            "button_label": "Explore Now"
+            "image_desktop": "shopify:\/\/shop_images\/1.webp",
+            "heading": "Women's Apparel",
+            "description": "Elevate your wardrobe with our limited-time fashion offer!",
+            "button_label": "Explore More",
+            "text_alignment": "center",
+            "content_position": "center"
           }
         },
         "slide_J7EV3Y": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/5_c6bce303-0339-4ede-9d1b-4971a509a081.webp",
-            "heading": "Business Formal Choices",
-            "description": "Explore our new arrivals of business formal wear.",
-            "button_label": "Explore Now"
+            "image_desktop": "shopify:\/\/shop_images\/4.webp",
+            "heading": "Trendy Classics",
+            "description": "Discover Signature Look: Fashion Forward and Fabulous!",
+            "button_label": "Shop Now",
+            "text_alignment": "left",
+            "content_position": "left"
           }
         },
         "slide_YV6pQz": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/retail-shopping-package.jpg",
-            "heading": "Business Formal Choices",
-            "description": "Explore our new arrivals of business formal wear.",
-            "button_label": "Explore Now"
+            "image_desktop": "shopify:\/\/shop_images\/3.webp",
+            "heading": "Modern Elegance",
+            "description": "Step into the World of Style with the Latest Fashion Trends Unveiled!",
+            "button_label": "Explore Now",
+            "text_alignment": "left",
+            "content_position": "left"
           }
         }
       },
