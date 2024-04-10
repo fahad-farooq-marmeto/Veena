@@ -24,6 +24,9 @@
         "announcement_PPjNLf",
         "announcement_WghPwL"
       ],
+      "custom_css": [
+        ".utility-bar__grid{padding:1rem 1rem;}"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "show_line_separator": false,
