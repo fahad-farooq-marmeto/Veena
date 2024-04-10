@@ -80,7 +80,7 @@ img {
 
 .product-card img {
     max-height: 300px;
-    object-fit: cover;
+    object-fit: contain;
     flex: 1 1 40%;
     margin: 0 5px;
 }
