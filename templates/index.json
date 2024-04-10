@@ -45,77 +45,6 @@
       "settings": {
       }
     },
-    "slideshow_DChLY6": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_VdBGKE": {
-          "type": "slide",
-          "settings": {
-            "heading": "Women's Apparel",
-            "heading_size": "h1",
-            "subheading": "Elevate your wardrobe with our <a href=\"https:\/\/veena-theme-fashion.myshopify.com\/collections\" title=\"All collections\">limited-time<\/a> fashion offer!",
-            "button_label": "Explore More",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_YpRyFx": {
-          "type": "slide",
-          "settings": {
-            "heading": "Trendy Classics",
-            "heading_size": "h1",
-            "subheading": "Discover Signature Look: Fashion Forward and Fabulous!",
-            "button_label": "Shop Now",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_ECnakm": {
-          "type": "slide",
-          "settings": {
-            "heading": "Modern Elegance",
-            "heading_size": "h1",
-            "subheading": "Step into the World of Style with the Latest Fashion Trends Unveiled!",
-            "button_label": "Explore Now",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_VdBGKE",
-        "slide_YpRyFx",
-        "slide_ECnakm"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
     "rich_text_7XM76V": {
       "type": "rich-text",
       "blocks": {
@@ -668,7 +597,6 @@
   },
   "order": [
     "hero_slider_tEAXya",
-    "slideshow_DChLY6",
     "rich_text_7XM76V",
     "multicolumn_77xRBA",
     "collection_list_neQ7DV",
