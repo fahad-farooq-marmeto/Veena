@@ -29,21 +29,12 @@
             "description": "Explore our new arrivals of business formal wear.",
             "button_label": "Explore Now"
           }
-        },
-        "slide_qAWUkM": {
-          "type": "slide",
-          "settings": {
-            "heading": "Business Formal Choices",
-            "description": "Explore our new arrivals of business formal wear.",
-            "button_label": "Explore Now"
-          }
         }
       },
       "block_order": [
         "slide_DXjBcC",
         "slide_J7EV3Y",
-        "slide_YV6pQz",
-        "slide_qAWUkM"
+        "slide_YV6pQz"
       ],
       "settings": {
       }
