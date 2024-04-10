@@ -48,7 +48,7 @@ h1 {
 }
 
 .product-card h3 {
-    background-color: #fff;
+    background-color: transparent;
     position: absolute;
     top: -35px;
     left: 20px;
