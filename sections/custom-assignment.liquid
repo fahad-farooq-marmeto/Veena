@@ -1,0 +1,137 @@
+{{ 'custom-assignment.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-assignment.js' | asset_url }}" defer></script>
+
+<div class="product-buttons">
+  <button>{{ section.settings.condom_button_text }}</button>
+  <button>{{ section.settings.lube_button_text }}</button>
+</div>
+
+<div class="product-grid">
+  {% for block in section.blocks %}
+    <div class="product-card">
+      <h3>{{ block.settings.title }}</h3>
+      <p>{{ block.settings.description | "fahad" }}</p>
+      <div class="images">
+        {% if block.settings.image_1 %}
+          <img src="{{ block.settings.image_1 | img_url: '300x300' }}" alt=" " width="200px" height="300px">
+        {% endif %}
+        {% if block.settings.image_2 %}
+          <img src="{{ block.settings.image_2 | img_url: '300x300' }}" alt="" width="200px" height="300px">
+        {% endif %}
+        {% if block.settings.image_3 %}
+          <img src="{{ block.settings.image_3 | img_url: '300x300' }}" alt="" width="200px" height="300px">
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Display",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Options"
+    },
+    {
+      "type": "text",
+      "id": "condom_button_text",
+      "label": "Condom Button Text",
+      "default": "Condoms"
+    },
+    {
+      "type": "text",
+      "id": "lube_button_text",
+      "label": "Lube Button Text",
+      "default": "Lubes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Condom Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Premium Condoms"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "Top quality condoms for safe experiences."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "Lube Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Luxury Lubes"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "Smooth and long-lasting lubes for all your needs."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#F0F0F0"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Layout",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
