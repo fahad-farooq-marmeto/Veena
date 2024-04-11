@@ -45,46 +45,13 @@
       "settings": {
       }
     },
-    "rich_text_7XM76V": {
-      "type": "rich-text",
-      "blocks": {
-        "text_4xbpU7": {
-          "type": "text",
-          "settings": {
-            "text": "<p>What You Wear<\/p>"
-          }
-        },
-        "heading_zriPjT": {
-          "type": "heading",
-          "settings": {
-            "heading": "Fashion Emerges As A Universal <a href=\"https:\/\/veena-theme-fashion.myshopify.com\/collections\" title=\"All collections\">Language<\/a>",
-            "heading_size": "h1"
-          }
-        },
-        "button_mC3tMr": {
-          "type": "button",
-          "settings": {
-            "button_label": "Explore",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_4xbpU7",
-        "heading_zriPjT",
-        "button_mC3tMr"
-      ],
+    "animated_rich_text_qRgPHU": {
+      "type": "animated-rich-text",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "small_heading": "What You Wear",
+        "description": "Fashion Emerges As A Universal",
+        "button_label": "Click Me!",
+        "button_link": ""
       }
     },
     "multicolumn_77xRBA": {
@@ -597,7 +564,7 @@
   },
   "order": [
     "hero_slider_tEAXya",
-    "rich_text_7XM76V",
+    "animated_rich_text_qRgPHU",
     "multicolumn_77xRBA",
     "collection_list_neQ7DV",
     "featured_collection_aFRbqt",
