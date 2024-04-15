@@ -607,9 +607,11 @@
         "review_block_UU7UiY": {
           "type": "review-block",
           "settings": {
-            "name": "Alex",
-            "designation": "Designer",
-            "description": "<p>Business Formal Choices<\/p>"
+            "image_desktop": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "name": "Sarah Mitchell",
+            "designation": "Stylist",
+            "description": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>"
           }
         }
       },
