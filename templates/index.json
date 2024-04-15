@@ -490,75 +490,60 @@
         "padding_bottom": 36
       }
     },
-    "collapsible_content_HqAnQH": {
-      "type": "collapsible-content",
+    "custom_faq_section_hay9nR": {
+      "type": "custom-faq-section",
       "blocks": {
-        "collapsible_row_Gq6WzU": {
-          "type": "collapsible_row",
+        "assignment_faq_block_zRb8PC": {
+          "type": "assignment-faq-block",
           "settings": {
-            "heading": "1. How can I track my order?",
-            "icon": "none",
-            "row_content": "<p>Once your order has been processed and shipped, you will receive a confirmation email with a tracking number. You can use this tracking number to monitor the status and location of your package through our shipping carrier's website.<\/p>",
-            "page": ""
+            "question": "1. How can I track my order?",
+            "answer": "<p>Once your order has been processed and shipped, you will receive a confirmation email with a tracking number. You can use this tracking number to monitor the status and location of your package through our shipping carrier's website.<\/p>"
           }
         },
-        "collapsible_row_DfYPEe": {
-          "type": "collapsible_row",
+        "assignment_faq_block_aLzBAM": {
+          "type": "assignment-faq-block",
           "settings": {
-            "heading": "2.What is your return policy?",
-            "icon": "none",
-            "row_content": "<p>We offer a hassle-free return policy. If you're not completely satisfied with your purchase, you can return it within 30 days for a full refund or exchange. Please visit our Returns & Exchanges page for more details on the process and any eligibility criteria.<\/p>",
-            "page": ""
+            "question": "2. What is your return policy?",
+            "answer": "<p>We offer a hassle-free return policy. If you're not completely satisfied with your purchase, you can return it within 30 days for a full refund or exchange. Please visit our Returns & Exchanges page for more details on the process and any eligibility criteria.<\/p>"
           }
         },
-        "collapsible_row_cr8QcN": {
-          "type": "collapsible_row",
+        "assignment_faq_block_6k6jmH": {
+          "type": "assignment-faq-block",
           "settings": {
-            "heading": "3. Are the product images accurate representations of the items?",
-            "icon": "none",
-            "row_content": "<p>Yes, we strive to provide accurate and high-quality images of our products. However, please note that colors may vary slightly due to differences in monitor settings. If you have any specific questions about a product, feel free to contact our customer support team.<\/p>",
-            "page": ""
+            "question": "3. Are the product images accurate representations of the items?",
+            "answer": "<p>Yes, we strive to provide accurate and high-quality images of our products. However, please note that colors may vary slightly due to differences in monitor settings. If you have any specific questions about a product, feel free to contact our customer support team.<\/p>"
           }
         },
-        "collapsible_row_VePFDp": {
-          "type": "collapsible_row",
+        "assignment_faq_block_pwg4zU": {
+          "type": "assignment-faq-block",
           "settings": {
-            "heading": "4. How do I determine my size?",
-            "icon": "none",
-            "row_content": "<p>To find the right size, please refer to our detailed size guide available on each product page. Measurements may vary by product, so it's essential to check the specific sizing information provided. If you have further questions or need assistance, our customer support team is here to help.<\/p>",
-            "page": ""
+            "question": "4. How do I determine my size?",
+            "answer": "<p>To find the right size, please refer to our detailed size guide available on each product page. Measurements may vary by product, so it's essential to check the specific sizing information provided. If you have further questions or need assistance, our customer support team is here to help.<\/p>"
           }
         },
-        "collapsible_row_FTzP9n": {
-          "type": "collapsible_row",
+        "assignment_faq_block_aRkVL8": {
+          "type": "assignment-faq-block",
           "settings": {
-            "heading": "5. What payment methods do you accept?",
-            "icon": "none",
-            "row_content": "<p>We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment options. During the checkout process, you can choose the payment method that suits you best.<\/p>",
-            "page": ""
+            "question": "5. What payment methods do you accept?",
+            "answer": "<p>We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment options. During the checkout process, you can choose the payment method that suits you best.<\/p>"
           }
         }
       },
       "block_order": [
-        "collapsible_row_Gq6WzU",
-        "collapsible_row_DfYPEe",
-        "collapsible_row_cr8QcN",
-        "collapsible_row_VePFDp",
-        "collapsible_row_FTzP9n"
+        "assignment_faq_block_zRb8PC",
+        "assignment_faq_block_aLzBAM",
+        "assignment_faq_block_6k6jmH",
+        "assignment_faq_block_pwg4zU",
+        "assignment_faq_block_aRkVL8"
       ],
       "settings": {
-        "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "FAQ"
+      }
+    },
+    "usp_section_aFktQR": {
+      "type": "usp-section",
+      "settings": {
+        "heading": "Business Formal Choices"
       }
     }
   },
@@ -575,6 +560,7 @@
     "image_banner_kaJN3D",
     "multicolumn_63kjQy",
     "featured_blog_AXCGM8",
-    "collapsible_content_HqAnQH"
+    "custom_faq_section_hay9nR",
+    "usp_section_aFktQR"
   ]
 }
