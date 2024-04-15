@@ -521,11 +521,11 @@
             "answer": "<p>To find the right size, please refer to our detailed size guide available on each product page. Measurements may vary by product, so it's essential to check the specific sizing information provided. If you have further questions or need assistance, our customer support team is here to help.<\/p>"
           }
         },
-        "assignment_faq_block_aRkVL8": {
+        "assignment_faq_block_JffYxA": {
           "type": "assignment-faq-block",
           "settings": {
-            "question": "5. What payment methods do you accept?",
-            "answer": "<p>We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment options. During the checkout process, you can choose the payment method that suits you best.<\/p>"
+            "question": "Business Formal Choices",
+            "answer": "<p>Yes Business Formal Choices<\/p>"
           }
         }
       },
@@ -534,7 +534,7 @@
         "assignment_faq_block_aLzBAM",
         "assignment_faq_block_6k6jmH",
         "assignment_faq_block_pwg4zU",
-        "assignment_faq_block_aRkVL8"
+        "assignment_faq_block_JffYxA"
       ],
       "settings": {
         "heading": "FAQ"
@@ -542,6 +542,58 @@
     },
     "usp_section_aFktQR": {
       "type": "usp-section",
+      "blocks": {
+        "usp_block_EWn6d4": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img3.png",
+            "image_mobile": "shopify:\/\/shop_images\/img3.png",
+            "heading": "Daily deals",
+            "description": "<p>that bring a touch of excitement to your everyday shopping experience.<\/p><p><br\/><br\/><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_YGCmyy": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img1.png",
+            "image_mobile": "shopify:\/\/shop_images\/img1.png",
+            "heading": "Return Shipping",
+            "description": "<p>return shipping costs unless the item received is damaged, defective, or incorrect.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_R8U9KV": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
+            "image_mobile": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
+            "heading": "secure paymets",
+            "description": "<p>We accept a variety of secure payment methods, including major credit cards.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_6GWL9w": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img4.png",
+            "image_mobile": "shopify:\/\/shop_images\/img4.png",
+            "heading": "Help Center",
+            "description": "<p>Absolutely, providing 24\/7 support is a great way to enhance customer satisfaction.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "usp_block_EWn6d4",
+        "usp_block_YGCmyy",
+        "usp_block_R8U9KV",
+        "usp_block_6GWL9w"
+      ],
       "settings": {
         "heading": "Business Formal Choices"
       }
