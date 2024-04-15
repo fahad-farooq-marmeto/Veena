@@ -613,12 +613,32 @@
             "designation": "Stylist",
             "description": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>"
           }
+        },
+        "review_block_rGA3YE": {
+          "type": "review-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "image_mobile": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "name": "Alex Rodriguez",
+            "designation": "Fashion Enthusiast",
+            "description": "<p>\"Being a fashion enthusiast, I'm always on the lookout for unique pieces. This store exceeds expectations with its exceptional customer service. Her attention to detail, and ability to meet deadlines have made every project a success.<\/p>"
+          }
+        },
+        "review_block_6gX4Qq": {
+          "type": "review-block",
+          "settings": {
+            "name": "Alex",
+            "designation": "Designer",
+            "description": "<p>Business Formal Choices<\/p>"
+          }
         }
       },
       "block_order": [
         "review_block_FikbGA",
         "review_block_k6crNq",
-        "review_block_UU7UiY"
+        "review_block_UU7UiY",
+        "review_block_rGA3YE",
+        "review_block_6gX4Qq"
       ],
       "settings": {
         "heading": "Review"
