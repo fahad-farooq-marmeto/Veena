@@ -627,9 +627,11 @@
         "review_block_6gX4Qq": {
           "type": "review-block",
           "settings": {
-            "name": "Alex",
-            "designation": "Designer",
-            "description": "<p>Business Formal Choices<\/p>"
+            "image_desktop": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "image_mobile": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "name": "Grace Turner",
+            "designation": "Influencer",
+            "description": "<p>\"Obsessed with my recent purchases! The store's fashion-forward approach aligns perfectly with my style. The pieces are Instagram-worthy. His commitment to resolving issues have greatly contributed to our customer satisfaction levels.\"<\/p>"
           }
         }
       },
