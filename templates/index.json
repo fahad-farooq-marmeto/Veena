@@ -594,14 +594,6 @@
             "description": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>"
           }
         },
-        "review_block_tgd9cX": {
-          "type": "review-block",
-          "settings": {
-            "name": "Alex",
-            "designation": "Designer",
-            "description": "<p>Business Formal Choices<\/p>"
-          }
-        },
         "review_block_k6crNq": {
           "type": "review-block",
           "settings": {
@@ -621,7 +613,6 @@
       },
       "block_order": [
         "review_block_FikbGA",
-        "review_block_tgd9cX",
         "review_block_k6crNq",
         "review_block_UU7UiY"
       ],
