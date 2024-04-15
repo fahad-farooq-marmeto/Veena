@@ -473,23 +473,6 @@
         "padding_bottom": 36
       }
     },
-    "featured_blog_AXCGM8": {
-      "type": "featured-blog",
-      "settings": {
-        "heading": "Blog posts",
-        "heading_size": "h1",
-        "blog": "",
-        "post_limit": 3,
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_view_all": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "custom_faq_section_hay9nR": {
       "type": "custom-faq-section",
       "blocks": {
@@ -597,6 +580,54 @@
       "settings": {
         "heading": "Business Formal Choices"
       }
+    },
+    "custom_customer_review_section_QDqjUA": {
+      "type": "custom-customer-review-section",
+      "blocks": {
+        "review_block_FikbGA": {
+          "type": "review-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "image_mobile": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "name": "Emma Watson",
+            "designation": "\"Fashion Blogger\"",
+            "description": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>"
+          }
+        },
+        "review_block_tgd9cX": {
+          "type": "review-block",
+          "settings": {
+            "name": "Alex",
+            "designation": "Designer",
+            "description": "<p>Business Formal Choices<\/p>"
+          }
+        },
+        "review_block_k6crNq": {
+          "type": "review-block",
+          "settings": {
+            "name": "Alex",
+            "designation": "Designer",
+            "description": "<p>Business Formal Choices<\/p>"
+          }
+        },
+        "review_block_UU7UiY": {
+          "type": "review-block",
+          "settings": {
+            "name": "Alex",
+            "designation": "Designer",
+            "description": "<p>Business Formal Choices<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_block_FikbGA",
+        "review_block_tgd9cX",
+        "review_block_k6crNq",
+        "review_block_UU7UiY"
+      ],
+      "settings": {
+        "heading": "Review"
+      }
     }
   },
   "order": [
@@ -611,8 +642,8 @@
     "multicolumn_EmEHwx",
     "image_banner_kaJN3D",
     "multicolumn_63kjQy",
-    "featured_blog_AXCGM8",
     "custom_faq_section_hay9nR",
-    "usp_section_aFktQR"
+    "usp_section_aFktQR",
+    "custom_customer_review_section_QDqjUA"
   ]
 }
