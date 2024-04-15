@@ -597,9 +597,11 @@
         "review_block_k6crNq": {
           "type": "review-block",
           "settings": {
-            "name": "Alex",
-            "designation": "Designer",
-            "description": "<p>Business Formal Choices<\/p>"
+            "image_desktop": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "image_mobile": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "name": "James Harper",
+            "designation": "Fashion Editor",
+            "description": "<p>\"As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.<\/p>"
           }
         },
         "review_block_UU7UiY": {
