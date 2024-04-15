@@ -1,0 +1,109 @@
+{{ 'custom-customer-review-section.css' | asset_url | stylesheet_tag }}
+
+<div id="customer-review-slider" class="product-slider">
+  <div>
+    <h1 class="customer-review-heading">{{ section.settings.heading }}</h1>
+  </div>
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+          <li class="splide__slide customer-review-splide-item">
+            <div class="customer-review--image-container">
+              {% render 'responsive-picture',
+                desktopImage: block.settings.image_desktop,
+                mobileImage: block.settings.image_mobile
+              %}
+            </div>
+            <div class="customer-review-splide-item--name">
+              <p>{{ block.settings.name }}</p>
+            </div>
+            <div class="customer-review-splide-item--designation">
+              <p>{{ block.settings.designation }}</p>
+            </div>
+            <div class="customer-review-splide-item--description">{{ block.settings.description }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script defer src="{{"https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"}}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var splideInstance = new Splide('#customer-review-slider .splide', {
+      type: 'slide',
+      perPage: 3,
+      autoplay: false,
+      interval: 3000,
+      gap: 20, // Gap between slides
+      pagination: false,
+      perMove: 1,
+      breakpoints: {
+        780: {
+          perPage: 1,
+        },
+      },
+    }).mount();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "customer-review section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Review"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review-block",
+      "name": "review-block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop image",
+          "info": "Recommended dimensions: 1440 x 600"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image",
+          "info": "Recommended dimensions: 600 x 400"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "name",
+          "default": "Alex"
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "designation",
+          "default": "Designer"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Business Formal Choices</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "customer-review Section"
+    }
+  ]
+}
+{% endschema %}

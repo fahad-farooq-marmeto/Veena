@@ -1,0 +1,128 @@
+{% comment %}
+  {% schema %}
+  {
+    "name": "custom slidshow",
+    "tag": "section",
+    "class": "Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "splider options"
+      },
+      {
+        "type": "checkbox",
+        "id": "auto_play",
+        "label": "Enable auto play",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "label": "Show dots",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show arrows",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "auto_play_duration",
+        "min": 1000,
+        "max": 5000,
+        "step": 1000,
+        "unit": "sec",
+        "label": "Autoplay duration",
+        "default": 2000
+      },
+      {
+        "type": "header",
+        "content": "Animation options"
+      },
+      {
+        "type": "select",
+        "id": "Slide_animation",
+        "label": "Slide animation",
+        "options": [
+          {
+            "value": "fade",
+            "label": "Fade"
+          },
+          {
+            "value": "slide",
+            "label": "slide"
+          },
+          {
+            "value": "loop",
+            "label": "Loop"
+          }
+        ],
+        "default": "slide"
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "padding top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "padding bottom",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Media positions"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "desktop_image",
+            "info": "Recommended size :1360  x 633 px."
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile",
+            "label": "mobile",
+            "info": "Recommended size :360  x 282 px."
+          },
+          {
+              "type" : "header",
+              "content": "Text Customization"
+          },
+          {
+              "type": "select"
+
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "custom slideshow"
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}
