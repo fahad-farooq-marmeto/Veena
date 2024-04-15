@@ -524,8 +524,8 @@
         "assignment_faq_block_JffYxA": {
           "type": "assignment-faq-block",
           "settings": {
-            "question": "Business Formal Choices",
-            "answer": "<p>Yes Business Formal Choices<\/p>"
+            "question": "5. What payment methods do you accept?",
+            "answer": "<p>We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment options. During the checkout process, you can choose the payment method that suits you best.<\/p>"
           }
         }
       },
