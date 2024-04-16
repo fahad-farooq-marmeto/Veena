@@ -1,4 +1,4 @@
-.first-section {
+.first-section-second {
     padding: 4rem 5rem;
 }
 
@@ -87,7 +87,7 @@
 }
 
 @media (max-width:500px) {
-    .first-section {
+    .first-section-second {
         padding: 0 3rem;
     }
 
