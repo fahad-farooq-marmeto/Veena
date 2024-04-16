@@ -71,8 +71,10 @@
         "custom_block_N7qc6M": {
           "type": "custom-block",
           "settings": {
-            "pre_heading": "Business Formal Choices",
-            "title": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "image_desktop": "shopify:\/\/shop_images\/Rectangle_4265.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_4265.webp",
+            "pre_heading": "Faishon",
+            "title": "<p>Women's Sustainable Style Hub<\/p>",
             "button_label": "Explore",
             "button_link": ""
           }
