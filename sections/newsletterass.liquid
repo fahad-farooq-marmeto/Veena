@@ -1,0 +1,37 @@
+{{ 'newsletterass.css' | asset_url | stylesheet_tag }}
+
+<!-- Newsletter Subscription Form -->
+<div class="newsletter-subscription">
+  <h2>Subscribe to Our Newsletter</h2>
+  <form action="/contact#contact_form" method="post">
+    <input type="email" name="email" placeholder="Email Address" required>
+    <button type="submit">Subscribe</button>
+    {{ form_authenticity_token }}
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Title",
+      "default": "Subscribe to our newsletter"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit Button Label",
+      "default": "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "newsletterassess",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
