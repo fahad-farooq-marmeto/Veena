@@ -1,35 +1,35 @@
-.first-section-second {
+.first-section-v {
     padding: 4rem 5rem;
 }
 
-.first-section--container {
+.first-section--container-v {
     display: flex;
     gap: 5rem;
 }
 
-.first-section--block {
+.first-section--block-v {
     position: relative;
 }
 
-.first-section-block--img-container {
+.first-section-block--img-container-v {
     overflow: hidden;
     border-radius: 10px;
     height: 95%;
 }
 
-.first-section--block,
-.first-section-block--img-container img,
-.first-section-block--content {
+.first-section--block-v,
+.first-section-block--img-container-v img,
+.first-section-block--content-v {
     width: 100%;
 }
 
-.first-section-block--img-container img {
+.first-section-block--img-container-v img {
     object-fit: cover;
     border-radius: 10px;
     transition: all ease-in-out 0.5s;
 }
 
-.first-section-block--content {
+.first-section-block--content-v {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -39,59 +39,59 @@
     top: 0;
 }
 
-.first-section--block:hover .first-section-block--img-container img {
+.first-section--block-v:hover .first-section-block--img-container-v img {
     transform: scale(1.1);
 }
 
-.first-section-block--content div {
+.first-section-block--content-v div {
     text-align: center;
 }
 
-.first-section-block--content div p {
+.first-section-block--content-v div p {
     padding: 0 20px;
-    border: 1px solid white;
     border-radius: 20px;
     color: white;
     margin: 0;
+    background-color: red;
 }
 
-.first-section-block--content div h3 {
+.first-section-block--content-v div h3 {
     margin-top: 0;
     color: white;
     font-size: 3rem;
     font-weight: 600;
 }
 
-.first-section-block--content div .button {
+.first-section-block--content-v div .button {
     background: white;
     color: black;
     border: none;
 }
 
-.first-section-block--content div .button:hover {
+.first-section-block--content-v div .button:hover {
     color: rgb(208, 60, 63);
 }
 
-.first-section-block--content div .button:after {
+.first-section-block--content-v div .button:after {
     box-shadow: none;
 }
 
-.first-section-block--content div .button:hover {
+.first-section-block--content-v div .button:hover {
     border: none;
 }
 
 @media (max-width:800px) {
-    .first-section--container {
+    .first-section--container-v {
         flex-direction: column;
     }
 }
 
 @media (max-width:500px) {
-    .first-section-second {
+    .first-section-v {
         padding: 0 3rem;
     }
 
-    .first-section-block--content div h3 {
+    .first-section-block--content-v div h3 {
         font-size: 2rem;
     }
 }

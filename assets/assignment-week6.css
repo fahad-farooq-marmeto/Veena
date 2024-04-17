@@ -1,0 +1,141 @@
+.slider-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+.slider-section .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 100%;
+    max-width: 60%;
+    object-fit: cover;
+
+}
+
+.main-image-container {
+    width: 100%;
+    height: 100%;
+}
+
+.main-image-container img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #000;
+    min-height: 300px;
+    /* Include padding and border in the width and height calculation */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card .test-text {
+    width: 100%;
+    font-size: 24px;
+}
+
+.author-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+}
+
+
+.author-block img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.testi-heading {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.testi-subheading {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+
+
+@media (max-width: 800px) {
+
+    .slider-section {
+        padding-bottom: 3rem;
+    }
+
+    .slider-section .container {
+        max-width: 101%;
+    }
+
+    .slider-section {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .author-block img {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+
+    .testi-heading {
+        font-size: 3rem;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    .testi-subheading {
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+
+    .card .test-text {
+        font-size: 18px;
+    }
+
+
+    .author-block {
+        display: flex;
+
+    }
+
+    .splide__pagination {
+        bottom: .5em;
+        left: 0;
+        padding: 0 1em;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        bottom: -16px;
+
+    }
+
+    .main-image-container img {
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+
+    }
+
+}
