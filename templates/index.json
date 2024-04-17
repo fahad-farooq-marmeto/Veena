@@ -1,5 +1,57 @@
 {
   "sections": {
+    "assignmet_week6_7zdjgz": {
+      "type": "assignmet-week6",
+      "blocks": {
+        "slider_card_ApHibR": {
+          "type": "slider_card",
+          "settings": {
+            "active_card_bg": "#F0F0F0",
+            "card_bg": "#FFFFFF",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "author_image": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "author_name": "Jane Doe",
+            "author_title": "Verified Buyer",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_56.webp"
+          }
+        },
+        "slider_card_bAF8Ye": {
+          "type": "slider_card",
+          "settings": {
+            "active_card_bg": "#F0F0F0",
+            "card_bg": "#FFFFFF",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "author_image": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "author_name": "Jane Doe",
+            "author_title": "Verified Buyer",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_55.webp"
+          }
+        },
+        "slider_card_VwwzEH": {
+          "type": "slider_card",
+          "settings": {
+            "active_card_bg": "#F0F0F0",
+            "card_bg": "#FFFFFF",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "author_image": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "author_name": "Doe",
+            "author_title": "Verified Buyer",
+            "main_image": "shopify:\/\/shop_images\/1_9e27fc95-296f-4e14-9c02-caf09ad108a3.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slider_card_ApHibR",
+        "slider_card_bAF8Ye",
+        "slider_card_VwwzEH"
+      ],
+      "settings": {
+        "section_background": "#FFFFFF",
+        "section_padding": 20,
+        "section_heading": "Our Customers' Stories",
+        "section_description": "Hear what our customers have to say about their experiences."
+      }
+    },
     "hero_slider_tEAXya": {
       "type": "hero-slider",
       "blocks": {
@@ -52,40 +104,6 @@
         "description": "Fashion Emerges As A Universal",
         "button_label": "Explore More",
         "button_link": ""
-      }
-    },
-    "custom_section_fTQYcn": {
-      "type": "custom-section",
-      "blocks": {
-        "custom_block_jWfFUD": {
-          "type": "custom-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Rectangle_4264.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Rectangle_4264.webp",
-            "pre_heading": "Women's",
-            "title": "<p>Women's Clothing Collection<\/p>",
-            "button_label": "Explore",
-            "button_link": ""
-          }
-        },
-        "custom_block_N7qc6M": {
-          "type": "custom-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Rectangle_4265.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Rectangle_4265.webp",
-            "pre_heading": "Faishon",
-            "title": "<p>Women's Sustainable Style Hub<\/p>",
-            "button_label": "Explore",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "custom_block_jWfFUD",
-        "custom_block_N7qc6M"
-      ],
-      "settings": {
-        "heading": "Business Formal Choices"
       }
     },
     "collection_list_neQ7DV": {
@@ -639,9 +657,9 @@
     }
   },
   "order": [
+    "assignmet_week6_7zdjgz",
     "hero_slider_tEAXya",
     "animated_rich_text_qRgPHU",
-    "custom_section_fTQYcn",
     "collection_list_neQ7DV",
     "featured_collection_aFRbqt",
     "multicolumn_MY6e9w",
