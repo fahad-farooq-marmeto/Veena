@@ -6,37 +6,37 @@
         "slider_card_ApHibR": {
           "type": "slider_card",
           "settings": {
-            "active_card_bg": "#F0F0F0",
-            "card_bg": "#FFFFFF",
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
             "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_56.webp",
             "author_image": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
             "author_name": "Jane Doe",
-            "author_title": "Verified Buyer",
-            "main_image": "shopify:\/\/shop_images\/Rectangle_56.webp"
+            "author_title": "Verified Buyer"
           }
         },
         "slider_card_bAF8Ye": {
           "type": "slider_card",
           "settings": {
-            "active_card_bg": "#F0F0F0",
-            "card_bg": "#FFFFFF",
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
             "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_55.webp",
             "author_image": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
             "author_name": "Jane Doe",
-            "author_title": "Verified Buyer",
-            "main_image": "shopify:\/\/shop_images\/Rectangle_55.webp"
+            "author_title": "Verified Buyer"
           }
         },
         "slider_card_VwwzEH": {
           "type": "slider_card",
           "settings": {
-            "active_card_bg": "#F0F0F0",
-            "card_bg": "#FFFFFF",
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
             "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/1_9e27fc95-296f-4e14-9c02-caf09ad108a3.webp",
             "author_image": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
             "author_name": "Doe",
-            "author_title": "Verified Buyer",
-            "main_image": "shopify:\/\/shop_images\/1_9e27fc95-296f-4e14-9c02-caf09ad108a3.webp"
+            "author_title": "Verified Buyer"
           }
         }
       },
@@ -46,10 +46,17 @@
         "slider_card_VwwzEH"
       ],
       "settings": {
-        "section_background": "#FFFFFF",
+        "section_background": "#ffffff",
         "section_padding": 20,
         "section_heading": "Our Customers' Stories",
         "section_description": "Hear what our customers have to say about their experiences."
+      }
+    },
+    "newsletterass_RBb6in": {
+      "type": "newsletterass",
+      "settings": {
+        "newsletter_title": "Subscribe to our newsletter",
+        "submit_label": "Subscribe"
       }
     },
     "hero_slider_tEAXya": {
@@ -658,6 +665,7 @@
   },
   "order": [
     "assignmet_week6_7zdjgz",
+    "newsletterass_RBb6in",
     "hero_slider_tEAXya",
     "animated_rich_text_qRgPHU",
     "collection_list_neQ7DV",
