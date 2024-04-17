@@ -7,103 +7,82 @@
         "padding_bottom": 28
       }
     },
-    "assignment_week5_ianygf": {
-      "type": "assignment-week5",
+    "assignmet_week6_FCKzdi": {
+      "type": "assignmet-week6",
       "blocks": {
-        "product_card_J89xeQ": {
-          "type": "product_card",
+        "slider_card_YcByMK": {
+          "type": "slider_card",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/1_2_2.png",
-            "card_title": "Real Feel",
-            "card_description": "Natural Skin on Skin Feeling",
-            "background_color": "#fff7e7",
-            "product_tag": "condoms"
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_56.webp",
+            "author_image": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "author_name": "Fahad",
+            "author_title": "Verified Buyer"
           }
         },
-        "product_card_N9b4zD": {
-          "type": "product_card",
+        "slider_card_zp9dJ9": {
+          "type": "slider_card",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/2_1_1.jpg",
-            "image2": "shopify:\/\/shop_images\/3_1_2.jpg",
-            "card_title": "Climax Delay",
-            "card_description": "To Pleasure Both",
-            "background_color": "#ececec",
-            "product_tag": "condoms"
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/Rectangle_55.webp",
+            "author_image": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "author_name": "Jane Doe",
+            "author_title": "Rishabh"
           }
         },
-        "product_card_YiBNCG": {
-          "type": "product_card",
+        "slider_card_qzeKk9": {
+          "type": "slider_card",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/4_1_4.png",
-            "image2": "shopify:\/\/shop_images\/5_1_1.png",
-            "image3": "shopify:\/\/shop_images\/6_1_1.png",
-            "card_title": "Thin",
-            "card_description": "For Greater Sensitivity",
-            "background_color": "#effeff",
-            "product_tag": "condoms"
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/1_677b86eb-ee13-4e0f-9252-459e593c6461.webp",
+            "author_image": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "author_name": "Jhonny",
+            "author_title": "CEO"
           }
         },
-        "product_card_89RGRk": {
-          "type": "product_card",
+        "slider_card_HGDRp9": {
+          "type": "slider_card",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/7_2.png",
-            "card_title": "Intense",
-            "card_description": "For Tingling Sensation",
-            "background_color": "#fefbef",
-            "product_tag": "condoms"
-          }
-        },
-        "product_card_GN4dDG": {
-          "type": "product_card",
-          "settings": {
-            "image1": "shopify:\/\/shop_images\/8_1.png",
-            "image2": "shopify:\/\/shop_images\/9_1.png",
-            "card_title": "Stimulation",
-            "card_description": "Ribbed & Dotted to Pleasure Her",
-            "background_color": "#ffffff",
-            "product_tag": "condoms"
-          }
-        },
-        "product_card_EDfwrR": {
-          "type": "product_card",
-          "settings": {
-            "image1": "shopify:\/\/shop_images\/10_1.png",
-            "image2": "shopify:\/\/shop_images\/11_1.png",
-            "image3": "shopify:\/\/shop_images\/12_1_1_1.png",
-            "card_title": "Flavoured",
-            "card_description": "Feeling of Flavour",
-            "background_color": "#ffeef0",
-            "product_tag": "condoms"
-          }
-        },
-        "product_card_ctcUgG": {
-          "type": "product_card",
-          "settings": {
-            "image1": "shopify:\/\/shop_images\/1_ee3ca8de-cd00-4b00-a1c6-f48760231859.webp",
-            "card_title": "Intimate Lubricant",
-            "card_description": "Silicone Based Lube Gel for Men & Women",
-            "background_color": "#ffeef0",
-            "product_tag": "lubes"
+            "active_card_bg": "#f0f0f0",
+            "card_bg": "#ffffff",
+            "testimonial_text": "This is a testimonial about how great the product is.",
+            "main_image": "shopify:\/\/shop_images\/6_513ac5e7-ac24-44c7-9f9b-ef77c28af7c0.webp",
+            "author_image": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "author_name": "Jack",
+            "author_title": "CTO"
           }
         }
       },
       "block_order": [
-        "product_card_J89xeQ",
-        "product_card_N9b4zD",
-        "product_card_YiBNCG",
-        "product_card_89RGRk",
-        "product_card_GN4dDG",
-        "product_card_EDfwrR",
-        "product_card_ctcUgG"
+        "slider_card_YcByMK",
+        "slider_card_zp9dJ9",
+        "slider_card_qzeKk9",
+        "slider_card_HGDRp9"
       ],
       "settings": {
-        "button1_label": "Condoms",
-        "button2_label": "Lubes"
+        "section_background": "#ffffff",
+        "section_padding": 20,
+        "section_heading": "Our Customers' Stories",
+        "section_description": "Hear what our customers have to say about their experiences."
+      }
+    },
+    "newsletterass_4Gr8N6": {
+      "type": "newsletterass",
+      "settings": {
+        "newsletter_title": "Subscribe to our newsletter",
+        "submit_label": "Subscribe"
       }
     }
   },
   "order": [
     "main",
-    "assignment_week5_ianygf"
+    "assignmet_week6_FCKzdi",
+    "newsletterass_4Gr8N6"
   ]
 }
