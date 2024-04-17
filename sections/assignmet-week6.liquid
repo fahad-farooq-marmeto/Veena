@@ -28,10 +28,9 @@
       <div class="splide__track">
         <ul class="splide__list">
           {% for block in section.blocks %}
-            <li class="splide__slide">
+            <li class="splide__slide" data-main-image="{{ block.settings.main_image | img_url: '1024x768' }}">
               <div class="card" style="background-color: {{ block.settings.card_bg }};">
                 <div class="test-text">{{ block.settings.testimonial_text }}</div>
-
                 <div class="author-block">
                   <img
                     src="{{ block.settings.author_image | img_url: '300x300' }}"
@@ -57,7 +56,6 @@
 {% endstyle %}
 
 <script>
-  // Initialize Splide when the DOM is fully loaded
   document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('#testimonial-slider', {
       type: 'loop',
@@ -70,6 +68,19 @@
         },
       },
     }).mount();
+
+    // Function to update the main image based on the active slide
+    function updateMainImage() {
+      var activeSlide = splide.Components.Elements.list.children[splide.index];
+      var newImageUrl = activeSlide.getAttribute('data-main-image');
+      document.getElementById('main-image').src = newImageUrl;
+    }
+
+    // Update main image on initial load
+    updateMainImage();
+
+    // Update main image whenever the active slide changes
+    splide.on('moved', updateMainImage);
   });
 </script>
 
@@ -133,6 +144,12 @@
         },
         {
           "type": "image_picker",
+          "id": "main_image",
+          "label": "Main Image",
+          "info": "Changes with current slide"
+        },
+        {
+          "type": "image_picker",
           "id": "author_image",
           "label": "Author Image",
           "info": "Optional - leave empty if not used"
@@ -148,12 +165,6 @@
           "id": "author_title",
           "label": "Author Title",
           "default": "Verified Buyer"
-        },
-        {
-          "type": "image_picker",
-          "id": "main_image",
-          "label": "Main Image",
-          "info": "Changes with current slide"
         }
       ]
     }
