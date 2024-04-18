@@ -78,6 +78,60 @@
     z-index: 1;
 }
 
+
+.login-prompt {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Light grey background */
+    border: 1px solid #dee2e6;
+    /* Subtle border */
+    border-radius: 8px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for depth */
+    margin-left: 3rem;
+
+}
+
+.login-prompt p {
+    color: #333;
+    /* Dark grey text for readability */
+    font-size: 16px;
+    /* Slightly larger text */
+    margin-bottom: 15px;
+    /* Space between text and button */
+}
+
+.btn-primary {
+    color: #fff;
+    /* White text on the button */
+    background-color: #007bff;
+    /* Bootstrap primary blue */
+    border-color: #007bff;
+    padding: 10px 20px;
+    /* Padding for a larger click area */
+    text-decoration: none;
+    /* Remove underline from links */
+    border-radius: 5px;
+    /* Rounded button edges */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #0056b3;
+    /* Darker blue on hover/focus */
+    border-color: #004085;
+    /* Corresponding darker border */
+    outline: none;
+    /* Remove focus outline to clean up appearance */
+}
+
+
+
 /* Styles for tablets and desktops */
 
 @media (min-width: 801px) {
