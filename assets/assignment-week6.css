@@ -92,14 +92,10 @@
     margin-top: 20px;
     padding: 20px;
     background-color: #d03c3f;
-    /* Light grey background */
     border: 1px solid #dee2e6;
-    /* Subtle border */
     border-radius: 8px;
-    /* Rounded corners for a softer look */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Slight shadow for depth */
-    margin-left: 3rem;
+    border: 2px solid #000;
 
 }
 
