@@ -78,12 +78,20 @@
     z-index: 1;
 }
 
+.login-prompt-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
 
 .login-prompt {
     text-align: center;
     margin-top: 20px;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #d03c3f;
     /* Light grey background */
     border: 1px solid #dee2e6;
     /* Subtle border */
@@ -96,38 +104,29 @@
 }
 
 .login-prompt p {
-    color: #333;
-    /* Dark grey text for readability */
-    font-size: 16px;
-    /* Slightly larger text */
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 15px;
-    /* Space between text and button */
 }
 
 .btn-primary {
     color: #fff;
-    /* White text on the button */
-    background-color: #007bff;
-    /* Bootstrap primary blue */
-    border-color: #007bff;
+    background-color: #000;
+    color: #fff;
+    border-color: #5a5a5a;
     padding: 10px 20px;
-    /* Padding for a larger click area */
     text-decoration: none;
-    /* Remove underline from links */
     border-radius: 5px;
-    /* Rounded button edges */
     transition: background-color 0.3s ease;
-    /* Smooth transition for hover effect */
+
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #0056b3;
-    /* Darker blue on hover/focus */
-    border-color: #004085;
-    /* Corresponding darker border */
+    background-color: #ffffff;
+    color: #000;
     outline: none;
-    /* Remove focus outline to clean up appearance */
 }
 
 
