@@ -160,6 +160,46 @@
         "button_link": "shopify:\/\/collections"
       }
     },
+    "marque_collections_Y6ircy": {
+      "type": "marque-collections",
+      "blocks": {
+        "custom_block_6XKNy4": {
+          "type": "custom-block",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/svgviewer-output.svg",
+            "pre_heading": "Men's clothing collectioon",
+            "button_label": "EXPLORE",
+            "button_link": "shopify:\/\/collections"
+          }
+        },
+        "custom_block_hE8yxd": {
+          "type": "custom-block",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/svgviewer-output_ecf8c543-c188-41a6-a7c0-878fab621a27.svg",
+            "pre_heading": "Women's clothing collection",
+            "button_label": "EXPLORE",
+            "button_link": ""
+          }
+        },
+        "custom_block_Mq44iD": {
+          "type": "custom-block",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/svgviewer-output_1.svg",
+            "pre_heading": "new collection",
+            "button_label": "GRAB THIS OFFER",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_block_6XKNy4",
+        "custom_block_hE8yxd",
+        "custom_block_Mq44iD"
+      ],
+      "settings": {
+        "heading": "Marquee Collections"
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -339,6 +379,7 @@
     "animated_rich_text_qRgPHU",
     "custom_section_cMjJ8K",
     "captivating_collection_pYp7HU",
+    "marque_collections_Y6ircy",
     "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR",
     "usp_section_aFktQR"
