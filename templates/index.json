@@ -246,6 +246,15 @@
         "padding_bottom": 36
       }
     },
+    "featured_custom_collection_Ymr3bq": {
+      "type": "featured-custom-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "collection": "featured-collection",
+        "button_label": "See All Product",
+        "button_link": ""
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -428,6 +437,7 @@
     "marque_collections_Y6ircy",
     "men_women_image_with_text_iAkcH7",
     "custom_countdown_timer_txEUEc",
+    "featured_custom_collection_Ymr3bq",
     "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR",
     "usp_section_aFktQR"
