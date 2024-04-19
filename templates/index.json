@@ -234,6 +234,18 @@
         "heading": "Business Formal Choices"
       }
     },
+    "custom_countdown_timer_txEUEc": {
+      "type": "custom-countdown-timer",
+      "settings": {
+        "heading": "Our Women's Clothing Collection.",
+        "description": "<p>where fashion meets flair, and every outfit becomes a statement.<\/p>",
+        "button_label": "View All",
+        "button_link": "",
+        "text_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -415,6 +427,7 @@
     "captivating_collection_pYp7HU",
     "marque_collections_Y6ircy",
     "men_women_image_with_text_iAkcH7",
+    "custom_countdown_timer_txEUEc",
     "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR",
     "usp_section_aFktQR"
