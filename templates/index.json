@@ -391,6 +391,29 @@
       "settings": {
       }
     },
+    "bottom_banner_JGFj6D": {
+      "type": "bottom-banner",
+      "blocks": {
+        "custom_block_i47JKC": {
+          "type": "custom-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522.webp",
+            "image_mobile": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522.webp",
+            "pre_heading": "Introduce",
+            "title": "<h3>We Believe in the Power of Fashion<\/h3>",
+            "description": "<p>fashion emerges as the universal language that speaks volumes without words.<\/p>",
+            "button_label": "Explore",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_block_i47JKC"
+      ],
+      "settings": {
+        "heading": "Business Formal Choices"
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -518,6 +541,7 @@
     "featured_custom_collection_Ymr3bq",
     "usp_section_aFktQR",
     "custom_hotspot_VeyYF4",
+    "bottom_banner_JGFj6D",
     "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR"
   ]
