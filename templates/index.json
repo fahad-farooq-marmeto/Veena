@@ -255,6 +255,136 @@
         "button_link": ""
       }
     },
+    "usp_section_aFktQR": {
+      "type": "usp-section",
+      "blocks": {
+        "usp_block_EWn6d4": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img3.png",
+            "image_mobile": "shopify:\/\/shop_images\/img3.png",
+            "heading": "Daily deals",
+            "description": "<p>that bring a touch of excitement to your everyday shopping experience.<\/p><p><br\/><br\/><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_YGCmyy": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img1.png",
+            "image_mobile": "shopify:\/\/shop_images\/img1.png",
+            "heading": "Return Shipping",
+            "description": "<p>return shipping costs unless the item received is damaged, defective, or incorrect.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_R8U9KV": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
+            "image_mobile": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
+            "heading": "secure paymets",
+            "description": "<p>We accept a variety of secure payment methods, including major credit cards.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "usp_block_6GWL9w": {
+          "type": "usp-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/img4.png",
+            "image_mobile": "shopify:\/\/shop_images\/img4.png",
+            "heading": "Help Center",
+            "description": "<p>Absolutely, providing 24\/7 support is a great way to enhance customer satisfaction.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "usp_block_EWn6d4",
+        "usp_block_YGCmyy",
+        "usp_block_R8U9KV",
+        "usp_block_6GWL9w"
+      ],
+      "settings": {
+        "heading": "Business Formal Choices"
+      }
+    },
+    "custom_hotspot_VeyYF4": {
+      "type": "custom-hotspot",
+      "blocks": {
+        "image_card_Hxi6MR": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_86583ec4-835c-45cd-999c-b7e8b1bdc86e.webp",
+            "heading": "Women's Winter Clothes",
+            "description": "Welcome the season in style with our Women's Winter Clothes Collection – where warmth meets sophistication.",
+            "button_link": "shopify:\/\/collections",
+            "button_label": "Discover More",
+            "hotspot1_label": "Winter Jacket",
+            "hotspot1_product_name": "Winter Jacket",
+            "hotspot1_product_price": "1999.99",
+            "hotspot1_image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
+            "hotspot1_top": "15",
+            "hotspot1_left": "30",
+            "hotspot2_label": "Black Jeans",
+            "hotspot2_product_name": "Black Jeans",
+            "hotspot2_product_price": "4999",
+            "hotspot2_image": "shopify:\/\/shop_images\/5_c6bce303-0339-4ede-9d1b-4971a509a081.webp",
+            "hotspot2_top": "40",
+            "hotspot2_left": "40"
+          }
+        },
+        "image_card_hW4CtQ": {
+          "type": "image_card",
+          "settings": {
+            "heading": "",
+            "description": "",
+            "button_link": "",
+            "button_label": "",
+            "hotspot1_label": "",
+            "hotspot1_product_name": "",
+            "hotspot1_product_price": "",
+            "hotspot1_top": "",
+            "hotspot1_left": "",
+            "hotspot2_label": "",
+            "hotspot2_product_name": "",
+            "hotspot2_product_price": "",
+            "hotspot2_top": "",
+            "hotspot2_left": ""
+          }
+        },
+        "image_card_4KkUpt": {
+          "type": "image_card",
+          "settings": {
+            "heading": "",
+            "description": "",
+            "button_link": "",
+            "button_label": "",
+            "hotspot1_label": "",
+            "hotspot1_product_name": "",
+            "hotspot1_product_price": "",
+            "hotspot1_top": "",
+            "hotspot1_left": "",
+            "hotspot2_label": "",
+            "hotspot2_product_name": "",
+            "hotspot2_product_price": "",
+            "hotspot2_top": "",
+            "hotspot2_left": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_Hxi6MR",
+        "image_card_hW4CtQ",
+        "image_card_4KkUpt"
+      ],
+      "settings": {
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -369,64 +499,6 @@
       "settings": {
         "heading": "FAQ"
       }
-    },
-    "usp_section_aFktQR": {
-      "type": "usp-section",
-      "blocks": {
-        "usp_block_EWn6d4": {
-          "type": "usp-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/img3.png",
-            "image_mobile": "shopify:\/\/shop_images\/img3.png",
-            "heading": "Daily deals",
-            "description": "<p>that bring a touch of excitement to your everyday shopping experience.<\/p><p><br\/><br\/><\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "usp_block_YGCmyy": {
-          "type": "usp-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/img1.png",
-            "image_mobile": "shopify:\/\/shop_images\/img1.png",
-            "heading": "Return Shipping",
-            "description": "<p>return shipping costs unless the item received is damaged, defective, or incorrect.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "usp_block_R8U9KV": {
-          "type": "usp-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
-            "image_mobile": "shopify:\/\/shop_images\/img2_820dd52f-e825-4b46-afa4-73470c3abc9e.png",
-            "heading": "secure paymets",
-            "description": "<p>We accept a variety of secure payment methods, including major credit cards.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "usp_block_6GWL9w": {
-          "type": "usp-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/img4.png",
-            "image_mobile": "shopify:\/\/shop_images\/img4.png",
-            "heading": "Help Center",
-            "description": "<p>Absolutely, providing 24\/7 support is a great way to enhance customer satisfaction.<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "usp_block_EWn6d4",
-        "usp_block_YGCmyy",
-        "usp_block_R8U9KV",
-        "usp_block_6GWL9w"
-      ],
-      "settings": {
-        "heading": "Business Formal Choices"
-      }
     }
   },
   "order": [
@@ -438,8 +510,9 @@
     "men_women_image_with_text_iAkcH7",
     "custom_countdown_timer_txEUEc",
     "featured_custom_collection_Ymr3bq",
+    "usp_section_aFktQR",
+    "custom_hotspot_VeyYF4",
     "custom_customer_review_section_QDqjUA",
-    "custom_faq_section_hay9nR",
-    "usp_section_aFktQR"
+    "custom_faq_section_hay9nR"
   ]
 }
