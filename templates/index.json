@@ -200,6 +200,40 @@
         "heading": "Marquee Collections"
       }
     },
+    "men_women_image_with_text_iAkcH7": {
+      "type": "men-women-image-with-text",
+      "blocks": {
+        "custom_block_i8D7fR": {
+          "type": "custom-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Rectangle_55.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_55.webp",
+            "pre_heading": "Men's",
+            "title": "<h3>Introducing Our Distinguished Men's Clothing Collection<\/h3>",
+            "button_label": "Explore",
+            "button_link": ""
+          }
+        },
+        "custom_block_THJzJn": {
+          "type": "custom-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Rectangle_56.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_56.webp",
+            "pre_heading": "Womens",
+            "title": "<h3>Elevate Your Wardrobe With Our Women's Clothing Collection<\/h3>",
+            "button_label": "Explore",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_block_i8D7fR",
+        "custom_block_THJzJn"
+      ],
+      "settings": {
+        "heading": "Business Formal Choices"
+      }
+    },
     "custom_customer_review_section_QDqjUA": {
       "type": "custom-customer-review-section",
       "blocks": {
@@ -380,6 +414,7 @@
     "custom_section_cMjJ8K",
     "captivating_collection_pYp7HU",
     "marque_collections_Y6ircy",
+    "men_women_image_with_text_iAkcH7",
     "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR",
     "usp_section_aFktQR"
