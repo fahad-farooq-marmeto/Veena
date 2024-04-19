@@ -54,380 +54,175 @@
         "button_link": ""
       }
     },
-    "collection_list_neQ7DV": {
-      "type": "collection-list",
+    "custom_section_cMjJ8K": {
+      "type": "custom-section",
       "blocks": {
-        "featured_collection_RXUHbk": {
-          "type": "featured_collection",
+        "custom_block_BWhd9F": {
+          "type": "custom-block",
           "settings": {
-            "collection": "accessories"
+            "image_desktop": "shopify:\/\/shop_images\/Rectangle_4264.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_4264_3a69931d-b265-4ab9-bb4c-23dd341b262f.webp",
+            "pre_heading": "Women's",
+            "title": "<p>Women's Clothing Collection<\/p>",
+            "button_label": "Explore",
+            "button_link": ""
           }
         },
-        "featured_collection_Xmxd6R": {
-          "type": "featured_collection",
+        "custom_block_nPm4Ba": {
+          "type": "custom-block",
           "settings": {
-            "collection": "mens-jacket"
-          }
-        },
-        "featured_collection_XNFhLt": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "shoes"
-          }
-        },
-        "featured_collection_KVJ7mz": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "handbags"
-          }
-        },
-        "featured_collection_WFfggW": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "best-selling"
-          }
-        },
-        "featured_collection_znB4aK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "t-shirt"
+            "image_desktop": "shopify:\/\/shop_images\/Rectangle_4265.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_4265_a7a1c1e7-d6df-4fbd-9436-8cef46e86be0.webp",
+            "pre_heading": "Fashion",
+            "title": "<p>Women's Sustainable Style Hub<\/p>",
+            "button_label": "Explore",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "featured_collection_RXUHbk",
-        "featured_collection_Xmxd6R",
-        "featured_collection_XNFhLt",
-        "featured_collection_KVJ7mz",
-        "featured_collection_WFfggW",
-        "featured_collection_znB4aK"
+        "custom_block_BWhd9F",
+        "custom_block_nPm4Ba"
       ],
       "settings": {
-        "title": "Captivating Collection",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Business Formal Choices"
       }
     },
-    "featured_collection_aFRbqt": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "New Arrivals",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_MY6e9w": {
-      "type": "multicolumn",
+    "captivating_collection_pYp7HU": {
+      "type": "captivating-collection",
       "blocks": {
-        "column_D8ajQJ": {
-          "type": "column",
+        "captivating_block_VRTAcm": {
+          "type": "captivating-block",
           "settings": {
-            "title": "Men's",
-            "text": "<h3>Introducing Our Distinguished Men's Clothing Collection<\/h3>",
-            "link_label": "",
-            "link": ""
+            "collection": "accessories",
+            "title": "Accessories",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/accessories"
           }
         },
-        "column_DHyhC4": {
-          "type": "column",
+        "captivating_block_7hXHnV": {
+          "type": "captivating-block",
           "settings": {
-            "title": "Women's",
-            "text": "<h3>Elevate Your Wardrobe With Our Women's Clothing Collection<\/h3>",
-            "link_label": "",
-            "link": ""
+            "collection": "mens-jacket-1",
+            "title": "Men's Jacket",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/mens-jacket-1"
+          }
+        },
+        "captivating_block_HRc4p6": {
+          "type": "captivating-block",
+          "settings": {
+            "collection": "shoes",
+            "title": "Shoes",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/shoes"
+          }
+        },
+        "captivating_block_YxD6Kz": {
+          "type": "captivating-block",
+          "settings": {
+            "collection": "handbags",
+            "title": "Handbags",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/handbags"
+          }
+        },
+        "captivating_block_QJqX3f": {
+          "type": "captivating-block",
+          "settings": {
+            "collection": "best-selling",
+            "title": "Bestseller",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/best-selling"
+          }
+        },
+        "captivating_block_xqRanH": {
+          "type": "captivating-block",
+          "settings": {
+            "collection": "t-shirts",
+            "title": "T Shirts",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/t-shirts"
           }
         }
       },
       "block_order": [
-        "column_D8ajQJ",
-        "column_DHyhC4"
+        "captivating_block_VRTAcm",
+        "captivating_block_7hXHnV",
+        "captivating_block_HRc4p6",
+        "captivating_block_YxD6Kz",
+        "captivating_block_QJqX3f",
+        "captivating_block_xqRanH"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Heading",
+        "button_label": "View  All",
+        "button_link": ""
       }
     },
-    "featured_collection_UNa7Fy": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "featured-collection",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_aGEbGn": {
-      "type": "multicolumn",
+    "custom_customer_review_section_QDqjUA": {
+      "type": "custom-customer-review-section",
       "blocks": {
-        "column_tL3cp4": {
-          "type": "column",
+        "review_block_FikbGA": {
+          "type": "review-block",
           "settings": {
-            "title": "Daily deals",
-            "text": "<p>that bring a touch of excitement to your everyday shopping experience.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_desktop": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "image_mobile": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "name": "Emma Watson",
+            "designation": "\"Fashion Blogger\"",
+            "description": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>"
           }
         },
-        "column_KALmEn": {
-          "type": "column",
+        "review_block_k6crNq": {
+          "type": "review-block",
           "settings": {
-            "title": "Return Shipping",
-            "text": "<p>return shipping costs unless the item received is damaged, defective, or incorrect.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_desktop": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "image_mobile": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "name": "James Harper",
+            "designation": "Fashion Editor",
+            "description": "<p>\"As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.<\/p>"
           }
         },
-        "column_XqtRFd": {
-          "type": "column",
+        "review_block_UU7UiY": {
+          "type": "review-block",
           "settings": {
-            "title": "secure payment",
-            "text": "<p>We accept a variety of secure payment methods, including major credit cards.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_desktop": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "name": "Sarah Mitchell",
+            "designation": "Stylist",
+            "description": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>"
           }
         },
-        "column_T9BTXV": {
-          "type": "column",
+        "review_block_rGA3YE": {
+          "type": "review-block",
           "settings": {
-            "title": "Help center",
-            "text": "<p>Absolutely, providing 24\/7 support is a great way to enhance customer satisfaction.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_desktop": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "image_mobile": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "name": "Alex Rodriguez",
+            "designation": "Fashion Enthusiast",
+            "description": "<p>\"Being a fashion enthusiast, I'm always on the lookout for unique pieces. This store exceeds expectations with its exceptional customer service. Her attention to detail, and ability to meet deadlines have made every project a success.<\/p>"
+          }
+        },
+        "review_block_6gX4Qq": {
+          "type": "review-block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "image_mobile": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "name": "Grace Turner",
+            "designation": "Influencer",
+            "description": "<p>\"Obsessed with my recent purchases! The store's fashion-forward approach aligns perfectly with my style. The pieces are Instagram-worthy. His commitment to resolving issues have greatly contributed to our customer satisfaction levels.\"<\/p>"
           }
         }
       },
       "block_order": [
-        "column_tL3cp4",
-        "column_KALmEn",
-        "column_XqtRFd",
-        "column_T9BTXV"
+        "review_block_FikbGA",
+        "review_block_k6crNq",
+        "review_block_UU7UiY",
+        "review_block_rGA3YE",
+        "review_block_6gX4Qq"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
-    "multicolumn_EmEHwx": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_hmrfpB": {
-          "type": "column",
-          "settings": {
-            "title": "Women's Winter Clothes",
-            "text": "<p>Welcome the season in style with our Women's Winter Clothes Collection – where warmth meets sophistication.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_RcMyjC": {
-          "type": "column",
-          "settings": {
-            "title": "Our Men's Winter Clothes",
-            "text": "<p>welcome to our Men's Winter Clothes Collection, where every piece is a statement in comfort and style.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_Kbcayk": {
-          "type": "column",
-          "settings": {
-            "title": "Women's Outdoor Clothes Collection",
-            "text": "<p>Embrace the beauty of nature with gear that complements your adventurous spirit.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_hmrfpB",
-        "column_RcMyjC",
-        "column_Kbcayk"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_banner_kaJN3D": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_7pWTUw": {
-          "type": "heading",
-          "settings": {
-            "heading": "Introduce",
-            "heading_size": "h1"
-          }
-        },
-        "text_wPm8Uz": {
-          "type": "text",
-          "settings": {
-            "text": "We Believe in the Power of Fashion",
-            "text_style": "body"
-          }
-        },
-        "buttons_6LgbmT": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_7pWTUw",
-        "text_wPm8Uz",
-        "buttons_6LgbmT"
-      ],
-      "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "multicolumn_63kjQy": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_mpk3my": {
-          "type": "column",
-          "settings": {
-            "title": "Emma Watson",
-            "text": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_QKbWQK": {
-          "type": "column",
-          "settings": {
-            "title": "James Harper",
-            "text": "<p>\"As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.\"<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_nrheeQ": {
-          "type": "column",
-          "settings": {
-            "title": "<strong>Sarah Mitchell<\/strong>",
-            "text": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_mpk3my",
-        "column_QKbWQK",
-        "column_nrheeQ"
-      ],
-      "settings": {
-        "title": "Our Customers Review",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Our Customers Review"
       }
     },
     "custom_faq_section_hay9nR": {
@@ -537,86 +332,15 @@
       "settings": {
         "heading": "Business Formal Choices"
       }
-    },
-    "custom_customer_review_section_QDqjUA": {
-      "type": "custom-customer-review-section",
-      "blocks": {
-        "review_block_FikbGA": {
-          "type": "review-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
-            "image_mobile": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
-            "name": "Emma Watson",
-            "designation": "\"Fashion Blogger\"",
-            "description": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>"
-          }
-        },
-        "review_block_k6crNq": {
-          "type": "review-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
-            "image_mobile": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
-            "name": "James Harper",
-            "designation": "Fashion Editor",
-            "description": "<p>\"As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.<\/p>"
-          }
-        },
-        "review_block_UU7UiY": {
-          "type": "review-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
-            "image_mobile": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
-            "name": "Sarah Mitchell",
-            "designation": "Stylist",
-            "description": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>"
-          }
-        },
-        "review_block_rGA3YE": {
-          "type": "review-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
-            "image_mobile": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
-            "name": "Alex Rodriguez",
-            "designation": "Fashion Enthusiast",
-            "description": "<p>\"Being a fashion enthusiast, I'm always on the lookout for unique pieces. This store exceeds expectations with its exceptional customer service. Her attention to detail, and ability to meet deadlines have made every project a success.<\/p>"
-          }
-        },
-        "review_block_6gX4Qq": {
-          "type": "review-block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
-            "image_mobile": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
-            "name": "Grace Turner",
-            "designation": "Influencer",
-            "description": "<p>\"Obsessed with my recent purchases! The store's fashion-forward approach aligns perfectly with my style. The pieces are Instagram-worthy. His commitment to resolving issues have greatly contributed to our customer satisfaction levels.\"<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "review_block_FikbGA",
-        "review_block_k6crNq",
-        "review_block_UU7UiY",
-        "review_block_rGA3YE",
-        "review_block_6gX4Qq"
-      ],
-      "settings": {
-        "heading": "Our Customers Review"
-      }
     }
   },
   "order": [
     "hero_slider_tEAXya",
     "animated_rich_text_qRgPHU",
-    "collection_list_neQ7DV",
-    "featured_collection_aFRbqt",
-    "multicolumn_MY6e9w",
-    "featured_collection_UNa7Fy",
-    "multicolumn_aGEbGn",
-    "multicolumn_EmEHwx",
-    "image_banner_kaJN3D",
-    "multicolumn_63kjQy",
+    "custom_section_cMjJ8K",
+    "captivating_collection_pYp7HU",
+    "custom_customer_review_section_QDqjUA",
     "custom_faq_section_hay9nR",
-    "usp_section_aFktQR",
-    "custom_customer_review_section_QDqjUA"
+    "usp_section_aFktQR"
   ]
 }
