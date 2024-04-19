@@ -1,0 +1,183 @@
+{{ 'custom-hotspot.css' | asset_url | stylesheet_tag }}
+
+<div class="interactive-cards">
+  {% for block in section.blocks %}
+    <div class="hotspot-card" style="position: relative;">
+      <div class="card-image">
+        <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.heading }}" height="" width="">
+
+        <!-- Hotspot 1 -->
+        <div
+          class="hotspot"
+          style="position: absolute; top: {{ block.settings.hotspot1_top }}%; left: {{ block.settings.hotspot1_left }}%;"
+          data-product-name="{{ block.settings.hotspot1_product_name }}"
+          data-product-price="{{ block.settings.hotspot1_product_price }}"
+          data-product-image="{{ block.settings.hotspot1_image | img_url: '100x' }}"
+          data-content="{{ block.settings.hotspot1_label }}"
+        >
+          <div class="hotspot-inner-dot">1</div>
+        </div>
+
+        <!-- Hotspot 2 -->
+        <div
+          class="hotspot"
+          style="position: absolute; top: {{ block.settings.hotspot2_top }}%; left: {{ block.settings.hotspot2_left }}%;"
+          data-product-name="{{ block.settings.hotspot2_product_name }}"
+          data-product-price="{{ block.settings.hotspot2_product_price }}"
+          data-product-image="{{ block.settings.hotspot2_image | img_url: '100x' }}"
+          data-content="{{ block.settings.hotspot2_label }}"
+        >
+          <div class="hotspot-inner-dot">2</div>
+        </div>
+      </div>
+      <div class="hotspot-card-heading">{{ block.settings.heading }}</div>
+      <div class="hotspot-card-desc">{{ block.settings.description }}</div>
+      <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_label }}</a>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var hotspots = document.querySelectorAll('.hotspot');
+    hotspots.forEach(function (hotspot) {
+      hotspot.addEventListener('mouseover', function () {
+        var tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.innerHTML = `<img src="${hotspot.getAttribute('data-product-image')}" alt="Product Image">
+                                     <div class="text">
+                                         <strong>${hotspot.getAttribute('data-product-name')}</strong><br>
+                                         Price: ${hotspot.getAttribute('data-product-price')}
+                                     </div>`;
+        hotspot.appendChild(tooltip);
+        tooltip.style.display = 'block';
+      });
+      hotspot.addEventListener('mouseout', function () {
+        var tooltips = hotspot.getElementsByClassName('tooltip');
+        if (tooltips.length > 0) {
+          hotspot.removeChild(tooltips[0]);
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Interactive Image Cards",
+  "class": "spacing--tight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Card Settings"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_card",
+      "name": "Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Main Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Card Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card Description"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "header",
+          "content": "Hotspot 1"
+        },
+        {
+          "type": "text",
+          "id": "hotspot1_label",
+          "label": "Hotspot 1 Label"
+        },
+        {
+          "type": "text",
+          "id": "hotspot1_product_name",
+          "label": "Hotspot 1 Product Name"
+        },
+        {
+          "type": "text",
+          "id": "hotspot1_product_price",
+          "label": "Hotspot 1 Product Price"
+        },
+        {
+          "type": "image_picker",
+          "id": "hotspot1_image",
+          "label": "Hotspot 1 Product Image"
+        },
+        {
+          "type": "text",
+          "id": "hotspot1_top",
+          "label": "Hotspot 1 Top (%)"
+        },
+        {
+          "type": "text",
+          "id": "hotspot1_left",
+          "label": "Hotspot 1 Left (%)"
+        },
+        {
+          "type": "header",
+          "content": "Hotspot 2"
+        },
+        {
+          "type": "text",
+          "id": "hotspot2_label",
+          "label": "Hotspot 2 Label"
+        },
+        {
+          "type": "text",
+          "id": "hotspot2_product_name",
+          "label": "Hotspot 2 Product Name"
+        },
+        {
+          "type": "text",
+          "id": "hotspot2_product_price",
+          "label": "Hotspot 2 Product Price"
+        },
+        {
+          "type": "image_picker",
+          "id": "hotspot2_image",
+          "label": "Hotspot 2 Product Image"
+        },
+        {
+          "type": "text",
+          "id": "hotspot2_top",
+          "label": "Hotspot 2 Top (%)"
+        },
+        {
+          "type": "text",
+          "id": "hotspot2_left",
+          "label": "Hotspot 2 Left (%)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

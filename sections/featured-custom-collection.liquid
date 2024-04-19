@@ -1,0 +1,422 @@
+{{ 'featured-custom-collection.css' | asset_url | stylesheet_tag }}
+<script defer src="{{"splide.min.js" | asset_url}}"></script>
+<link rel="stylesheet" href="{{ "splide.min.css" | asset_url }}">
+
+<script src="{{ 'featured-custom-collection.js' | asset_url }}" defer></script>
+<script>
+  function showSecondImage(element) {
+      element.querySelector('.product-img').style.display = 'none';
+      element.querySelector('.second-image').style.display = 'block';
+  }
+
+  function showFirstImage(element) {
+      element.querySelector('.product-img').style.display = 'block';
+      element.querySelector('.second-image').style.display = 'none';
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+
+
+
+      {% comment %} var productItems = document.querySelectorAll('.product-container-item');
+
+  productItems.forEach(function (item) {
+      var newTag = item.querySelector('.new-tag');
+      var discountTag = item.querySelector('.discount-tag');
+
+      if (!newTag) {
+          discountTag.classList.add('no-new-tag');
+      }
+  }); {% endcomment %}
+
+
+      // Initialize Splide sliders
+      var splide1 = new Splide('#splide-1', {
+          type: 'slide',
+          perPage: 4,
+          {% comment %} perMove:2, {% endcomment %}
+          rewind: true,
+          focus: 'center',
+          gap: '20px',
+          drag:true,
+          breakpoints: {
+              1024: {
+                  perPage: 3, // Display 3 products per page on medium screens (width >= 1024px)
+                  drag:true
+              },
+              768: {
+                  perPage: 2,
+                  drag:true
+
+              }
+          },
+          arrows: true,
+          pagination: false,
+
+      }).mount();
+
+      var splide2 = new Splide('#splide-2', {
+          type: 'slide',
+          perPage: 4,
+          {% comment %} perMove:1, {% endcomment %}
+          rewind: true,
+          focus: 'center',
+          gap: '20px',
+          drag:true,
+          breakpoints: {
+              1024: {
+                  perPage: 3, // Display 3 products per page on medium screens (width >= 1024px)
+                  drag:true
+              },
+              768: {
+                  perPage: 2,
+                  drag:true
+
+              }
+          },
+          arrows: true,
+          pagination: false,
+
+      }).mount();
+
+      // Synchronize the sliders
+      splide1.on('move', function (newIndex, oldIndex, destIndex) {
+          splide2.go(destIndex);
+      });
+
+      splide2.on('move', function (newIndex, oldIndex, destIndex) {
+          splide1.go(destIndex);
+      });
+  });
+</script>
+<div class="featured-custom-title-bar">
+  <h3 class="featured-custom-title">{{ section.settings.heading }}</h3>
+  <a class="featured-custom-button"> {{ section.settings.button_label }} </a>
+</div>
+
+{% comment %}
+  <div class="featured-custom-collection-container">
+
+      <div class="product-container">
+                {% assign collection = collections[section.settings.collection] %}
+          {% if collection %}
+              {% for product in collection.products %}
+
+                  <div class="product-container-item" onmouseover="showSecondImage(this)" onmouseout="showFirstImage(this)">
+
+                      {% if product.compare_at_price > product.price %}
+                          {% assign regular_price = product.price %}
+                              {% assign compared_price = product.compare_at_price %}
+                              {% assign discount = compared_price | minus: regular_price %}
+                              {% assign discount_percent = discount | times: 100 | divided_by: compared_price %}
+                          <div class="tag discount-tag">{{ discount_percent | round }}% off</div> <!-- Discount tag -->
+                      {% endif %}
+                      <div class="tag new-tag">New</div> <!-- New tag -->
+                      {% comment %} <img class="product-img" src="{{ product.featured_image.src | image_url }}" alt="{{ product.title }}" width=300 height=300/> {% endcomment %}
+                      <div class="image-container">
+                          <img class="product-img" src="{{ product.images[0].src | image_url }}" alt="{{ product.title }}" width=300 height=300/>
+                          <img class="product-img second-image" src="{{ product.images[1].src | image_url }}" alt="{{ product.title }}" width=300 height=300/>
+                      </div>
+                      <a href="{{ product.url }}" class="quick-look-tag">Quick Look</a> <!-- Quick Look tag -->
+
+                      <div class="product-container-details">
+                          {% assign colorOption = false %}
+                          {% for option in product.options %}
+                              {% if option.name == 'Color' %}
+                                  {% assign colorOption = true %}
+                                  <div class="color-variants">
+                                      <p>Select Color:</p>
+                                      {% for variant in product.variants %}
+                                          {% if variant.option1 == option.values[0] %}
+                                              <input type="radio" id="color-{{ variant.id }}" name="color-{{ product.id }}" value="{{ variant.option1 }}" {% if forloop.first %}checked{% endif %}>
+                                              <label for="color-{{ variant.id }}" style="background-color: {{ variant.option1 }};"></label>
+                                          {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              {% endif %}
+
+                          {% endfor %}
+
+          {% unless colorOption %}
+              <p>No color variants available</p>
+          {% endunless %}
+
+                          <p class="vendor-name">{{ product.vendor }}</p>
+                          <h3 class="product-name">{{ product.title }}</h3>
+                          <p class="price">
+                              <span class="product-price">{{ product.price | money }}</span>
+                              {% if product.compare_at_price > product.price %}
+                                  <span class="compared-price">{{ product.compare_at_price | money }}</span>
+                              {% endif %}
+                          </p>
+                          <p class="stock">{{ product.variants.first.inventory_quantity }} in stock</p>
+                                  </div>
+                  </div>
+
+              {% endfor %}
+
+
+          {% else %}
+              <p class="no-products-message">No products found in the selected collection.</p>
+          {% endif %}
+      </div>
+
+  </div>
+{% endcomment %}
+
+{% comment %} with single row splide {% endcomment %}
+
+{% comment %}
+  <div class="featured-custom-collection-container">
+
+      <div class="splide"> <!-- Container for Splide slider -->
+          <div class="splide__track">
+              <ul class="splide__list">
+                  {% assign collection = collections[section.settings.collection] %}
+                  {% if collection %}
+                      {% for product in collection.products %}
+                          <li class="splide__slide product-container-item" onmouseover="showSecondImage(this)" onmouseout="showFirstImage(this)">
+                              <!-- Product HTML content -->
+                              {% if product.compare_at_price > product.price %}
+                                  {% assign regular_price = product.price %}
+                                      {% assign compared_price = product.compare_at_price %}
+                                      {% assign discount = compared_price | minus: regular_price %}
+                                      {% assign discount_percent = discount | times: 100 | divided_by: compared_price %}
+                                  <div class="tag discount-tag">{{ discount_percent | round }}% off</div> <!-- Discount tag -->
+                              {% endif %}
+                              <div class="tag new-tag">New</div> <!-- New tag -->
+                              {% comment %} <img class="product-img" src="{{ product.featured_image.src | image_url }}" alt="{{ product.title }}" width=300 height=300/> {% endcomment %}
+                              <div class="image-container">
+                                  <img class="product-img" src="{{ product.images[0].src | image_url }}" alt="{{ product.title }}" width=300 height=300/>
+                                  <img class="product-img second-image" src="{{ product.images[1].src | image_url }}" alt="{{ product.title }}" width=300 height=300/>
+                              </div>
+                              <a href="{{ product.url }}" class="quick-look-tag">Quick Look</a> <!-- Quick Look tag -->
+
+                              <div class="product-container-details">
+                                  {% assign colorOption = false %}
+                                  {% for option in product.options %}
+                                      {% if option.name == 'Color' %}
+                                          {% assign colorOption = true %}
+                                          <div class="color-variants">
+                                              <p>Select Color:</p>
+                                              {% for variant in product.variants %}
+                                                  {% if variant.option1 == option.values[0] %}
+                                                      <input type="radio" id="color-{{ variant.id }}" name="color-{{ product.id }}" value="{{ variant.option1 }}" {% if forloop.first %}checked{% endif %}>
+                                                      <label for="color-{{ variant.id }}" style="background-color: {{ variant.option1 }};"></label>
+                                                  {% endif %}
+                                              {% endfor %}
+                                          </div>
+                                      {% endif %}
+
+                                  {% endfor %}
+
+
+                                  <p class="vendor-name">{{ product.vendor }}</p>
+                                  <h3 class="product-name">{{ product.title }}</h3>
+                                  <p class="price">
+                                      <span class="product-price">{{ product.price | money }}</span>
+                                      {% if product.compare_at_price > product.price %}
+                                          <span class="compared-price">{{ product.compare_at_price | money }}</span>
+                                      {% endif %}
+                                  </p>
+                                  <p class="stock">{{ product.variants.first.inventory_quantity }} in stock</p>
+                                          </div>
+                          </li>
+                      {% endfor %}
+                  {% else %}
+                      <p class="no-products-message">No products found in the selected collection.</p>
+                  {% endif %}
+              </ul>
+          </div>
+      </div>
+
+  </div>
+{% endcomment %}
+
+<div class="featured-custom-collection-container">
+  <div class="splide" id="splide-1">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% assign collection = collections[section.settings.collection] %}
+        {% if collection %}
+          {% for product in collection.products limit: 4 %}
+            <li class="splide__slide product-container-item">
+              {% if product.tags contains 'New' %}
+                <div class="tag new-tag">New</div>
+                <!-- New tag -->
+              {% else %}
+                <div class="tag new-tag" style="display: none;">New</div>
+                <!-- Hide new tag -->
+              {% endif %}
+              {% if product.compare_at_price > product.price %}
+                {% assign regular_price = product.price %}
+                {% assign compared_price = product.compare_at_price %}
+                {% assign discount = compared_price | minus: regular_price %}
+                {% assign discount_percent = discount | times: 100 | divided_by: compared_price %}
+                <div class="tag discount-tag top-discount">{{ discount_percent | round }}% off</div>
+                <!-- Discount tag -->
+              {% endif %}
+              {% comment %} <div class="tag new-tag">New</div> <!-- New tag --> {% endcomment %}
+              {% comment %} <img class="product-img" src="{{ product.featured_image.src | image_url }}" alt="{{ product.title }}" width=300 height=300/> {% endcomment %}
+              <div class="image-container" onmouseover="showSecondImage(this)" onmouseout="showFirstImage(this)">
+                <img
+                  class="product-img get-img"
+                  src="{{ product.images[1].src | image_url }}"
+                  alt="{{ product.title }}"
+                  width="300"
+                  height="300/"
+                >
+                <img
+                  class="product-img second-image"
+                  src="{{ product.images[0].src | image_url }}"
+                  alt="{{ product.title }}"
+                  width="300"
+                  height="300/"
+                >
+              </div>
+              <a href="{{ product.url }}" class="quick-look-tag">Quick Look</a>
+              <!-- Quick Look tag -->
+
+              <div class="product-container-details">
+                <div class="colors-container">
+                  {% for eachcolor in product.options_by_name.Color.values %}
+                    {% assign val = forloop.index %}
+                    <div class="outer-radio" style="display:block;">
+                      <div
+                        class="radio"
+                        style="background-color:{{eachcolor}};display:block;"
+                        data-images="{{ product.images[val].src |image_url }}"
+                        data-imageindex="{{ forloop.parentloop.index }}"
+                      ></div>
+                    </div>
+                  {% endfor %}
+                </div>
+
+                <p class="vendor-name">{{ product.vendor }}</p>
+                <h3 class="product-name">{{ product.title }}</h3>
+                <p class="price">
+                  <span class="product-price">{{ product.price | money }}</span>
+                  {% if product.compare_at_price > product.price %}
+                    <span class="compared-price">{{ product.compare_at_price | money }}</span>
+                  {% endif %}
+                </p>
+                <p class="stock">{{ product.variants.first.inventory_quantity }} in stock</p>
+              </div>
+            </li>
+          {% endfor %}
+        {% else %}
+          <p class="no-products-message">No products found in the selected collection.</p>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="splide" id="splide-2">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% assign collection = collections[section.settings.collection] %}
+        {% if collection %}
+          {% for product in collection.products limit: 4 offset: 4 %}
+            <li class="splide__slide product-container-item">
+              {% if product.tags contains 'New' %}
+                <div class="tag new-tag">New</div>
+                <!-- New tag -->
+              {% endif %}
+              {% if product.compare_at_price > product.price %}
+                {% assign regular_price = product.price %}
+                {% assign compared_price = product.compare_at_price %}
+                {% assign discount = compared_price | minus: regular_price %}
+                {% assign discount_percent = discount | times: 100 | divided_by: compared_price %}
+                <div class="tag discount-tag top-discount">{{ discount_percent | round }}% off</div>
+                <!-- Discount tag -->
+              {% endif %}
+              {% comment %} <div class="tag new-tag">New</div> <!-- New tag --> {% endcomment %}
+              {% comment %} <img class="product-img" src="{{ product.featured_image.src | image_url }}" alt="{{ product.title }}" width=300 height=300/> {% endcomment %}
+              <div class="image-container" onmouseover="showSecondImage(this)" onmouseout="showFirstImage(this)">
+                <img
+                  class="product-img get-img-2"
+                  src="{{ product.images[1].src | image_url }}"
+                  alt="{{ product.title }}"
+                  width="300"
+                  height="300/"
+                >
+                <img
+                  class="product-img second-image"
+                  src="{{ product.images[0].src | image_url }}"
+                  alt="{{ product.title }}"
+                  width="300"
+                  height="300/"
+                >
+              </div>
+              <a href="{{ product.url }}" class="quick-look-tag">Quick Look</a>
+              <!-- Quick Look tag -->
+
+              <div class="product-container-details">
+                <div class="colors-container">
+                  {% for eachcolor in product.options_by_name.Color.values %}
+                    {% assign val = forloop.index %}
+                    <div class="outer-radio" style="display:block;">
+                      <div
+                        class="radio-1"
+                        style="background-color:{{eachcolor}};display:block;"
+                        data-images="{{ product.images[val].src |image_url }}"
+                        data-imageindex="{{ forloop.parentloop.index }}"
+                      ></div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <p class="vendor-name">{{ product.vendor }}</p>
+                <h3 class="product-name">{{ product.title }}</h3>
+                <p class="price">
+                  <span class="product-price">{{ product.price | money }}</span>
+                  {% if product.compare_at_price > product.price %}
+                    <span class="compared-price">{{ product.compare_at_price | money }}</span>
+                  {% endif %}
+                </p>
+                <p class="stock">{{ product.variants.first.inventory_quantity }} in stock</p>
+              </div>
+            </li>
+          {% endfor %}
+        {% else %}
+          <p class="no-products-message">No products found in the selected collection.</p>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "featured collection",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "collection"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "See All Product"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "featured collection"
+    }
+  ]
+}
+{% endschema %}

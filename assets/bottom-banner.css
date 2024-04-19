@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: end;
-
     height: 450px;
     padding: 0px 40px;
     margin: 20px auto;
@@ -176,97 +175,4 @@
         height: 410px;
         /* Adjust height for medium screens */
     }
-}
-
-/* Media Queries for Large screens (e.g., desktops) */
-@media only screen and (min-width: 1025px) {
-    /* Add any additional styles for large screens here */
-}
-
-.first-section {
-    width: 93%;
-    height: 450px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 30px; */
-    margin: 20px auto;
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 18px;
-}
-
-.first-section-block--img-container {
-    object-fit: cover;
-    width: 100%;
-    position: absolute;
-    border-radius: 10px;
-    box-sizing: border-box;
-    height: 450px;
-    border-radius: 18px;
-    transition: transform 1s;
-}
-
-.first-section:hover .first-section-block--img-container {
-    transform: scale(1.1);
-}
-
-.first-section-block--content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    /* z-index: 2; */
-    /* box-sizing: border-box; */
-    position: absolute;
-    margin-bottom: 40px;
-
-}
-
-.first-section-block--content div {
-    text-align: center;
-}
-
-.first-section-block--content ul {
-    padding: 0 20px;
-    /* border: 1px solid white; */
-    border-radius: 20px;
-    color: #FFFFFF;
-    margin: 0;
-    list-style-type: none;
-}
-
-.first-section-block--content h3 {
-    margin: 0px 0px 10px;
-    color: #FFFFFF;
-    font-size: 44px;
-    font-weight: 600;
-    width: 710px;
-    text-align: center;
-}
-
-.first-section-block--content p {
-    margin-top: 0;
-    color: #FFFFFFCC;
-    font-size: 14px;
-    width: 510px;
-    padding: 10px;
-    text-align: center;
-    line-height: 1;
-}
-
-.first-section-block--content a {
-    background: transparent;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    font-size: 16px;
-    /* box-shadow: none; */
-}
-
-.first-section-block--content a:hover {
-    color: rgb(208, 60, 63);
-    background: white;
-    box-shadow: none;
 }

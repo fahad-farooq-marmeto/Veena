@@ -1,0 +1,122 @@
+.custom-countdown-timer__wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.custom-countdown-timer__text-wrapper {
+    width: 40%;
+}
+
+.custom-countdown-timer__time-wrapper {
+    width: 60%;
+}
+
+.custom-countdown-timer__time-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.custom-countdown-timer__text-wrapper h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.custom-countdown-timer__wrapper .button {
+    background: linear-gradient(to right, rgb(208, 60, 63) 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.4s ease;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.custom-countdown-timer__wrapper .button:hover {
+    background-position: left bottom;
+}
+
+.custom-countdown-timer__wrapper .button:after {
+    box-shadow: none;
+}
+
+.custom-countdown-timer__button {
+    margin-top: 10px;
+}
+
+.custom-countdown-timer__card {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    height: 139px;
+    width: 140px;
+    box-sizing: border-box;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 0.3px;
+    line-height: 28.8px;
+    text-align: center;
+}
+
+.custom-countdown-timer__time {
+    font-weight: 400;
+    font-size: 46px;
+}
+
+.custom-countdown-timer__description {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+}
+
+.custom-countdown-timer__stamp {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* .custom-button-secondary_color ::before{
+    height: 45px;
+    width: auto;
+    background-color: black;
+    border-radius: 12px ;
+  } */
+
+
+@media screen and (max-width: 750px) {
+    .custom-countdown-timer__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-countdown-timer__text-wrapper {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .custom-countdown-timer__time-wrapper {
+        width: 90%;
+    }
+
+    .custom-countdown-timer__description {
+        font-size: 12px;
+    }
+
+    .custom-countdown-timer__card {
+        height: 61px;
+        width: 47px;
+        padding: 12px 0px;
+    }
+
+    .custom-countdown-timer__time {
+        font-weight: 200;
+        font-size: 20px;
+    }
+
+    .custom-countdown-timer__stamp {
+        font-size: 12px;
+    }
+}

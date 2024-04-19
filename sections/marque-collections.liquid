@@ -1,0 +1,95 @@
+{{ 'marquee-collections.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'marquee-collections.js' | asset_url }}" defer></script>
+
+<div class="custome-marquee">
+  <div>
+    {% for block in section.blocks %}
+      {% assign image_url = block.settings.image_collection | image_url %}
+      {% if image_url %}
+        <span
+          ><img src="{{ image_url |image_url }}" alt="{{ block.settings.pre_heading }}" width="20" height="20">
+          {{- block.settings.pre_heading -}}
+        </span>
+      {% endif %}
+      <a href="{{ block.settings.button_link }}"
+        ><button class="{% if block.settings.button_label == 'EXPLORE' %}explore-btn{% elsif block.settings.button_label == 'GRAB THIS OFFER' %}grab-this-offer-btn{% else %}explore{% endif %}">
+          {{ block.settings.button_label }}
+        </button></a
+      >
+    {% endfor %}
+
+    {% comment %}
+      <span><img src="{{ 'new-clothing-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>WOMEN'S CLOTHING COLLECTION</span>
+      <a><button class="explore-btn">EXPLORE</button></a>
+
+      <span><img src="{{ 'new-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>NEW COLLECTION</span>
+      <a><button class="grab-this-offer-btn">GRAB THIS OFFER</button></a>
+
+
+      <span><img src="{{ 'new-clothing-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>MEN'S CLOTHING COLLECTION</span>
+      <a><button class="explore">EXPLORE</button></a>
+
+
+      <span><img src="{{ 'new-clothing-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>WOMEN'S CLOTHING COLLECTION</span>
+      <a><button class="explore-btn">EXPLORE</button></a>
+
+
+      <span><img src="{{ 'new-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>NEW COLLECTION</span>
+      <a><button class="grab-this-offer-btn">GRAB THIS OFFER</button></a>
+
+
+      <span><img src="{{ 'new-clothing-collection.svg' | asset_url}}" alt="New Collection" width=20 height=20>MEN'S CLOTHING COLLECTION</span>
+      <a><button class="explore">EXPLORE</button></a>
+    {% endcomment %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Marquee collection",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Marquee Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom-block",
+      "name": "custom-block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_collection",
+          "label": "collection image"
+        },
+        {
+          "type": "text",
+          "id": "pre_heading",
+          "label": "Pre Heading",
+          "default": "Business Formal Choices"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Explore"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee collection"
+    }
+  ]
+}
+{% endschema %}
