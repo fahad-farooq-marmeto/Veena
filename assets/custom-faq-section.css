@@ -1,48 +1,46 @@
-.assignment-faq {
+.faq-section {
     background: #f5f5f5;
-    padding: 3rem;
-    padding-right: 1rem;
+    padding: 3rem 1rem 3rem 3rem;
 }
 
-.assignment-faq--heading {
+.faq-section__heading {
     padding-top: 2rem;
     margin: 0;
-    color: white;
+    color: #000;
     text-align: left;
     font-weight: 900;
-    color: #000;
 }
 
-.assignment-faq--description {
+.faq-section__description {
     max-width: 530px;
+    padding-top: 0;
     padding-bottom: 1rem;
     font-size: 18px;
     font-weight: 400;
     color: #000;
-    padding-top: 0;
 }
 
-.assignment-faq-container--block {
+.faq-container__block {
     border-bottom: 0.5px solid #e2e2e2;
     margin-right: 2rem;
 }
 
-.assignment-faq-container-block--question {
+.faq-block__question {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
-.assignment-faq-container-block--question h5 {
+.faq-block__question h5 {
     font-size: 1.8rem;
     margin: 20px 0;
     color: #000;
     font-weight: 700;
     flex: 12;
+    /* Maintain the flex grow to prioritize question text space */
 }
 
-.toggle-icon {
+.question__toggle-icon {
     color: #000;
     width: 5rem;
     display: flex;
@@ -52,39 +50,39 @@
     font-weight: 500;
     margin: 0;
     flex: 1;
+    /* Ensure toggle icon occupies minimal space */
 }
 
-.assignment-faq-container-block--answer p {
+.faq-block__answer p {
     color: #000;
     font-size: 18px;
     margin-top: 0;
     padding: 0 1.5rem;
 }
 
-@media (max-width:600px) {
-    .assignment-faq--heading {
-        padding-top: 0rem;
+@media (max-width: 600px) {
+    .faq-section__heading {
+        padding-top: 0;
         font-size: 2.5rem;
     }
 
-    .assignment-faq-container-block--question h5 {
+    .faq-block__question h5 {
         font-size: 1.5rem;
     }
 
-    .assignment-faq-container-block--answer p {
+    .faq-block__answer p {
         font-size: 1.2rem;
     }
 
-    .assignment-faq {
+    .faq-section {
         padding: 0 1rem;
     }
 
-    .assignment-faq-container--block {
+    .faq-container__block {
         margin-right: 1rem;
     }
 
-    .assignment-faq--description {
+    .faq-section__description {
         font-size: 12px;
     }
-
 }

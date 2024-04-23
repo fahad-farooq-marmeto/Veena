@@ -1,20 +1,20 @@
-.animated-rich-text-container {
+.animated-rich-text {
     font-weight: 500;
 }
 
-.animated-rich-inner-container {
+.animated-rich-text__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.animated-rich-text-small-heading {
+.animated-rich-text__heading {
     font-size: 18px;
     color: #000000CC;
 }
 
-.animated-rich-text-description {
+.animated-rich-text__description {
     font-size: 6rem;
     display: flex;
     align-items: center;
@@ -47,28 +47,25 @@
     }
 }
 
-.animated-text {
-    display: inline-block;
+.animated-rich-text__text {
+    display: flex;
+    gap: 2px;
     overflow: hidden;
     vertical-align: bottom;
     color: #d03c3f;
     position: relative;
 }
 
-/* .animated-text:hover {
-    border-bottom: 2px solid #d03c3f;
-} */
-
-.animated-text span {
+.animated-rich-text__text span {
     display: inline-block;
     animation: letterIn 0.3s forwards;
 }
 
-.animated-text span.out {
+.animated-rich-text__text span.out {
     animation: letterOut 0.3s forwards;
 }
 
-.animated-text::after {
+.animated-rich-text__text::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -79,34 +76,25 @@
     transition: width 0.3s ease-out, right 0.3s ease-out;
 }
 
-.animated-text:hover::after {
+.animated-rich-text__text:hover::after {
     width: 100%;
     right: auto;
     left: 0;
     cursor: pointer;
 }
 
-
-.animated-text:not(:hover)::after {
+.animated-rich-text__text:not(:hover)::after {
     transition: width 0.3s ease-out, left 0.3s ease-out;
     left: auto;
     right: 0;
 }
 
-
-a {
-    text-decoration: none;
-}
-
-
-.animated-button {
+.animated-rich-text__button {
     padding: 10px 20px;
     font-size: 16px;
-    text-align: center;
     background-color: #d03c3f;
     color: white;
     border-radius: 50px;
-    outline: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -119,23 +107,11 @@ a {
     height: 55px;
 }
 
-@media screen and (max-width:762px) {
-    .animated-button {
-        font-size: 12px;
-        width: 100px;
-        height: 40px;
-        margin-top: 0.8rem;
-    }
-
-    .animated-rich-text-small-heading {
-        font-size: 12px;
-        margin-bottom: 0.8rem;
-    }
-
+.animated-rich-text__button:hover {
+    color: #fff;
 }
 
-
-.animated-button::before {
+.animated-rich-text__button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -145,50 +121,48 @@ a {
     background-color: #000;
     transition: left 0.4s ease;
     border-radius: 50px;
-    z-index: 1;
-
 }
 
-.animated-button:hover::before {
+.animated-rich-text__button:hover::before {
     left: 0;
 }
 
-.animated-button:hover {
-    color: #fff;
-}
-
-.animated-button-text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    color: #fff;
-}
-
-.animated-button-label {
+.animated-rich-text__button-label {
     z-index: 10;
-    position: absolute;
+    position: relative;
 }
 
-@media screen and (max-width:1024px) {
-    .animated-rich-text-description {
+@media screen and (max-width: 1024px) {
+    .animated-rich-text__description {
         font-size: 4rem;
     }
-
 }
 
-@media screen and (max-width:762px) {
-
-    .animated-rich-text-description {
-        font-size: 2.5rem;
+@media screen and (max-width: 762px) {
+    .animated-rich-text__button {
+        font-size: 12px;
+        width: 100px;
+        height: 40px;
+        margin-top: 0.8rem;
     }
 
+    .animated-rich-text__heading {
+        font-size: 12px;
+        margin-bottom: 0.8rem;
+    }
+
+    .animated-rich-text__description {
+        font-size: 2.5rem;
+    }
 }
 
-@media screen and (max-width:500px) {
-    .animated-rich-text-description {
+@media screen and (max-width: 500px) {
+    .animated-rich-text__description {
         font-size: 2rem;
         gap: 0.8rem;
     }
+}
 
+.animated-rich-text__button {
+    text-decoration: none;
 }

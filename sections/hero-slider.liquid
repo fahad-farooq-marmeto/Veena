@@ -1,28 +1,31 @@
-{{ 'hero-slider.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'hero-slider.css' | asset_url }}">
 <script src="{{ 'hero-slider.js' | asset_url }}" defer></script>
 
 <div class="hero-slider">
   {% for block in section.blocks %}
     <div
-      class="slide {% if forloop.first %}active{% endif %}"
+      class="hero-slider__slide {% if forloop.first %}active{% endif %}"
       style="background-image: url('{{ block.settings.image_desktop | img_url: '1440x600' }}');"
     >
-      <div class="slide-content {{ block.settings.content_position }}">
-        <div class="glassmorph-heading"><span class="bullet">•</span>{{ block.settings.heading }}</div>
-        <div class="slide-content-description {{ block.settings.text_alignment }}">
+      <div class="hero-slider__content hero-slider__content--{{ block.settings.content_position }}">
+        <div class="hero-slider__heading">
+          <span class="hero-slider__bullet">•</span>
+          {{ block.settings.heading }}
+        </div>
+        <div class="hero-slider__description hero-slider__description--{{ block.settings.text_alignment }}">
           {{ block.settings.description }}
         </div>
-        <a href="#" class="button-slider-button">{{ block.settings.button_label }}</a>
+        <a href="#" class="hero-slider__button">{{ block.settings.button_label }}</a>
       </div>
     </div>
   {% endfor %}
-  <div class="slider-controls">
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-    <div class="slide-dots">
+  <div class="hero-slider__controls">
+    <button class="hero-slider__prev">&#10094;</button>
+    <button class="hero-slider__next">&#10095;</button>
+    <div class="hero-slider__dots">
       {% for block in section.blocks %}
         <span
-          class="dot {% if forloop.first %}active-dot{% endif %}"
+          class="hero-slider__dot {% if forloop.first %}active-dot{% endif %}"
           onclick="currentSlide({{ forloop.index0 }})"
         ></span>
       {% endfor %}

@@ -2,53 +2,57 @@
 
 <div class="interactive-cards">
   {% for block in section.blocks %}
-    <div class="hotspot-card" style="position: relative;">
-      <div class="card-image">
+    <div class="interactive-cards__card">
+      <div class="interactive-cards__image">
         <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.heading }}" height="" width="">
 
         <!-- Hotspot 1 -->
         <div
-          class="hotspot"
-          style="position: absolute; top: {{ block.settings.hotspot1_top }}%; left: {{ block.settings.hotspot1_left }}%;"
+          class="interactive-cards__hotspot"
+          style="top: {{ block.settings.hotspot1_top }}%; left: {{ block.settings.hotspot1_left }}%;"
           data-product-name="{{ block.settings.hotspot1_product_name }}"
           data-product-price="{{ block.settings.hotspot1_product_price }}"
           data-product-image="{{ block.settings.hotspot1_image | img_url: '100x' }}"
           data-content="{{ block.settings.hotspot1_label }}"
         >
-          <div class="hotspot-inner-dot">1</div>
+          <div class="interactive-cards__dot">1</div>
         </div>
 
         <!-- Hotspot 2 -->
         <div
-          class="hotspot"
-          style="position: absolute; top: {{ block.settings.hotspot2_top }}%; left: {{ block.settings.hotspot2_left }}%;"
+          class="interactive-cards__hotspot"
+          style="top: {{ block.settings.hotspot2_top }}%; left: {{ block.settings.hotspot2_left }}%;"
           data-product-name="{{ block.settings.hotspot2_product_name }}"
           data-product-price="{{ block.settings.hotspot2_product_price }}"
           data-product-image="{{ block.settings.hotspot2_image | img_url: '100x' }}"
           data-content="{{ block.settings.hotspot2_label }}"
         >
-          <div class="hotspot-inner-dot">2</div>
+          <div class="interactive-cards__dot">2</div>
         </div>
       </div>
-      <div class="hotspot-card-heading">{{ block.settings.heading }}</div>
-      <div class="hotspot-card-desc">{{ block.settings.description }}</div>
-      <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_label }}</a>
+      <div class="interactive-cards__content">
+        <div class="interactive-cards__heading">{{ block.settings.heading }}</div>
+        <div class="interactive-cards__desc">{{ block.settings.description }}</div>
+        <a href="{{ block.settings.button_link }}" class="interactive-cards__button button">
+          {{- block.settings.button_label -}}
+        </a>
+      </div>
     </div>
   {% endfor %}
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var hotspots = document.querySelectorAll('.hotspot');
+    var hotspots = document.querySelectorAll('.interactive-cards__hotspot');
     hotspots.forEach(function (hotspot) {
       hotspot.addEventListener('mouseover', function () {
         var tooltip = document.createElement('div');
         tooltip.className = 'tooltip';
         tooltip.innerHTML = `<img src="${hotspot.getAttribute('data-product-image')}" alt="Product Image">
-                                     <div class="text">
-                                         <strong>${hotspot.getAttribute('data-product-name')}</strong><br>
-                                         Price: ${hotspot.getAttribute('data-product-price')}
-                                     </div>`;
+                             <div class="text">
+                               <strong>${hotspot.getAttribute('data-product-name')}</strong><br>
+                               Price: ${hotspot.getAttribute('data-product-price')}
+                             </div>`;
         hotspot.appendChild(tooltip);
         tooltip.style.display = 'block';
       });

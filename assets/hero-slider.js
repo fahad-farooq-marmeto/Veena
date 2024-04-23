@@ -1,43 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let slides = document.querySelectorAll('.slide');
-    let dots = document.querySelectorAll('.dot');
+    const slides = document.querySelectorAll('.hero-slider__slide');
+    const dots = document.querySelectorAll('.hero-slider__dot');
     let currentSlide = 0;
 
-    function nextSlide() {
-        goToSlide(currentSlide + 1, "right");
+    function navigateSlide(targetIndex, direction) {
+        const targetSlideIndex = (targetIndex + slides.length) % slides.length;
+        resetCurrentSlide(slides[currentSlide]);
+        prepareNextSlide(slides[targetSlideIndex], direction);
+        updateActiveDot(dots[currentSlide], dots[targetSlideIndex]);
+        currentSlide = targetSlideIndex;
     }
 
-    function previousSlide() {
-        goToSlide(currentSlide - 1, "left");
+    function resetCurrentSlide(slide) {
+        slide.className = 'hero-slider__slide'; // Reset class to default
     }
 
-    function goToSlide(n, direction) {
-        let nextSlideIndex = (n + slides.length) % slides.length;
-        slides[currentSlide].className = 'slide'; // Reset current slide
-        slides[nextSlideIndex].className = 'slide active'; // Prepare next slide to come in
-        slides[nextSlideIndex].style.transform = direction === "right" ? "translateX(100%)" : "translateX(-100%)"; // Position offscreen
+    function prepareNextSlide(slide, direction) {
+        slide.className = 'hero-slider__slide active'; // Activate next slide
+        slide.style.transform = direction === "right" ? "translateX(100%)" : "translateX(-100%)"; // Position offscreen appropriately
         setTimeout(() => {
-            slides[nextSlideIndex].style.transform = "translateX(0)"; // Slide into view
-        }, 20); // A small delay to ensure the transform applies
-        dots[currentSlide].className = 'dot';
-        dots[nextSlideIndex].className = 'dot active-dot';
-        currentSlide = nextSlideIndex;
+            slide.style.transform = "translateX(0)"; // Slide into view
+        }, 20); // A short delay to ensure transform applies
     }
 
-    let next = document.querySelector('.next-slide');
-    let previous = document.querySelector('.prev-slide');
+    function updateActiveDot(currentDot, targetDot) {
+        currentDot.className = 'hero-slider__dot';
+        targetDot.className = 'hero-slider__dot active-dot';
+    }
 
-    next.onclick = function() {
-        nextSlide();
-    };
+    function setupNavigation() {
+        const nextButton = document.querySelector('.hero-slider__next');
+        const prevButton = document.querySelector('.hero-slider__prev');
 
-    previous.onclick = function() {
-        previousSlide();
-    };
+        if (nextButton) {
+            nextButton.addEventListener('click', () => navigateSlide(currentSlide + 1, "right"));
+        }
+        if (prevButton) {
+            prevButton.addEventListener('click', () => navigateSlide(currentSlide - 1, "left"));
+        }
+    }
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index, index > currentSlide ? "right" : "left");
+    function setupDots() {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => navigateSlide(index, index > currentSlide ? "right" : "left"));
         });
-    });
+    }
+
+    setupNavigation();
+    setupDots();
 });

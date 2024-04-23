@@ -1,22 +1,22 @@
 {{ 'custom-faq-section.css' | asset_url | stylesheet_tag }}
 
-<div class="assignment-faq">
-  <h1 class="assignment-faq--heading">{{ section.settings.heading }}</h1>
-  <p class="assignment-faq--description">
+<div class="faq-section">
+  <h1 class="faq-section__heading">{{ section.settings.heading }}</h1>
+  <p class="faq-section__description">
     Ensure that your FAQs are regularly updated based on common customer queries and changes in your business
     operations.
   </p>
-  <div class="assignment-faq--container">
+  <div class="faq-section__container">
     {% for block in section.blocks %}
-      <div class="assignment-faq-container--block">
+      <div class="faq-container__block">
         <details>
           <summary>
-            <div class="assignment-faq-container-block--question">
+            <div class="faq-block__question">
               <h5>{{ block.settings.question }}</h5>
-              <span class="toggle-icon">+</span>
+              <span class="question__toggle-icon">+</span>
             </div>
           </summary>
-          <div class="assignment-faq-container-block--answer">{{ block.settings.answer }}</div>
+          <div class="faq-block__answer">{{ block.settings.answer }}</div>
         </details>
       </div>
     {% endfor %}
@@ -27,10 +27,9 @@
   let summaries = document.querySelectorAll('details summary');
   let previous = null;
   let previousIcon = null;
-  let i = 0;
   summaries.forEach(function (summary) {
     summary.addEventListener('click', function () {
-      var icon = summary.querySelector('.toggle-icon');
+      var icon = summary.querySelector('.question__toggle-icon');
 
       if (previous == summary.parentNode) {
         previous.open = previous.open;

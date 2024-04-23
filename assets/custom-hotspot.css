@@ -1,55 +1,73 @@
 .interactive-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    place-items: start;
+    /* Aligns items to the top and left */
     justify-content: center;
     gap: 3rem;
     padding: 0 3rem;
-    position: relative;
 }
 
-.hotspot-card {
+.interactive-cards__card {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
     flex-direction: column;
+    align-items: start;
+    /* Ensures content is left-aligned */
     width: 100%;
 }
 
-.hotspot-card-heading {
+.interactive-cards__image {
+    width: 100%;
+    border-radius: 22px;
+    position: relative;
+}
+
+.interactive-cards__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+}
+
+.interactive-cards__content {
+    text-align: left;
+    width: 100%;
+}
+
+.interactive-cards__heading {
     font-size: 3rem;
     font-weight: 600;
     color: #000;
 }
 
-.hotspot-card-desc {
-    font-size: 2rem;
+.interactive-cards__desc {
+    font-size: 1.8rem;
     line-height: 26px;
     color: #000;
     margin-bottom: 2rem;
 }
 
-.card-image {
-    width: 100%;
-    border-radius: 22px;
+.interactive-cards__button {
+    /* display: block;
+    /* Makes the button occupy its own line
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    */
 }
 
-.card-image img {
-    width: 100%;
-    height: 480px;
-    border-radius: 22px;
-}
-
-.hotspot {
+.interactive-cards__hotspot {
     width: 30px;
     height: 30px;
     border-radius: 55%;
     background-color: #fff;
     cursor: pointer;
-    position: relative;
+    position: absolute;
 }
 
-.hotspot-inner-dot {
+.interactive-cards__dot {
     position: absolute;
     top: 35%;
     left: 32%;
@@ -60,9 +78,7 @@
     border-radius: 50%;
 }
 
-/* Tooltip Container */
 .tooltip {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,32 +89,19 @@
     z-index: 100;
     width: 200px;
     height: 130px;
-    /* Adjust width as needed */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 22px;
+    position: absolute;
     bottom: -60px;
     left: 35px;
-    border-radius: 22px;
 }
 
-/* Tooltip Image */
 .tooltip img {
-    float: left;
     width: 50px;
     height: 50px;
     margin-right: 10px;
-
 }
 
-/* Tooltip Text Container */
 .tooltip .text {
-    float: right;
-    width: 180px;
-    /* Adjust based on total width of the tooltip */
-}
-
-/* Clear floats */
-.tooltip:after {
-    content: "";
-    display: table;
-    clear: both;
+    width: 130px;
 }
