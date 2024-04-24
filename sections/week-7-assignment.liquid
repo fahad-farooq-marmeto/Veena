@@ -5,32 +5,36 @@
 
 <div class="hotspot-m-main-container">
   <div class="interactive-image-hotspot">
-    <img
-      src="{{ section.settings.background_image | img_url: '1024x1024' }}"
-      alt="Interactive image"
-      class="interactive-image__background"
-      height=""
-      width=""
-    >
-    {% for block in section.blocks %}
-      <div class="hotspot" style="left: {{ block.settings.position_x }}%; top: {{ block.settings.position_y }}%;">
-        <div class="hotspot__product-card">
-          <img
-            src="{{ block.settings.product.featured_image | img_url: '150x150' }}"
-            alt="{{ block.settings.product.title }}"
-            class=""
-            height=""
-            width=""
-          >
-          <div class="product-details">
-            <div class="product-title">{{ block.settings.product.title }}</div>
-            <div>{{ block.settings.product.title | json }}</div>
-            <div class="product-price">{{ block.settings.product.price | money }}</div>
-            <button class="add-to-cart-btn" data-product-id="{{ block.settings.product.id }}">Add to Cart</button>
+    <div class="parent-for-hotspot">
+      <img
+        src="{{ section.settings.background_image | img_url: '1024x1024' }}"
+        alt="Interactive image"
+        class="interactive-image__background"
+        height=""
+        width=""
+      >
+      {% for block in section.blocks %}
+        <div class="hotspot" style="left: {{ block.settings.position_x }}%; top: {{ block.settings.position_y }}%;">
+          <div class="hotspot__product-card">
+            <img
+              src="{{ block.settings.first_product.featured_image | img_url: '150x150' }}"
+              alt="{{ block.settings.product.title }}"
+              class="hotspot__product-card-image"
+              height=""
+              width=""
+            >
+            <div class="product-details">
+              <div class="product-title">{{ block.settings.first_product.title }}</div>
+              <div class="product-price">{{ block.settings.first_product.price | money_without_currency }}</div>
+
+              <button type="submit" class="add-to-cart-btn" data-product-id="{{ block.settings.product.id }}">
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
     <div class="interactive-coll__slider-container">
       <section class="slider-section">
         <!-- Splide Slider for Products -->
@@ -105,7 +109,7 @@
         },
         {
           "type": "product",
-          "id": "product_id",
+          "id": "first_product",
           "label": "Select Product"
         }
       ]

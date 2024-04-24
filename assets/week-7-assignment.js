@@ -2,6 +2,7 @@ document.querySelectorAll('.hotspot').forEach(hotspot => {
     hotspot.addEventListener('mouseover', function() {
       this.querySelector('.hotspot__product-card').style.display = 'block';
     });
+
   
     hotspot.addEventListener('mouseout', function() {
       this.querySelector('.hotspot__product-card').style.display = 'none';
