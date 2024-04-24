@@ -168,11 +168,12 @@
     top: 50%;
     transform: translateY(-50%);
     width: 2em;
-    z-index: 1
+    z-index: 1;
+    color: #000;
 }
 
 .splide__arrow svg {
-    fill: #000;
+    fill: #000 !important;
     height: 1.2em;
     width: 1.2em
 }

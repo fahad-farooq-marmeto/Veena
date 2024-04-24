@@ -84,6 +84,7 @@
 .slider-section {
     width: 360px;
     height: 650px;
+    color: #000;
 }
 
 .interactive-coll__slider-container {
@@ -120,6 +121,7 @@
     border-radius: 50% 50% 2px 2px;
     border: 1px solid #000;
     transform: rotate(360deg);
+    color: #000;
 }
 
 .splide .splide__arrow--next {
@@ -130,6 +132,8 @@
     border-radius: 2px 2px 50% 50%;
     border: 1px solid #000;
     opacity: 1;
+    color: #000;
+
 }
 
 .original-price,
@@ -148,6 +152,10 @@
 .sale-price {
     color: red;
     margin-right: 8px;
+}
+
+.original-price {
+    text-decoration: line-through;
 }
 
 /* Media queries for larger screens */
