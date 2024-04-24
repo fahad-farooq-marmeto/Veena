@@ -1,5 +1,33 @@
 {
   "sections": {
+    "week_7_assignment_9bmatV": {
+      "type": "week-7-assignment",
+      "blocks": {
+        "hotspot_mjJtyR": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 30,
+            "position_y": 16,
+            "product_id": "classic-baseball-hat"
+          }
+        },
+        "hotspot_XRKCdQ": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 50,
+            "position_y": 50,
+            "product_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_mjJtyR",
+        "hotspot_XRKCdQ"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/image_3.jpg"
+      }
+    },
     "hero_slider_tEAXya": {
       "type": "hero-slider",
       "blocks": {
@@ -51,7 +79,8 @@
         "small_heading": "What You Wear",
         "description": "Fashion Emerges As A Universal",
         "button_label": "Explore More",
-        "button_link": ""
+        "button_link": "",
+        "animated_text": "Language"
       }
     },
     "custom_section_cMjJ8K": {
@@ -531,6 +560,7 @@
     }
   },
   "order": [
+    "week_7_assignment_9bmatV",
     "hero_slider_tEAXya",
     "animated_rich_text_qRgPHU",
     "custom_section_cMjJ8K",
