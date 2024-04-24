@@ -1,0 +1,121 @@
+{{ 'week-7-assignment.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'week-7-assignment.js' | asset_url }}" defer></script>
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'splide.min.js' | asset_url }}" defer></script>
+
+<div class="hotspot-m-main-container">
+  <div class="interactive-image-hotspot">
+    <img
+      src="{{ section.settings.background_image | img_url: '1024x1024' }}"
+      alt="Interactive image"
+      class="interactive-image__background"
+      height=""
+      width=""
+    >
+    {% for block in section.blocks %}
+      <div class="hotspot" style="left: {{ block.settings.position_x }}%; top: {{ block.settings.position_y }}%;">
+        <div class="hotspot__product-card">
+          <img
+            src="{{ block.settings.product.featured_image | img_url: '150x150' }}"
+            alt="{{ block.settings.product.title }}"
+            class=""
+            height=""
+            width=""
+          >
+          <div class="product-details">
+            <div class="product-title">{{ block.settings.product.title }}</div>
+            <div>{{ block.settings.product.title | json }}</div>
+            <div class="product-price">{{ block.settings.product.price | money }}</div>
+            <button class="add-to-cart-btn" data-product-id="{{ block.settings.product.id }}">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    <div class="interactive-coll__slider-container">
+      <section class="slider-section">
+        <!-- Splide Slider for Products -->
+        <div class="splide" id="product-slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for product in collections.all.products %}
+                <li class="splide__slide">
+                  <div class="splide_slide_card">
+                    <img
+                      src="{{ product.featured_image | img_url: '300x300' }}"
+                      alt="{{ product.title }}"
+                      width="300"
+                      height="300"
+                    >
+                    <div>
+                      <div class="product-vendor-text">{{ product.vendor }}</div>
+                      <div class="product-title-text">{{ product.title }}</div>
+                      <div>stars</div>
+                      <div class="price">
+                        {% if product.compare_at_price > product.price %}
+                          <span class="sale-price">{{ product.price | money_with_currency }}</span>
+                          <span class="original-price">{{ product.compare_at_price | money_with_currency }}</span>
+                        {% else %}
+                          <span>{{ product.price | money_with_currency }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Hotspots",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspot",
+      "name": "Hotspot",
+      "settings": [
+        {
+          "type": "range",
+          "id": "position_x",
+          "label": "Position X (%)",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "position_y",
+          "label": "Position Y (%)",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "step": 1
+        },
+        {
+          "type": "product",
+          "id": "product_id",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Image with Hotspots",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
