@@ -55,39 +55,10 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
-    },
-    "week_7_assignment_DF6rqF": {
-      "type": "week-7-assignment",
-      "blocks": {
-        "hotspot_MT4HQG": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 32,
-            "position_y": 6,
-            "product_id": "corben-shoulder-bag"
-          }
-        },
-        "hotspot_3mRAPP": {
-          "type": "hotspot",
-          "settings": {
-            "position_x": 26,
-            "position_y": 23,
-            "product_id": "full-sleeve-high-neck-t-shirt-1"
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_MT4HQG",
-        "hotspot_3mRAPP"
-      ],
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/image_3.jpg"
-      }
     }
   },
   "order": [
     "announcement_bar_jyxna7",
-    "header",
-    "week_7_assignment_DF6rqF"
+    "header"
   ]
 }
