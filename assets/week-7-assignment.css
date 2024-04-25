@@ -8,6 +8,14 @@
     margin: 0rem 1rem;
 }
 
+.hotspot-m-main-container__heading {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
 .interactive-image-hotspot {
     display: flex;
     align-items: center;
@@ -275,9 +283,6 @@
     pointer-events: none;
     cursor: default;
 }
-
-
-
 
 
 /* Media queries for larger screens */
