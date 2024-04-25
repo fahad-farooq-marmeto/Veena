@@ -180,7 +180,23 @@
 
 .add-to-cart-btn {
     margin-top: 8px;
+    cursor: pointer;
 }
+
+.rating svg {
+    width: 16px;
+    /* Size of the star */
+    height: 16px;
+    margin-right: 1px;
+    fill: #ccc;
+    /* Default fill color for empty stars */
+}
+
+.rating .star-filled {
+    fill: #f80;
+}
+
+
 
 /* Media queries for larger screens */
 @media (min-width: 763px) {
@@ -203,6 +219,7 @@
         width: 250px;
         height: 110px;
         flex-direction: row;
+
     }
 
     .hotspot__product-card img {

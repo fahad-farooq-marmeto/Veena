@@ -26,8 +26,7 @@
             <div class="product-details">
               <div class="product-title">{{ block.settings.first_product.title }}</div>
               <div class="product-price">{{ block.settings.first_product.price | money_without_currency }}</div>
-
-              <button type="submit" class="add-to-cart-btn" data-product-id="{{ block.settings.product.id }}">
+              <button type="button" class="add-to-cart-btn" data-product-id="{{ block.settings.first_product.id }}">
                 Add to Cart
               </button>
             </div>
@@ -53,7 +52,40 @@
                     <div>
                       <div class="product-vendor-text">{{ product.vendor }}</div>
                       <div class="product-title-text">{{ product.title }}</div>
-                      <div>stars</div>
+                      <div class="product-rating">
+                        <div class="rating">
+                          {% assign rating = product.metafields.custom.rating | default: 0 %}
+                          {% assign max_stars = 5 %}
+                          {% for i in (1..max_stars) %}
+                            {% if i <= rating %}
+                              <!-- Filled Star -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                height="24px"
+                                width="24px"
+                                viewBox="0 0 53.867 53.867"
+                                xml:space="preserve"
+                              >
+                                <polygon style="fill:#EFCE4A;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 10.288,52.549 13.467,34.013 0,20.887 18.611,18.182"/>
+                              </svg>
+
+                            {% else %}
+                              <!-- Empty Star -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                height="24px"
+                                width="24px"
+                                viewBox="0 0 53.867 53.867"
+                                xml:space="preserve"
+                              >
+                                <polygon style="fill:#dddddf;" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 10.288,52.549 13.467,34.013 0,20.887 18.611,18.182"/>
+                              </svg>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
                       <div class="price">
                         {% if product.compare_at_price > product.price %}
                           <span class="sale-price">{{ product.price | money_with_currency }}</span>
