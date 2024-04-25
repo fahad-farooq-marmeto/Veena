@@ -9,7 +9,7 @@ document.querySelectorAll('.hotspot').forEach(hotspot => {
 
   document.addEventListener('DOMContentLoaded', function () {
     new Splide('#product-slider', {
-      type: 'loop',
+      type: 'slide',
       pagination: false,
       perPage: 1,
       perMove: 1,
@@ -19,6 +19,19 @@ document.querySelectorAll('.hotspot').forEach(hotspot => {
         },
       },
     }).mount();
+
+    // Add an event listener to disable the "Previous" button at the first slide
+    splide.on('mounted move', function () {
+      var prevButton = splide.Components.Elements.arrows.prev;
+      // Disable the prev button if the current index is 0
+      if (splide.index === 0) {
+        prevButton.disabled = true;
+        prevButton.classList.add('is-disabled');
+      } else {
+        prevButton.disabled = false;
+        prevButton.classList.remove('is-disabled');
+      }
+    });
   });
 
   document.addEventListener('DOMContentLoaded', function() {
