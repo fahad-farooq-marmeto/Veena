@@ -21,4 +21,51 @@ document.querySelectorAll('.hotspot').forEach(hotspot => {
     }).mount();
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all add to cart forms
+    const addToCartForms = document.querySelectorAll('form[action$="/cart/add"]');
 
+    addToCartForms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Create a new FormData object to capture form data
+            const formData = new FormData(this);
+
+            fetch('/cart/add.js', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Product added to cart:', data);
+                showToast('Product successfully added to your cart!'); // Show success toast
+                updateCartCount(); // Update the cart count
+            })
+            .catch(error => {
+                console.error('Error adding product to cart:', error);
+                showToast('Failed to add the product to the cart. Please try again.'); // Show error toast
+            });
+        });
+    });
+});
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) {
+        return;
+    }
+    toast.textContent = message;
+    toast.className = "toast show";
+    setTimeout(function() { 
+        toast.className = toast.className.replace("show", ""); 
+    }, 3000);
+}
+
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (!cartCount) {
+        return;
+    }
+    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+}

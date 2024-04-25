@@ -4,6 +4,9 @@
 <script src="{{ 'splide.min.js' | asset_url }}" defer></script>
 
 <div class="hotspot-m-main-container">
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    Product successfully added to your cart!
+  </div>
   <div class="interactive-image-hotspot">
     <div class="parent-for-hotspot">
       <img
@@ -26,9 +29,14 @@
             <div class="product-details">
               <div class="product-title">{{ block.settings.first_product.title }}</div>
               <div class="product-price">{{ block.settings.first_product.price | money_without_currency }}</div>
-              <button type="button" class="add-to-cart-btn" data-product-id="{{ block.settings.first_product.id }}">
-                Add to Cart
-              </button>
+              <form action="/cart/add" method="post" class="add-to-cart-form">
+                {% if block.settings.first_product.selected_variant %}
+                  <input type="hidden" name="id" value="{{ block.settings.first_product.selected_variant.id }}">
+                {% else %}
+                  <input type="hidden" name="id" value="{{ block.settings.first_product.variants.first.id }}">
+                {% endif %}
+                <input type="submit" value="Add to Cart" class="btn btn-primary">
+              </form>
             </div>
           </div>
         </div>
