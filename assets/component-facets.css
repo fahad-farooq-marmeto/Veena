@@ -200,9 +200,12 @@
 
 .facets__summary {
   color: rgba(var(--color-foreground), 0.75);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 0 1.75rem 0 0;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+
 }
 
 .facets__disclosure fieldset {
