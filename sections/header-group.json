@@ -15,7 +15,7 @@
         "solid_color_3pXRgf": {
           "type": "solid-color",
           "settings": {
-            "solid_color_name": "Blue",
+            "solid_color_name": "blue",
             "solid_color": "#0082ff"
           }
         },
@@ -29,7 +29,7 @@
         "solid_color_n9B94d": {
           "type": "solid-color",
           "settings": {
-            "solid_color_name": "cornslik",
+            "solid_color_name": "Cornslik",
             "solid_color": "#fff8dc"
           }
         },
@@ -50,7 +50,7 @@
         "solid_color_BpEHzt": {
           "type": "solid-color",
           "settings": {
-            "solid_color_name": "darkolivegeeen",
+            "solid_color_name": "darkolivegreen",
             "solid_color": "#556b2f"
           }
         },
@@ -116,6 +116,20 @@
             "solid_color_name": "lightslategray",
             "solid_color": "#778899"
           }
+        },
+        "solid_color_3AVYJC": {
+          "type": "solid-color",
+          "settings": {
+            "solid_color_name": "limegreen",
+            "solid_color": "#32cd32"
+          }
+        },
+        "solid_color_aeHQMd": {
+          "type": "solid-color",
+          "settings": {
+            "solid_color_name": "Mediumpurple",
+            "solid_color": "#9370db"
+          }
         }
       },
       "block_order": [
@@ -134,7 +148,9 @@
         "solid_color_w9wFxe",
         "solid_color_eMd9EV",
         "solid_color_gjbiKL",
-        "solid_color_kEDkRx"
+        "solid_color_kEDkRx",
+        "solid_color_3AVYJC",
+        "solid_color_aeHQMd"
       ],
       "settings": {
         "heading": ""
