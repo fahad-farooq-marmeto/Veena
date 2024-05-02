@@ -8,6 +8,12 @@
         "color_scheme": "scheme-1"
       }
     },
+    "bread_crumb_HntzGV": {
+      "type": "bread-crumb",
+      "settings": {
+        "heading": ""
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -31,6 +37,7 @@
   },
   "order": [
     "banner",
+    "bread_crumb_HntzGV",
     "product-grid"
   ]
 }
