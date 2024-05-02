@@ -454,6 +454,28 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+                <!-- offer section start -->
+              {% when 'variant-offer' %}
+                <div class="coupon">
+                  <div class="left">
+                    <div id="cupon-code">{{ block.settings.offer_title }}</div>
+                  </div>
+                  <div class="center">
+                    <div>
+                      <h2>50% OFF</h2>
+                      <h3>Coupon</h3>
+                      <button id="copyButton">copy</button>
+                      <small>Valid until May, 2023</small>
+                    </div>
+                  </div>
+
+                  <div class="right">
+                    <div>{{ product.selected_variant.id }}</div>
+                  </div>
+                </div>
+                <!-- offer section end -->
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -718,6 +740,24 @@
       });
     </script>
 
+    <script>
+      document.getElementById('copyButton').addEventListener('click', function () {
+        // The ID to be copied is injected directly from the Shopify Liquid schema
+        const idToCopy = document.getElementById('cupon-code').innerText;
+
+        // Use the Clipboard API to copy the ID to the clipboard
+        navigator.clipboard.writeText(idToCopy).then(
+          function () {
+            console.log('Copying to clipboard was successful!');
+            alert('ID copied: ' + idToCopy); // Optional: Alert the user that the copy was successful
+          },
+          function (err) {
+            console.error('Could not copy text: ', err);
+          }
+        );
+      });
+    </script>
+
     {%- liquid
       if product.selected_or_first_available_variant.featured_media
         assign seo_media = product.selected_or_first_available_variant.featured_media
@@ -817,6 +857,18 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "variant-offer",
+      "name": "Variant offer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "offer_title",
+          "label": "Offer Title"
+        }
+      ],
       "limit": 1
     },
     {

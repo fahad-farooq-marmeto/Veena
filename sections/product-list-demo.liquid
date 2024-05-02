@@ -1,0 +1,28 @@
+<div>
+  {% for product in section.settings.product_list %}
+    {% render 'custom-product-card', product: product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "demo product section",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Product list"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "name"
+    }
+  ],
+  "presets": [
+    {
+      "name": "demo product section"
+    }
+  ]
+}
+{% endschema %}

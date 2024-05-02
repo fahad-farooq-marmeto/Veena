@@ -1,0 +1,311 @@
+<div class="custom-grid page-width">
+  <div class="custom-grid--left">
+    {% render 'responsive-picture', desktopImage: section.settings['grid-image-1'] %}
+    <div class="custom-grid-left-info-1 info">
+      <p class="preheading">{{ section.settings['preheading-1'] }}</p>
+      <h3>{{ section.settings['title-1'] }}</h3>
+      <p class="description">{{ section.settings['description-1'] }}</p>
+      <a href="/collections" class="button">{{ section.settings['button-label-1'] }}</a>
+    </div>
+  </div>
+  <div class="custom-grid--right">
+    <div class="custom-grid-right--top">
+      {% render 'responsive-picture', desktopImage: section.settings['grid-image-2'] %}
+      <div class="custom-grid-right-top-info-2 info">
+        <p class="preheading">{{ section.settings['preheading-2'] }}</p>
+        <h3>{{ section.settings['title-2'] }}</h3>
+        <p class="description">{{ section.settings['description-2'] }}</p>
+        <a href="/collections" class="button">{{ section.settings['button-label-2'] }}</a>
+      </div>
+    </div>
+    <div class="custom-grid-right--bottom">
+      <div class="custom-grid-right-bottom--left">
+        {% render 'responsive-picture', desktopImage: section.settings['grid-image-3'] %}
+        <div class="custom-grid-right-bottom-left-info-3 info">
+          <p class="preheading">{{ section.settings['preheading-3'] }}</p>
+          <h3>{{ section.settings['title-3'] }}</h3>
+          <p class="description">{{ section.settings['description-3'] }}</p>
+          <a href="/collections" class="button">{{ section.settings['button-label-3'] }}</a>
+        </div>
+      </div>
+      <div class="custom-grid-right-bottom--right">
+        {% render 'responsive-picture', desktopImage: section.settings['grid-image-4'] %}
+        <div class="custom-grid-right-bottom-right-info-4 info">
+          <p class="preheading">{{ section.settings['preheading-4'] }}</p>
+          <h3>{{ section.settings['title-4'] }}</h3>
+          <p class="description">{{ section.settings['description-4'] }}</p>
+          <a href="/collections" class="button">{{ section.settings['button-label-4'] }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .custom-grid {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+  .custom-grid--left,
+  .custom-grid--right {
+    width: 50%;
+  }
+  .custom-grid--left picture img,
+  .custom-grid--right div picture img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .custom-grid--left,
+  .custom-grid-right--top,
+  .custom-grid-right-bottom--left,
+  .custom-grid-right-bottom--right {
+    position: relative;
+  }
+
+  .custom-grid p {
+    margin: 0;
+  }
+
+  .custom-grid .info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    padding: 4rem;
+  }
+  .custom-grid .info .preheading {
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+  .custom-grid .info h3 {
+    font-size: 2.5rem;
+    margin: 8px 0;
+    font-weight: 600;
+  }
+  .custom-grid .info .description + p {
+    width: 80%;
+    line-height: 20px;
+    font-size: 1.5rem;
+  }
+  .custom-grid .info .button {
+    margin-top: 15px;
+  }
+  .custom-grid .info .button:after {
+    box-shadow: none;
+  }
+
+  .custom-grid .info .button {
+    background: linear-gradient(to right, white 50%, rgb(208, 60, 63) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.4s ease;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .custom-grid .info .button:hover {
+    background-position: left bottom;
+    color: black;
+  }
+  .custom-grid--left .info .preheading,
+  .custom-grid-right--top .info .preheading {
+    color: #f5f5f5;
+  }
+  .custom-grid--left .info h3,
+  .custom-grid-right--top .info h3 {
+    color: white;
+  }
+  .custom-grid--left .info .description + p,
+  .custom-grid-right--top .info .description + p {
+    color: #f5f5f5;
+  }
+  .custom-grid .custom-grid-left-info-1 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .custom-grid .custom-grid-right-top-info-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .custom-grid-right-bottom-left-info-3 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .custom-grid-right-bottom-right-info-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .custom-grid--right {
+    display: flex;
+    flex-direction: column;
+  }
+  .custom-grid-right--bottom {
+    display: flex;
+    gap: 1rem;
+  }
+
+  @media (max-width: 749px) {
+    .custom-grid {
+      flex-direction: column;
+    }
+    .custom-grid--left,
+    .custom-grid--right {
+      width: 100%;
+    }
+    .custom-grid-right--bottom {
+      flex-direction: column;
+    }
+    .custom-grid .custom-grid-left-info-1 {
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-grid .custom-grid-right-top-info-2 {
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-grid-right-bottom-left-info-3 {
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-grid-right-bottom-right-info-4 {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Grid layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "First grid image"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid-image-1",
+      "label": "Grid image"
+    },
+    {
+      "type": "text",
+      "id": "preheading-1",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title-1",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description-1",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button-label-1",
+      "label": "button-label"
+    },
+    {
+      "type": "header",
+      "content": "Second grid image"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid-image-2",
+      "label": "Grid image"
+    },
+    {
+      "type": "text",
+      "id": "preheading-2",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title-2",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description-2",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button-label-2",
+      "label": "button-label"
+    },
+    {
+      "type": "header",
+      "content": "Third grid image"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid-image-3",
+      "label": "Grid image"
+    },
+    {
+      "type": "text",
+      "id": "preheading-3",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title-3",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description-3",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button-label-3",
+      "label": "button-label"
+    },
+    {
+      "type": "header",
+      "content": "Fourth grid image"
+    },
+    {
+      "type": "image_picker",
+      "id": "grid-image-4",
+      "label": "Grid image"
+    },
+    {
+      "type": "text",
+      "id": "preheading-4",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title-4",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description-4",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button-label-4",
+      "label": "button-label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid layout"
+    }
+  ]
+}
+{% endschema %}

@@ -15,6 +15,12 @@
           "settings": {
           }
         },
+        "variant_offer_qrWb6K": {
+          "type": "variant-offer",
+          "settings": {
+            "offer_title": "Sale123456"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -54,6 +60,7 @@
       "block_order": [
         "vendor",
         "title",
+        "variant_offer_qrWb6K",
         "price",
         "variant_picker",
         "quantity_selector",

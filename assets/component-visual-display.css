@@ -23,11 +23,9 @@
 }
 
 /* Hover, active, and focus states */
-:is(
-    .visual-display-parent:hover .visual-display--presentation-swatch,
-    .visual-display-parent.active .visual-display--presentation-swatch,
-    .visual-display-parent:has(:focus-visible) .visual-display--presentation-swatch
-  ) {
+:is(.visual-display-parent:hover .visual-display--presentation-swatch,
+  .visual-display-parent.active .visual-display--presentation-swatch,
+  .visual-display-parent:has(:focus-visible) .visual-display--presentation-swatch) {
   outline-style: solid;
 }
 
@@ -87,4 +85,9 @@
 
 .visual-display--presentation-swatch .visual-display__image {
   object-fit: cover;
+}
+
+
+.display-none {
+  display: none;
 }
