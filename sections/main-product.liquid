@@ -94,7 +94,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <div class="product__title__heading">{{ product.title | escape }}</div>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
@@ -110,6 +110,7 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+                <hr>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -456,28 +457,6 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
-                <!-- offer section start -->
-              {% when 'variant-offer' %}
-                <div class="coupon">
-                  <div class="left">
-                    <div>{{ block.settings.offer_title }}</div>
-                  </div>
-                  <div class="center">
-                    <div>
-                      <h2>50% OFF</h2>
-                      <h3>Coupon</h3>
-                      <button id="copyButton">copy</button>
-                      <small>Valid until May, 2023</small>
-                    </div>
-                  </div>
-                  <div class="right">
-                    <div id="cupon-code">{{ product.selected_variant.id }}</div>
-                  </div>
-                </div>
-                <!-- offer section end -->
-
-                {% comment %} pincode checker {% endcomment %}
-                {% comment %} <pincode-checker></pincode-checker> {% endcomment %}
                 <pincode-checker>
                   <div class="pincode-checker">
                     <div class="field pincode-checker__field">
@@ -758,152 +737,6 @@
         });
       });
     </script>
-
-    {% comment %}
-      pincode checker
-    {% endcomment %}
-
-    {% comment %}
-      <script>
-        class PincodeChecker extends HTMLElement {
-          constructor() {
-            super();
-            this.attachShadow({ mode: 'open' });
-            this.shadowRoot.innerHTML = `
-            <style>
-              #pincodeCheckerContainer {
-                text-align: center;
-                margin-top: 20px;
-                display: flex;
-                align-items: flex-start;
-                justify-content: flex-start;
-              }
-              #pincodeInput {
-                padding: 10px;
-                width: 200px;
-                margin-right: 10px;
-                border: none;
-                border-radius: 16px;
-                border: 1px solid grey;
-              }
-              #pincodeInput:focus {
-                outline: none;
-              }
-              #checkButton {
-                padding: 10px 20px;
-                background-color: #000;
-                color: white;
-                border: none;
-                border-radius: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-              }
-              #checkButton:hover {
-                background-color: darkgray;
-                color: #000;
-              }
-              #resultMessage {
-                opacity: 0;
-                transition: opacity 0.5s ease;
-                color: white;
-                text-align: center;
-                border-radius: 5px;
-                padding: 10px;
-                position: absolute;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                white-space: nowrap;
-                box-shadow: 0px 0px 10px #00000050;
-                z-index: 1000;
-              }
-              div#resultMessage {
-                position: absolute;
-                top: 1px;
-                right: 10px;
-                width: 350px;
-                height: 30px;
-              }
-              #resultMessage.show {
-                opacity: 1;
-              }
-              #resultMessage.green {
-                background-color: #4caf50;
-              }
-              #resultMessage.yellow {
-                background-color: #ffeb3b;
-              }
-              #resultMessage.red {
-                background-color: #f44336;
-              }
-            </style>
-            <div id="pincodeCheckerContainer">
-              <input type="text" id="pincodeInput" placeholder="Enter your 6-digit pincode" maxlength="6">
-              <button id="checkButton">Check</button>
-              <div id="resultMessage"></div>
-            </div>
-          `;
-            this.shadowRoot.querySelector('#checkButton').addEventListener('click', this.checkPincode.bind(this));
-            this.shadowRoot.querySelector('#pincodeInput').addEventListener('keydown', this.validateKeyPress);
-          }
-
-          validateKeyPress(event) {
-            // Allow only digits, backspace, tab, arrow keys, delete, and Ctrl/Command key combinations
-            if (
-              !/^\d$/.test(event.key) &&
-              !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete'].includes(event.key) &&
-              !(event.ctrlKey || event.metaKey)
-            ) {
-              event.preventDefault();
-            }
-          }
-
-          async checkPincode() {
-            const pincodeInput = this.shadowRoot.querySelector('#pincodeInput');
-            const pincode = pincodeInput.value;
-            const pincodeRegex = /^[1-9][0-9]{5}$/; // Regex to ensure pincode starts with 1-9 and is exactly 6 digits
-
-            if (!pincodeRegex.test(pincode)) {
-              this.showToast('Please enter a valid 6-digit pin code.', 'yellow');
-              return;
-            }
-
-            try {
-              const response = await fetch(`https://api.postalpincode.in/pincode/${pincode}`);
-              const data = await response.json();
-              this.handleResponse(data);
-            } catch (error) {
-              console.error('Error:', error);
-              this.showToast('Error checking pin code.', 'red');
-            }
-          }
-
-          handleResponse(data) {
-            if (data[0].Status === 'Success') {
-              const deliveryStatus = data[0].PostOffice.some((po) => po.DeliveryStatus === 'Delivery');
-              if (deliveryStatus) {
-                this.showToast('Delivery is available for this pin code.', 'green');
-              } else {
-                this.showToast('Sorry, delivery is not available for this pin code.', 'yellow');
-              }
-            } else {
-              this.showToast('Failed to retrieve pin code details.', 'red');
-            }
-          }
-
-          showToast(message, color) {
-            const resultMessage = this.shadowRoot.querySelector('#resultMessage');
-            resultMessage.innerText = message;
-            resultMessage.className = 'show ' + color; // Append color class based on status
-            setTimeout(() => {
-              resultMessage.className = resultMessage.className.replace('show', '');
-            }, 3000);
-          }
-        }
-
-        customElements.define('pincode-checker', PincodeChecker);
-      </script>
-    {% endcomment %}
 
     <script>
       document.getElementById('copyButton').addEventListener('click', function () {

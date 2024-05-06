@@ -3,6 +3,7 @@
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   color: rgb(var(--color-foreground));
+  height: 35px;
 }
 
 .price>* {
@@ -29,6 +30,20 @@
 
 .price:not(.price--show-badge) .price-item--last:last-of-type {
   margin: 0;
+}
+
+.price__regular .price-item--regular {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.product__title__heading {
+  font-size: 28px;
+  color: #000;
+  font-weight: 500;
+  height: 35px;
 }
 
 @media screen and (min-width: 750px) {
