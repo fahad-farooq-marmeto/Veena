@@ -6,7 +6,7 @@
       {% for block in section.blocks %}
         <div class="column">
           <div class="mm-heading">{{ block.settings.title }}</div>
-          <p>{{ block.settings.content }}</p>
+          <div class="mm-description">{{ block.settings.content }}</div>
           <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_text }}</a>
         </div>
       {% endfor %}
@@ -20,6 +20,12 @@
     text-align: center;
     width: 100%;
     background-color: #f5f5f5;
+  }
+
+  .mm-description {
+    text-align: center;
+    font-size: 12px;
+    color: #000;
   }
 
   .custom-multi-column-section .columns-wrapper {
