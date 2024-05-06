@@ -71,9 +71,9 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "small",
+        "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
@@ -84,8 +84,40 @@
         "padding_bottom": 12
       }
     },
+    "custom_multcolumn_wyqrT4": {
+      "type": "custom-multcolumn",
+      "blocks": {
+        "column_KCRgqa": {
+          "type": "column",
+          "settings": {
+            "title": "Elegance Redefined",
+            "content": "Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.",
+            "button_text": "Explore Now",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "column_jbMfb8": {
+          "type": "column",
+          "settings": {
+            "title": "Effortless Casual Couture",
+            "content": "Experience the perfect blend of comfort and style with our casual couture collection. From laid-back essentials to effortlessly chic pieces, redefine casual wear with fashion that allows you to express yourself without compromising on comfort.",
+            "button_text": "Check It Now",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_KCRgqa",
+        "column_jbMfb8"
+      ],
+      "settings": {
+        "heading": "Our Featured Products",
+        "description": "Check out our most popular products below!"
+      }
+    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -115,6 +147,7 @@
   },
   "order": [
     "main",
+    "custom_multcolumn_wyqrT4",
     "related-products"
   ]
 }
