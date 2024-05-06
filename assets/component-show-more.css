@@ -8,3 +8,46 @@
 .button-show-less {
   margin-top: 1.5rem;
 }
+
+.custom-collection-menu-nav {
+  margin: 1rem 0;
+  text-decoration: none !important;
+}
+
+.custom-collection-menu-ul {
+  margin: 0px;
+  padding: 0;
+}
+
+.custom-collection-menu-li {
+  background-color: #f5f5f5;
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+}
+
+.custom-collection-menu-li a,
+ul {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 0px;
+  padding-bottom: 10px;
+}
+
+.custom-collection-menu-li a:hover {
+  color: crimson;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.custom-collection-menu-li summary::-webkit-details-marker {
+  display: none;
+  /* to remove the default arrow icon in Chrome */
+}

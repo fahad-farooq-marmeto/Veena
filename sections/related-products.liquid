@@ -20,32 +20,56 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+{% liquid
+  assign autoPlay = section.settings.auto_play
+  assign type = section.settings.Slide_animation
+  assign pagination = section.settings.show_pagination
+  assign perpage = section.settings.perpage
+  assign perMove = section.settings['per-move']
+  assign gap = section.settings.gap
+  assign tabletPerpage = section.settings['tablet-perpage']
+  assign mobilePerpage = section.settings['mobile-perpage']
+%}
+{%- capture splide_option -%}
+{
+  "type": "{{ type }}",
+  "pagination": {{ pagination }},
+  "perPage":{{ perpage }},
+  "perMove": {{ perMove }},
+  "autoplay":{{ autoPlay }},
+  "gap":{{gap}},
+  "breakpoints" : {
+    "900": {
+      "perPage": {{ tabletPerpage }}
+    },
+    "749": {
+      "perPage": {{ mobilePerpage }}
+    }
+  }
+}
+{% endcapture %}
+
+<div class="page-width section-{{ section.id }}-padding" id="related-products">
   <product-recommendations
-    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
         {{ section.settings.heading }}
       </h2>
-      <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {% endfor %}
-      </ul>
+      <splider-component>
+        <div class="splide" data-slider-settings="{{ splide_option }}">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for recommendation in recommendations.products %}
+                <li class="splide__slide ">
+                  {% render 'custom-product-card', product: recommendation %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </splider-component>
     {% endif %}
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
@@ -197,6 +221,103 @@
       "default": false,
       "label": "t:sections.related-products.settings.show_rating.label",
       "info": "t:sections.related-products.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "Slider settongs"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_play",
+      "label": "Enable auto play",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "auto_play_duration",
+      "min": 1000,
+      "max": 5000,
+      "step": 1000,
+      "unit": "sec",
+      "label": "Autoplay duration",
+      "default": 2000
+    },
+    {
+      "type": "range",
+      "id": "perpage",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Perpage",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "tablet-perpage",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Tablet perpage",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile-perpage",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Mobile perpage",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "per-move",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Permove",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "label": "Gap",
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "Slide_animation",
+      "label": "Slide animation",
+      "options": [
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "loop",
+          "label": "Loop"
+        }
+      ],
+      "default": "slide"
     },
     {
       "type": "header",

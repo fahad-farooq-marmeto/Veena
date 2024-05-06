@@ -1221,15 +1221,3 @@ input.mobile-facets__checkbox {
     padding: 0 1rem 1rem;
   }
 }
-
-/* .list-unstyled {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 10px;
-}
-
-@media (max-width: 1199px) {
-  .list-unstyled {
-    grid-template-columns: 100%;
-  }
-} */

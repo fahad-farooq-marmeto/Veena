@@ -52,6 +52,76 @@
               </h2>
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
+            {% comment %}
+              custom tab swtching
+            {% endcomment %}
+            <nav class="custom-collection-menu-nav">
+              <ul class="custom-collection-menu-ul">
+                {% for link in linklists['main-menu'].links %}
+                  {% if link.links.size > 0 %}
+                    <!-- Parent Menu Item with Dropdown -->
+                    <li class="custom-collection-menu-li">
+                      <details>
+                        <summary class="has-dropdown">
+                          <div>
+                            {{ link.title }}
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              class="icon icon-caret"
+                              viewBox="0 0 10 6"
+                            >
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                              </path>
+                            </svg>
+                          </div>
+                        </summary>
+                        <ul class="dropdown-menu">
+                          {% for sublink in link.links %}
+                            <li>
+                              {% if sublink.links.size > 0 %}
+                                <!-- Submenu with Nested Dropdown -->
+                                <details>
+                                  <summary class="has-dropdown">
+                                    <div>
+                                      {{ sublink.title }}
+                                      <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        class="icon icon-caret"
+                                        viewBox="0 0 10 6"
+                                      >
+                                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                                        </path>
+                                      </svg>
+                                    </div>
+                                  </summary>
+                                  <ul class="dropdown-menu-sub">
+                                    {% for item in sublink.links %}
+                                      <li>
+                                        <a href="{{ item.url }}">{{ item.title }}</a>
+                                      </li>
+                                    {% endfor %}
+                                  </ul>
+                                </details>
+                              {% else %}
+                                <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </details>
+                    </li>
+                  {% else %}
+                    <!-- Regular Menu Item -->
+                    <li class="custom-collection-menu-li">
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </nav>
+
             {%- if filter_type == 'vertical' -%}
               <div class="active-facets active-facets-desktop">
                 <div class="active-facets-vertical-filter">

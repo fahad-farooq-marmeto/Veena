@@ -1,0 +1,376 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-footer page-width">
+  <div class="custom-footer--top-bar">
+    <div class="custom-footer-top-bar--social-media">
+      <span class="icon">
+        {% render 'responsive-picture', desktopImage: section.settings['icon-1'] %}
+      </span>
+      <span class="icon">
+        {% render 'responsive-picture', desktopImage: section.settings['icon-2'] %}
+      </span>
+      <span class="icon">
+        {% render 'responsive-picture', desktopImage: section.settings['icon-3'] %}
+      </span>
+      <span class="icon">
+        {% render 'responsive-picture', desktopImage: section.settings['icon-4'] %}
+      </span>
+    </div>
+    <div class="custom-footer-top-bar--store-image">
+      {% render 'responsive-picture', desktopImage: section.settings['store-image'] %}
+    </div>
+    <div class="custom-footer-top-bar--contact">
+      {% render 'responsive-picture', desktopImage: section.settings['contact-logo'] %}
+      <span
+        >Call us:
+        <p>{{ section.settings['contact-no'] }}</p>
+      </span>
+    </div>
+  </div>
+  <div class="custom-footer--bottom">
+    {% if section.settings['enable-email-sub'] %}
+      <div class="custom-footer--email-inputContainer">
+        <h3 class="custom-footer-email-inputContainer-heading">SIGN UP TO OUR NEWSLETTER</h3>
+        <p>Visit the website offering the newsletter and follow their sign-up instructions</p>
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div>
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="week-6-email--input"
+              placeholder="Email address"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              required
+            >
+          </div>
+          <button
+            type="submit"
+            class="button week-6-email--button "
+            name="commit"
+            id="Subscribe"
+            aria-label="{{ 'newsletter.button_label' | t }}"
+          >
+            Subscribe
+          </button>
+          {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </small>
+          {%- endif -%}
+          {%- if form.posted_successfully? -%}
+            <h3
+              class="newsletter-form__message newsletter-form__message--success form__message"
+              id="Newsletter-success--{{ section.id }}"
+              tabindex="-1"
+              autofocus
+            >
+              {% render 'icon-success' -%}
+              {{- 'newsletter.success' | t }}
+            </h3>
+          {%- endif -%}
+        {% endform %}
+        <p>By subscribing you agree to with our Privacy Policy</p>
+      </div>
+    {% endif %}
+    <div class="custom-footer-bottom--navContainer">
+      {% for block in section.blocks %}
+        <div class="custom-footer-navContainer--block">
+          <p class="custom-footer-navContainer-block--heading">{{ block.settings.title }}</p>
+          {%- if block.settings.list != blank -%}
+            <ul>
+              {%- for link in block.settings.list.links -%}
+                <li>
+                  <a
+                    href="{{ link.url }}"
+                  >
+                    {{ link.title }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <div class="custom-footer-navContainer--block store-info">
+        <p class="custom-footer-navContainer-block--heading">Contact Info</p>
+        <ul>
+          <li>
+            <span class="icon">{% render 'responsive-picture', desktopImage: section.settings['address-icon'] %}</span
+            >Address{{ section.settings.address }}
+          </li>
+          <li>
+            <span class="icon">{% render 'responsive-picture', desktopImage: section.settings['contact-logo'] %}</span>
+            {{- section.settings['contact-no'] }}
+          </li>
+          <li>
+            <span class="icon">{% render 'responsive-picture', desktopImage: section.settings['email-icon'] %}</span
+            >Email : <a href="mailto:{{section.settings.store-email}}">{{ section.settings['store-email'] }}</a>
+          </li>
+          <li>
+            <span class="icon">{{ section.settings['additional-info'] }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-footer--bottom-bar">
+    <div class="footer__column footer__localization isolate">
+      <div>
+        <a href="/policies/refund-policy">Refund policy</a>
+        <a href="/policies/privacy-policy">Privacy policy</a>
+        <a href="/policies/terms-of-service">Terms of service</a>
+      </div>
+      <div>
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 0 -%}
+          <noscript>
+            {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
+              <div class="localization-form__select">
+                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
+                  {{ 'localization.language_label' | t }}
+                </h2>
+                <select
+                  class="localization-selector link"
+                  name="locale_code"
+                  aria-labelledby="FooterLanguageLabelNoScript"
+                >
+                  {%- for language in localization.available_languages -%}
+                    <option
+                      value="{{ language.iso_code }}"
+                      lang="{{ language.iso_code }}"
+                      {%- if language.iso_code == localization.language.iso_code %}
+                        selected
+                      {% endif %}
+                    >
+                      {{ language.endonym_name | capitalize }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+            {%- endform -%}
+          </noscript>
+
+          <localization-form>
+            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
+              <div class="no-js-hidden">
+                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <noscript>
+            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
+              <div class="localization-form__select">
+                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                <select
+                  class="localization-selector link"
+                  name="country_code"
+                  aria-labelledby="FooterCountryLabelNoScript"
+                >
+                  {%- for country in localization.available_countries -%}
+                    <option
+                      value="{{ country.iso_code }}"
+                      {%- if country.iso_code == localization.country.iso_code %}
+                        selected
+                      {% endif %}
+                    >
+                      {{ country.name }} ({{ country.currency.iso_code }}
+                      {{ country.currency.symbol }})
+                    </option>
+                  {%- endfor -%}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
+            {%- endform -%}
+          </noscript>
+          <localization-form>
+            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
+              <div class="no-js-hidden">
+                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="custom-footer-bottom-bar--copyright">
+      <div class="footer__copyright caption">
+        <small class="copyright__content"
+          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+        </small>
+        <small class="copyright__content">{{ powered_by_link }}</small>
+        <ul class="policies list-unstyled">
+          {%- for policy in shop.policies -%}
+            {%- if policy != blank -%}
+              <li>
+                <small class="copyright__content"
+                  ><a href="{{ policy.url }}">{{ policy.title }}</a></small
+                >
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="footer__column footer__column--info">
+        {%- if section.settings.payment_enable -%}
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom Footer section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Store  information"
+    },
+    {
+      "type": "image_picker",
+      "id": "store-image",
+      "label": "Store logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact-logo",
+      "label": "Contact logo"
+    },
+    {
+      "type": "text",
+      "id": "contact-no",
+      "label": "Contact number"
+    },
+    {
+      "type": "image_picker",
+      "id": "address-icon",
+      "label": "Address icon"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Store address"
+    },
+    {
+      "type": "image_picker",
+      "id": "email-icon",
+      "label": "Email icon"
+    },
+    {
+      "type": "text",
+      "id": "store-email",
+      "label": "Store's email id"
+    },
+    {
+      "type": "text",
+      "id": "additional-info",
+      "label": "Additional info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable-email-sub",
+      "label": "Enable email signup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "label": "Enable country selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "label": "Enable language selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "label": "Show payment",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Social media"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon-1",
+      "label": "Media icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon-2",
+      "label": "Media icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon-3",
+      "label": "Media icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon-4",
+      "label": "Media icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer-block",
+      "name": "Footer block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "placeholder": "Contact"
+        },
+        {
+          "type": "link_list",
+          "id": "list",
+          "label": "options"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom Footer section"
+    }
+  ]
+}
+{% endschema %}
