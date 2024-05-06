@@ -76,31 +76,6 @@
         "padding_bottom": 12
       }
     },
-    "custom_gird_layout_jVktqk": {
-      "type": "custom-gird-layout",
-      "settings": {
-        "grid-image-1": "shopify:\/\/shop_images\/1_d1ac205b-b4a5-40db-a149-92f268adee32.webp",
-        "preheading-1": "Unveil Your Inner Grace",
-        "title-1": "Timeless Elegance",
-        "description-1": "<p>Explore a collection that transcends trends, embracing timeless pieces that exude sophistication. Elevate your style with our curated selection designed to stand the test of time.<\/p>",
-        "button-label-1": "Shop Now",
-        "grid-image-2": "shopify:\/\/shop_images\/2_7a4f3b90-123c-4ddb-8516-50ad7a441487.webp",
-        "preheading-2": "Free-Spirited Fashion Finds",
-        "title-2": "Boho Chic Vibes",
-        "description-2": "<p>Immerse yourself in the world of bohemian charm. From flowy silhouettes to vibrant patterns.<\/p>",
-        "button-label-2": "Explore More",
-        "grid-image-3": "shopify:\/\/shop_images\/4_d6084ff2-c86b-4f52-b59b-0c92b864e4ae.webp",
-        "preheading-3": "Modern Minimalism",
-        "title-3": "Simplicity Redefined",
-        "description-3": "",
-        "button-label-3": "Shop Now",
-        "grid-image-4": "shopify:\/\/shop_images\/3_5f501b6a-db8f-4b53-b9ca-c2aa1ee96dd3.webp",
-        "preheading-4": "Elegance Redefined",
-        "title-4": "Modern Minimalist Trends",
-        "description-4": "",
-        "button-label-4": "Shop Now"
-      }
-    },
     "custom_multcolumn_wyqrT4": {
       "type": "custom-multcolumn",
       "blocks": {
@@ -130,6 +105,31 @@
       "settings": {
         "heading": "",
         "description": ""
+      }
+    },
+    "custom_gird_layout_jVktqk": {
+      "type": "custom-gird-layout",
+      "settings": {
+        "grid-image-1": "shopify:\/\/shop_images\/1_d1ac205b-b4a5-40db-a149-92f268adee32.webp",
+        "preheading-1": "Unveil Your Inner Grace",
+        "title-1": "Timeless Elegance",
+        "description-1": "<p>Explore a collection that transcends trends, embracing timeless pieces that exude sophistication. Elevate your style with our curated selection designed to stand the test of time.<\/p>",
+        "button-label-1": "Shop Now",
+        "grid-image-2": "shopify:\/\/shop_images\/2_7a4f3b90-123c-4ddb-8516-50ad7a441487.webp",
+        "preheading-2": "Free-Spirited Fashion Finds",
+        "title-2": "Boho Chic Vibes",
+        "description-2": "<p>Immerse yourself in the world of bohemian charm. From flowy silhouettes to vibrant patterns.<\/p>",
+        "button-label-2": "Explore More",
+        "grid-image-3": "shopify:\/\/shop_images\/4_d6084ff2-c86b-4f52-b59b-0c92b864e4ae.webp",
+        "preheading-3": "Modern Minimalism",
+        "title-3": "Simplicity Redefined",
+        "description-3": "",
+        "button-label-3": "Shop Now",
+        "grid-image-4": "shopify:\/\/shop_images\/3_5f501b6a-db8f-4b53-b9ca-c2aa1ee96dd3.webp",
+        "preheading-4": "Elegance Redefined",
+        "title-4": "Modern Minimalist Trends",
+        "description-4": "",
+        "button-label-4": "Shop Now"
       }
     },
     "related-products": {
@@ -164,8 +164,8 @@
   },
   "order": [
     "main",
-    "custom_gird_layout_jVktqk",
     "custom_multcolumn_wyqrT4",
+    "custom_gird_layout_jVktqk",
     "related-products"
   ]
 }
