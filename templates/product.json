@@ -84,8 +84,40 @@
         "padding_bottom": 12
       }
     },
+    "custom_multcolumn_wyqrT4": {
+      "type": "custom-multcolumn",
+      "blocks": {
+        "column_KCRgqa": {
+          "type": "column",
+          "settings": {
+            "title": "Elegance Redefined",
+            "content": "Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.",
+            "button_text": "Explore Now",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "column_jbMfb8": {
+          "type": "column",
+          "settings": {
+            "title": "Effortless Casual Couture",
+            "content": "Experience the perfect blend of comfort and style with our casual couture collection. From laid-back essentials to effortlessly chic pieces, redefine casual wear with fashion that allows you to express yourself without compromising on comfort.",
+            "button_text": "Check It Now",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_KCRgqa",
+        "column_jbMfb8"
+      ],
+      "settings": {
+        "heading": "Our Featured Products",
+        "description": "Check out our most popular products below!"
+      }
+    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -97,6 +129,16 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "auto_play": false,
+        "show_pagination": false,
+        "show_arrows": false,
+        "auto_play_duration": 2000,
+        "perpage": 2,
+        "tablet-perpage": 2,
+        "mobile-perpage": 2,
+        "per-move": 2,
+        "gap": 5,
+        "Slide_animation": "slide",
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
@@ -105,6 +147,7 @@
   },
   "order": [
     "main",
+    "custom_multcolumn_wyqrT4",
     "related-products"
   ]
 }
