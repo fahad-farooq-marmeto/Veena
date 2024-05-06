@@ -3521,3 +3521,32 @@ details-disclosure>details {
     /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+
+/* pincode checker */
+
+.pincode-checker {
+  display: flex;
+  margin: 1.1rem 0 10px;
+}
+
+.pincode-checker__button {
+  margin-left: 5px;
+}
+
+.pincode-message.is-hidden {
+  display: none;
+}
+
+.pincode-message.is-error {
+  color: red;
+}
+
+.pincode-message.is-success {
+  color: darkgreen;
+}
+
+.pincode-message ul {
+  padding: 0 25px;
+  margin: 0;
+}
