@@ -71,9 +71,9 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
@@ -91,7 +91,7 @@
           "type": "column",
           "settings": {
             "title": "Elegance Redefined",
-            "content": "Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.",
+            "content": "Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.  Our curated collection reflects a commitment",
             "button_text": "Explore Now",
             "button_link": "shopify:\/\/collections\/all"
           }
