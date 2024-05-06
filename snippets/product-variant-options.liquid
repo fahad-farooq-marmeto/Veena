@@ -100,7 +100,7 @@
       {% if option.name != 'Color' %}
         {{ value -}}
       {% else %}
-        <span class="color-swatch color-swatch--{{ value | handle }}"></span>
+        <span class="color-swatch color-swatch--{{ value | handle }}" style="display:block"></span>
       {% endif %}
       {{ label_unavailable }}
     </label>
@@ -123,3 +123,14 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+
+<style>
+  .custom .color-swatch {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+  }
+</style>
