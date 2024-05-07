@@ -501,6 +501,19 @@
                 </div>
 
               {%- when 'buy_buttons' -%}
+                <!-- Add to Cart form -->
+                <form action="/cart/add" method="post" enctype="multipart/form-data">
+                  <input
+                    type="hidden"
+                    name="id"
+                    id="productSelect"
+                    value=""
+                  >
+                  <button type="submit" class="button">
+                    add to cart {{ product.selected_or_first_available_variant.price | money }}
+                    {{  }}
+                  </button>
+                </form>
                 {%- render 'buy-buttons',
                   block: block,
                   product: product,

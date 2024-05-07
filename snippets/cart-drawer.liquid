@@ -7,6 +7,7 @@
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
@@ -59,16 +60,36 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
-        <button
-          class="drawer__close"
-          type="button"
-          onclick="this.closest('cart-drawer').close()"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          {% render 'icon-close' %}
-        </button>
+      <div class="custom__drawer_header">
+        <div class="drawer__header">
+          <h4 class="drawer__heading">Shopping Cart ({{ cart.item_count }})</h4>
+          <button
+            class="drawer__close"
+            type="button"
+            onclick="this.closest('cart-drawer').close()"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            {% render 'icon-close' %}
+          </button>
+        </div>
+
+        {% assign widthpercent = cart.total_price | times: 100 | divided_by: 2000000 %}
+        <p>Spent more {{ 2000000 | minus: cart.total_price | money }} extra for free shipping!</p>
+        <div>
+          <div class="progress-bar" style="height:0.8rem;background:white;border-radius: 20px">
+            <span
+              class="in-stock-bar"
+              style="
+                width:{{ widthpercent }}%;
+                background:#00d964;height:100%;border-radius:20px;display:block
+              "
+            >
+            </span>
+            <span class="not-in-stock-bar"></span>
+          </div>
+        </div>
+
+        {% comment %}  {% endcomment %}
       </div>
       <cart-drawer-items
         {% if cart == empty %}
@@ -90,21 +111,23 @@
                       <th id="CartDrawer-ColumnProductImage" role="columnheader">
                         <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
                       </th>
-                      <th
-                        id="CartDrawer-ColumnProduct"
-                        class="caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.product' | t }}
-                      </th>
-                      <th
-                        id="CartDrawer-ColumnTotal"
-                        class="right caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.total' | t }}
+
+                      <th>
+                        {% comment %} custom timer {% endcomment %}
+                        <div class="countdown-timer" style="width: 350px;">
+                          <div class="timer">
+                            <span class="day">73</span> : <span class="hours">0</span> :
+                            <span class="minutes">0</span> :
+                            <span class="seconds">0</span>
+                          </div>
+                          <div class="labels">
+                            <span class="label-days">Days</span>
+                            <span class="label-hours">Hours</span>
+                            <span class="label-minutes">Minutes</span>
+                            <span class="label-seconds">Seconds</span>
+                          </div>
+                        </div>
+                        {% comment %} custom tomer {% endcomment %}
                       </th>
                       <th id="CartDrawer-ColumnQuantity" role="columnheader">
                         <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
@@ -487,32 +510,20 @@
           </div>
 
           <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+            <h6 class="totals__total">Subtotal ({{ cart.item_count }})</h6>
+            <h5 class="totals__total_price" style="font-weight: 600">{{ cart.total_price | money_with_currency }}</h5>
           </div>
-
-          <small class="tax-note caption-large rte">
-            {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-              {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-            {%- elsif cart.taxes_included -%}
-              {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
-            {%- elsif shop.shipping_policy.body != blank -%}
-              {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-            {%- else -%}
-              {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
-            {%- endif -%}
-          </small>
         </div>
 
         <!-- CTAs -->
 
         <div class="cart__ctas" {{ block.shopify_attributes }}>
+          <button class="button">View Cart</button>
           <noscript>
             <button type="submit" class="cart__update-button button button--secondary" form="CartDrawer-Form">
               {{ 'sections.cart.update' | t }}
             </button>
           </noscript>
-
           <button
             type="submit"
             id="CartDrawer-Checkout"
@@ -525,6 +536,15 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
+        </div>
+        <div class="product-payment-method">
+          <ul class="list list-payment" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="list-payment__item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+            {%- endfor -%}
+          </ul>
         </div>
       </div>
     </div>
@@ -549,5 +569,88 @@
     document.querySelector('#checkout').addEventListener('click', function (event) {
       document.querySelector('#cart').submit();
     });
+  });
+</script>
+
+<style>
+  .countdown-timer {
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 16px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
+  .labels {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    font-size: 9px;
+    color: #000;
+  }
+  .labels span {
+    width: 40px;
+    text-align: center;
+    color: #000;
+  }
+  .timer span {
+    width: 40px;
+    text-align: center;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Parse separate day, month, and year from Liquid settings
+    var day = parseInt('12', 10);
+    var month = parseInt('12', 10) - 1; // JavaScript months are zero-indexed
+    var year = parseInt('2024', 10);
+
+    // Validate if the day, month, and year are integers
+    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+      console.error('Invalid date values provided. Please check your settings.');
+      return;
+    }
+    // Build the end date at 23:59:59 (end of day)
+    var endDate = new Date(year, month, day, 23, 59, 59).getTime();
+    if (isNaN(endDate)) {
+      console.error('Unable to parse the provided date.');
+      return;
+    }
+    // Elements to update
+    var daysSpan = document.querySelector('.days');
+    var hoursSpan = document.querySelector('.hours');
+    var minutesSpan = document.querySelector('.minutes');
+    var secondsSpan = document.querySelector('.seconds');
+    // Countdown function
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var distance = endDate - now;
+      // Time calculations for days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Update the display
+      daysSpan.textContent = days >= 0 ? days : 0;
+      hoursSpan.textContent = hours >= 0 ? hours : 0;
+      minutesSpan.textContent = minutes >= 0 ? minutes : 0;
+      secondsSpan.textContent = seconds >= 0 ? seconds : 0;
+      // Stop the countdown when it's done
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+      }
+    }
+    // Start the countdown interval
+    var countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call to set values right away
   });
 </script>
