@@ -33,9 +33,12 @@
       <div class="interactive-cards__content">
         <div class="interactive-cards__heading">{{ block.settings.heading }}</div>
         <div class="interactive-cards__desc">{{ block.settings.description }}</div>
-        <a href="{{ block.settings.button_link }}" class="interactive-cards__button button">
-          {{- block.settings.button_label -}}
-        </a>
+        <a
+          class="animated-rich-text__button"
+          style="font-size:13px; width:132px; height:38px"
+          href="{{ block.settings.button_link }}"
+          ><span class="animated-rich-text__button-label">{{- block.settings.button_label -}}</span></a
+        >
       </div>
     </div>
   {% endfor %}

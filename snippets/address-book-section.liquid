@@ -1,0 +1,415 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- paginate customer.addresses by 5 -%}
+  <div
+    style="display: none;"
+    id="address-book"
+    class="section-content customer addresses section-{{ section.id }}-padding"
+    data-customer-addresses
+  >
+    <div data-address>
+      <button
+        type="button"
+        aria-expanded="false"
+        aria-controls="AddAddress"
+        id="custom-address-add-button"
+      >
+        + {{ 'customer.addresses.add_new' | t }}
+      </button>
+      <div id="AddAddress">
+        <div style="margin-top:20px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="198" height="28" viewBox="0 0 198 28" fill="none">
+            <path d="M39.8343 22L38.7143 18.62H33.4143L32.2743 22H29.7143L34.6743 8H37.5943L42.5143 22H39.8343ZM34.0743 16.62H38.0543L36.0743 10.64L34.0743 16.62ZM51.2848 7.4H53.6848L53.6648 22H51.3248V20.54H51.3048C50.7448 21.6 49.7648 22.24 48.3448 22.24C45.8248 22.24 44.0048 20.22 44.0048 17C44.0048 13.78 45.8448 11.76 48.3448 11.76C49.7648 11.76 50.7048 12.38 51.2448 13.42H51.2848V7.4ZM48.8848 20.26C50.3648 20.26 51.2848 19.02 51.2848 17C51.2848 14.98 50.3648 13.74 48.8848 13.74C47.4048 13.74 46.4448 14.98 46.4448 17C46.4448 19.02 47.4048 20.26 48.8848 20.26ZM63.6871 7.4H66.0871L66.0671 22H63.7271V20.54H63.7071C63.1471 21.6 62.1671 22.24 60.7471 22.24C58.2271 22.24 56.4071 20.22 56.4071 17C56.4071 13.78 58.2471 11.76 60.7471 11.76C62.1671 11.76 63.1071 12.38 63.6471 13.42H63.6871V7.4ZM61.2871 20.26C62.7671 20.26 63.6871 19.02 63.6871 17C63.6871 14.98 62.7671 13.74 61.2871 13.74C59.8071 13.74 58.8471 14.98 58.8471 17C58.8471 19.02 59.8071 20.26 61.2871 20.26ZM83.5304 8H85.9504V22H83.1304L76.8704 11.2V22H74.4504V8H77.7104L83.5304 18.14V8ZM93.648 20.34C94.728 20.34 95.428 19.78 95.848 18.68L98.048 19.2C97.408 21.12 95.828 22.24 93.648 22.24C90.648 22.24 88.868 20.2 88.868 16.94C88.868 13.74 90.848 11.76 93.668 11.76C96.728 11.76 98.508 13.8 98.028 17.48H91.328C91.368 19.26 92.188 20.34 93.648 20.34ZM93.668 13.58C92.408 13.58 91.528 14.44 91.348 15.88L95.688 15.9C95.688 14.42 94.908 13.58 93.668 13.58ZM111.699 12H114.019L111.519 22H108.759L106.859 15.2L104.939 22H102.159L99.6585 12H101.979L103.659 19.54L105.779 12H107.879L109.999 19.5L111.699 12ZM130.342 22L129.222 18.62H123.922L122.782 22H120.222L125.182 8H128.102L133.022 22H130.342ZM124.582 16.62H128.562L126.582 10.64L124.582 16.62ZM141.793 7.4H144.193L144.173 22H141.833V20.54H141.813C141.253 21.6 140.273 22.24 138.853 22.24C136.333 22.24 134.513 20.22 134.513 17C134.513 13.78 136.353 11.76 138.853 11.76C140.273 11.76 141.213 12.38 141.753 13.42H141.793V7.4ZM139.393 20.26C140.873 20.26 141.793 19.02 141.793 17C141.793 14.98 140.873 13.74 139.393 13.74C137.913 13.74 136.953 14.98 136.953 17C136.953 19.02 137.913 20.26 139.393 20.26ZM154.195 7.4H156.595L156.575 22H154.235V20.54H154.215C153.655 21.6 152.675 22.24 151.255 22.24C148.735 22.24 146.915 20.22 146.915 17C146.915 13.78 148.755 11.76 151.255 11.76C152.675 11.76 153.615 12.38 154.155 13.42H154.195V7.4ZM151.795 20.26C153.275 20.26 154.195 19.02 154.195 17C154.195 14.98 153.275 13.74 151.795 13.74C150.315 13.74 149.355 14.98 149.355 17C149.355 19.02 150.315 20.26 151.795 20.26ZM164.877 11.76C165.077 11.76 165.277 11.78 165.477 11.8V13.96C165.197 13.92 164.977 13.92 164.757 13.92C162.957 13.92 162.177 14.92 162.177 17.18V22H159.797V12H162.097V13.68H162.137C162.537 12.46 163.397 11.76 164.877 11.76ZM171.714 20.34C172.794 20.34 173.494 19.78 173.914 18.68L176.114 19.2C175.474 21.12 173.894 22.24 171.714 22.24C168.714 22.24 166.934 20.2 166.934 16.94C166.934 13.74 168.914 11.76 171.734 11.76C174.794 11.76 176.574 13.8 176.094 17.48H169.394C169.434 19.26 170.254 20.34 171.714 20.34ZM171.734 13.58C170.474 13.58 169.594 14.44 169.414 15.88L173.754 15.9C173.754 14.42 172.974 13.58 171.734 13.58ZM182.399 22.24C179.819 22.24 178.359 21.04 178.179 19.22L180.279 18.88C180.439 19.94 181.119 20.58 182.399 20.58C183.479 20.58 184.219 20.04 184.219 19.24C184.219 18.58 183.759 18.2 182.859 18.04L181.599 17.84C179.379 17.44 178.439 16.44 178.439 14.78C178.439 12.86 180.119 11.76 182.239 11.76C184.339 11.76 185.919 12.72 186.199 14.7L184.099 14.94C183.899 13.88 183.259 13.42 182.239 13.42C181.219 13.42 180.659 13.94 180.659 14.62C180.659 15.2 180.999 15.64 181.959 15.78L183.239 16C185.439 16.36 186.559 17.4 186.559 19.12C186.559 20.98 184.799 22.24 182.399 22.24ZM192.672 22.24C190.092 22.24 188.632 21.04 188.452 19.22L190.552 18.88C190.712 19.94 191.392 20.58 192.672 20.58C193.752 20.58 194.492 20.04 194.492 19.24C194.492 18.58 194.032 18.2 193.132 18.04L191.872 17.84C189.652 17.44 188.712 16.44 188.712 14.78C188.712 12.86 190.392 11.76 192.512 11.76C194.612 11.76 196.192 12.72 196.472 14.7L194.372 14.94C194.172 13.88 193.532 13.42 192.512 13.42C191.492 13.42 190.932 13.94 190.932 14.62C190.932 15.2 191.272 15.64 192.232 15.78L193.512 16C195.712 16.36 196.832 17.4 196.832 19.12C196.832 20.98 195.072 22.24 192.672 22.24Z" fill="black"/>
+            <path d="M10.5 13.2968C11.0911 13.2969 11.6689 13.1216 12.1604 12.7933C12.652 12.4649 13.0351 11.9982 13.2613 11.4521C13.4876 10.9061 13.5468 10.3051 13.4315 9.7254C13.3162 9.14565 13.0316 8.61311 12.6137 8.19512C12.1957 7.77713 11.6632 7.49246 11.0835 7.37712C10.5038 7.26178 9.90284 7.32094 9.35673 7.54713C8.81062 7.77332 8.34385 8.15637 8.01545 8.64784C7.68705 9.13932 7.51177 9.71714 7.51177 10.3082C7.51263 11.1005 7.82773 11.8601 8.38794 12.4204C8.94814 12.9807 9.70771 13.2958 10.5 13.2968ZM10.5 8.30438C10.8964 8.30431 11.284 8.42181 11.6136 8.642C11.9432 8.8622 12.2002 9.17521 12.3519 9.54144C12.5036 9.90767 12.5433 10.3107 12.466 10.6995C12.3887 11.0883 12.1978 11.4454 11.9175 11.7257C11.6372 12.006 11.2801 12.1969 10.8912 12.2743C10.5024 12.3516 10.0994 12.3119 9.73321 12.1601C9.36698 12.0084 9.05397 11.7515 8.83377 11.4218C8.61357 11.0922 8.49608 10.7047 8.49614 10.3082C8.49675 9.77696 8.70806 9.26763 9.08373 8.89196C9.45939 8.5163 9.96873 8.30498 10.5 8.30438ZM14.4129 18.1481C16.0798 16.2795 17.6695 13.622 17.6695 11.0436C17.6679 9.1425 16.912 7.31976 15.5679 5.97541C14.2237 4.63107 12.4011 3.87496 10.5 3.87305C10.3884 3.87305 10.2802 3.87633 10.1719 3.88289C8.33001 3.96864 6.59185 4.76018 5.31801 6.09328C4.04417 7.42639 3.33244 9.19872 3.33047 11.0426C3.33047 13.3591 4.63969 15.7709 6.18844 17.6182C6.33773 17.797 6.48966 17.969 6.64223 18.1366C5.16075 18.4146 2.78906 19.0754 2.78906 20.4696C2.78906 22.1562 6.42797 23.0684 10.1391 23.1241H10.2047C10.3031 23.1274 10.4016 23.1274 10.5 23.1274C14.3325 23.1274 18.2109 22.212 18.2109 20.4696C18.2109 19.0885 15.8967 18.4293 14.4129 18.1471V18.1481ZM10.1817 4.86398C11.7607 4.95333 13.2458 5.64295 14.3328 6.79161C15.4199 7.94028 16.0267 9.46108 16.0289 11.0426C16.0289 13.8284 13.8994 16.7815 12.0717 18.4648C11.5349 18.9975 10.9127 19.4367 10.2309 19.7641C8.70188 19.1112 4.31484 14.9965 4.31484 11.0426C4.31709 9.46108 4.92387 7.94028 6.01093 6.79161C7.09799 5.64295 8.58306 4.95333 10.162 4.86398C10.1651 4.86559 10.1684 4.86643 10.1719 4.86643C10.1753 4.86643 10.1787 4.86559 10.1817 4.86398ZM10.0964 22.1398C6.00141 22.0741 3.77344 21.0209 3.77344 20.4696C3.77344 20.171 4.64625 19.4229 7.35 19.016C7.39167 19.0094 7.43227 18.9972 7.47075 18.9799C8.5155 19.9627 9.53794 20.6304 10.2342 20.7977C10.3086 20.8167 10.3843 20.8298 10.4606 20.8371C10.4912 20.8398 10.5218 20.8409 10.5525 20.8404C11.0408 20.7961 11.5091 20.625 11.9109 20.3439C12.6177 19.9469 15.6945 19.8367 16.5313 20.3439C16.5547 20.3815 16.5683 20.4244 16.571 20.4686C16.571 21.0199 14.343 22.0732 10.248 22.1388L10.0964 22.1398Z" fill="black"/>
+          </svg>
+        </div>
+        {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+          <div class="auth-form">
+            <div class="auth-form__field">
+              <label for="AddressFirstNameNew" class="auth-form__label">
+                {{- 'customer.addresses.first_name' | t -}}
+              </label>
+              <input
+                type="text"
+                id="AddressFirstNameNew"
+                name="address[first_name]"
+                value="{{ form.first_name }}"
+                autocomplete="given-name"
+                placeholder="{{ 'customer.addresses.first_name' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressLastNameNew" class="auth-form__label">{{ 'customer.addresses.last_name' | t }}</label>
+              <input
+                type="text"
+                id="AddressLastNameNew"
+                name="address[last_name]"
+                value="{{ form.last_name }}"
+                autocomplete="family-name"
+                placeholder="{{ 'customer.addresses.last_name' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressCompanyNew" class="auth-form__label">{{ 'customer.addresses.company' | t }}</label>
+              <input
+                type="text"
+                id="AddressCompanyNew"
+                name="address[company]"
+                value="{{ form.company }}"
+                autocomplete="organization"
+                placeholder="{{ 'customer.addresses.company' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressAddress1New" class="auth-form__label">{{ 'customer.addresses.address1' | t }}</label>
+              <input
+                type="text"
+                id="AddressAddress1New"
+                name="address[address1]"
+                value="{{ form.address1 }}"
+                autocomplete="address-line1"
+                placeholder="{{ 'customer.addresses.address1' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressAddress2New" class="auth-form__label">{{ 'customer.addresses.address2' | t }}</label>
+              <input
+                type="text"
+                id="AddressAddress2New"
+                name="address[address2]"
+                value="{{ form.address2 }}"
+                autocomplete="address-line2"
+                placeholder="{{ 'customer.addresses.address2' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressCityNew" class="auth-form__label">{{ 'customer.addresses.city' | t }}</label>
+              <input
+                type="text"
+                id="AddressCityNew"
+                name="address[city]"
+                value="{{ form.city }}"
+                autocomplete="address-level2"
+                placeholder="{{ 'customer.addresses.city' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressCountryNew" class="auth-form__label">{{ 'customer.addresses.country' | t }}</label>
+              <div class="auth-form__select-wrapper">
+                <select
+                  id="AddressCountryNew"
+                  name="address[country]"
+                  data-default="{{ form.country }}"
+                  autocomplete="country"
+                  class="auth-form__select"
+                >
+                  {{ all_country_option_tags }}
+                </select>
+              </div>
+            </div>
+
+            <div class="auth-form__field" id="AddressProvinceContainerNew" style="display: none;">
+              <label for="AddressProvinceNew" class="auth-form__label">{{ 'customer.addresses.province' | t }}</label>
+              <div class="auth-form__select-wrapper">
+                <select
+                  id="AddressProvinceNew"
+                  name="address[province]"
+                  data-default="{{ form.province }}"
+                  autocomplete="address-level1"
+                  class="auth-form__select"
+                ></select>
+              </div>
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressZipNew" class="auth-form__label">{{ 'customer.addresses.zip' | t }}</label>
+              <input
+                type="text"
+                id="AddressZipNew"
+                name="address[zip]"
+                value="{{ form.zip }}"
+                autocapitalize="characters"
+                autocomplete="postal-code"
+                placeholder="{{ 'customer.addresses.zip' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__field">
+              <label for="AddressPhoneNew" class="auth-form__label">{{ 'customer.addresses.phone' | t }}</label>
+              <input
+                type="tel"
+                id="AddressPhoneNew"
+                name="address[phone]"
+                value="{{ form.phone }}"
+                autocomplete="tel"
+                placeholder="{{ 'customer.addresses.phone' | t }}"
+                class="auth-form__input"
+              >
+            </div>
+
+            <div class="auth-form__checkbox">
+              {{ form.set_as_default_checkbox }}
+              <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
+            </div>
+
+            <div class="auth-form__actions">
+              <button style="background-color:#005BAA" class="auth-form__button">Save</button>
+              <button type="reset" class="auth-form__button auth-form__button--secondary">
+                {{ 'customer.addresses.cancel' | t }}
+              </button>
+            </div>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+
+    <ul role="list">
+      {%- for address in customer.addresses -%}
+        <li data-address>
+          {%- if address == customer.default_address -%}
+            <h2>{{ 'customer.addresses.default' | t }}</h2>
+          {%- endif -%}
+          {{ address | format_address }}
+          <button
+            type="button"
+            id="EditFormButton_{{ address.id }}"
+            aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+            aria-controls="EditAddress_{{ address.id }}"
+            aria-expanded="false"
+            data-address-id="{{ address.id }}"
+          >
+            {{ 'customer.addresses.edit' | t }}
+          </button>
+          <button
+            type="button"
+            aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+            data-target="{{ address.url }}"
+            data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+          >
+            {{ 'customer.addresses.delete' | t }}
+          </button>
+          <div id="EditAddress_{{ address.id }}">
+            <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
+            {%- form 'customer_address', address -%}
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressFirstName_{{ form.id }}"
+                  name="address[first_name]"
+                  value="{{ form.first_name }}"
+                  autocomplete="given-name"
+                  placeholder="{{ 'customer.addresses.first_name' | t }}"
+                >
+                <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressLastName_{{ form.id }}"
+                  name="address[last_name]"
+                  value="{{ form.last_name }}"
+                  autocomplete="family-name"
+                  placeholder="{{ 'customer.addresses.last_name' | t }}"
+                >
+                <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressCompany_{{ form.id }}"
+                  name="address[company]"
+                  value="{{ form.company }}"
+                  autocomplete="organization"
+                  placeholder="{{ 'customer.addresses.company' | t }}"
+                >
+                <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressAddress1_{{ form.id }}"
+                  name="address[address1]"
+                  value="{{ form.address1 }}"
+                  autocomplete="address-line1"
+                  placeholder="{{ 'customer.addresses.address1' | t }}"
+                >
+                <label for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressAddress2_{{ form.id }}"
+                  name="address[address2]"
+                  value="{{ form.address2 }}"
+                  autocomplete="address-line2"
+                  placeholder="{{ 'customer.addresses.address2' | t }}"
+                >
+                <label for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressCity_{{ form.id }}"
+                  name="address[city]"
+                  value="{{ form.city }}"
+                  autocomplete="address-level2"
+                  placeholder="{{ 'customer.addresses.city' | t }}"
+                >
+                <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
+              </div>
+              <div>
+                <label for="AddressCountry_{{ form.id }}">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressCountry_{{ form.id }}"
+                    name="address[country]"
+                    data-address-country-select
+                    data-default="{{ form.country }}"
+                    data-form-id="{{ form.id }}"
+                    autocomplete="country"
+                  >
+                    {{ all_country_option_tags }}
+                  </select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div>
+              </div>
+              <div id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                <label for="AddressProvince_{{ form.id }}">
+                  {{ 'customer.addresses.province' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressProvince_{{ form.id }}"
+                    name="address[province]"
+                    data-default="{{ form.province }}"
+                    autocomplete="address-level1"
+                  ></select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div>
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="AddressZip_{{ form.id }}"
+                  name="address[zip]"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                  autocomplete="postal-code"
+                  placeholder="{{ 'customer.addresses.zip' | t }}"
+                >
+                <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+              </div>
+              <div class="field">
+                <input
+                  type="tel"
+                  id="AddressPhone_{{ form.id }}"
+                  name="address[phone]"
+                  value="{{ form.phone }}"
+                  autocomplete="tel"
+                  placeholder="{{ 'customer.addresses.phone' | t }}"
+                >
+                <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+              </div>
+              <div>
+                {{ form.set_as_default_checkbox }}
+                <label for="address_default_address_{{ form.id }}">
+                  {{ 'customer.addresses.set_default' | t }}
+                </label>
+              </div>
+              <div class="custom-add-address">
+                <button>{{ 'customer.addresses.update' | t }}</button>
+                <button type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+              </div>
+            {%- endform -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.pages > 1 -%}
+      {%- if paginate.parts.size > 0 -%}
+        <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+          <ul role="list">
+            {%- if paginate.previous -%}
+              <li>
+                <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+              <li>
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                    {{- part.title -}}
+                  </a>
+                {%- else -%}
+                  {%- if part.title == paginate.current_page -%}
+                    <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                      {{- part.title -}}
+                    </span>
+                  {%- else -%}
+                    <span>{{ part.title }}</span>
+                  {%- endif -%}
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+              <li>
+                <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+
+<script>
+  window.addEventListener('load', () => {
+    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+  });
+</script>

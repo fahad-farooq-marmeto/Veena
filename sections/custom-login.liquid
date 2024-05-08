@@ -1,0 +1,79 @@
+{{ 'custom-login.css' | asset_url | stylesheet_tag }}
+
+<div class="auth-login">
+  <h1 class="auth-login__title">Login</h1>
+  <div class="auth-login__form-container">
+    {%- form 'customer_login', novalidate: 'novalidate' -%}
+      <div class="auth-login__field">
+        <label for="CustomerEmail" class="auth-login__label">Email</label>
+        <input
+          type="email"
+          name="customer[email]"
+          id="CustomerEmail"
+          autocomplete="email"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="Email"
+          class="auth-login__input"
+        >
+      </div>
+
+      <div class="auth-login__field">
+        <label for="CustomerPassword" class="auth-login__label">Password</label>
+        <input
+          type="password"
+          name="customer[password]"
+          id="CustomerPassword"
+          autocomplete="current-password"
+          placeholder="Password"
+          class="auth-login__input"
+        >
+      </div>
+
+      <a href="#recover" class="auth-login__forgot-password">Forgot Your Password?</a>
+
+      <div class="auth-login__terms-conditions">
+        <input type="checkbox" id="termsConditions" class="auth-login__terms-checkbox" required>
+        <label for="termsConditions">
+          By clicking, I am confirming that I have read and agree with the
+          <a href="/policies/terms-of-service">Terms and Conditions</a>
+        </label>
+      </div>
+
+      <button type="submit" class="auth-login__button">Sign in</button>
+      <a href="{{ routes.account_register_url }}" class="auth-login__create-account">Create Account</a>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Login Form",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "customLogin",
+      "category": "Login"
+    }
+  ]
+}
+{% endschema %}

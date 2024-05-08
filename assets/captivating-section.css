@@ -1,5 +1,5 @@
 #captivating-slider {
-    padding: 5rem;
+    padding: 0rem 5rem 5rem 5rem;
 }
 
 .captivating-splide-item {
@@ -121,9 +121,9 @@
 }
 
 #captivating-slider .splide__arrow--next {
-    right: 3.5px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    right: 0.1px;
+    border-radius: 16px 0px 0px 16px;
+    color: #fff;
 }
 
 #captivating-slider .splide__arrow:disabled {
@@ -131,13 +131,14 @@
 }
 
 #captivating-slider .splide__arrow--prev {
-    left: 3.5px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+    left: 0.1px;
+    border-radius: 0px 16px 16px 0px;
+    color: #fff;
 }
 
 #captivating-slider .splide__arrow svg {
     fill: white;
+    color: #fff;
     font-size: 10px;
 }
 

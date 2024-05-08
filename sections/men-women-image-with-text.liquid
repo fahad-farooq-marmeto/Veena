@@ -11,13 +11,11 @@
       </div>
       {% comment %} <div class="first-section-block--content"> {% endcomment %}
       <div class="men-women-banner-content--text-container">
-        <ul>
-          <li>&#x2022{{ block.settings.pre_heading }}</li>
-        </ul>
+        <p>&#x2022 {{ block.settings.pre_heading }}</p>
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.description }}</p>
-        <a class="button" href="{{ block.settings.button_link }}"
-          ><span>{{ block.settings.button_label }}</span></a
+        <a class="menwomen-animated-rich-text__button" href="{{ block.settings.button_link }}"
+          ><span class="menwomen-animated-rich-text__button-label">{{ block.settings.button_label }}</span></a
         >
       </div>
     </div>

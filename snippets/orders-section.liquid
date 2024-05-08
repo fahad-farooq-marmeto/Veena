@@ -1,0 +1,63 @@
+<div id="orders" class="section-content" style="display: none;">
+  <h2 style="font-size: 20px; font-weight: 700">{{ 'customer.orders.title' | t }}</h2>
+  {% paginate customer.orders by 20 %}
+    {%- if customer.orders.size > 0 -%}
+      <table role="table" class="order-history">
+        <caption class="visually-hidden">
+          {{ 'customer.orders.title' | t }}
+        </caption>
+        <thead role="rowgroup">
+          <tr role="row">
+            <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+            <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+            <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+            <th id="ColumnFulfillment" scope="col" role="columnheader">
+              {{ 'customer.orders.fulfillment_status' | t }}
+            </th>
+            <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          {%- for order in customer.orders -%}
+            <tr role="row">
+              <td
+                role="cell"
+                headers="ColumnOrder"
+                data-label="{{ 'customer.orders.order_number' | t }}"
+              >
+                <a
+                  href="{{ order.customer_url }}"
+                  aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                >
+                  {{- order.name -}}
+                </a>
+              </td>
+              <td headers="ColumnOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                {{ order.created_at | time_tag: format: 'date' }}
+              </td>
+              <td
+                headers="ColumnOrder ColumnPayment"
+                role="cell"
+                data-label="{{ 'customer.orders.payment_status' | t }}"
+              >
+                {{ order.financial_status_label }}
+              </td>
+              <td
+                headers="ColumnOrder ColumnFulfillment"
+                role="cell"
+                data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+              >
+                {{ order.fulfillment_status_label }}
+              </td>
+              <td headers="ColumnOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                {{ order.total_net_amount | money_with_currency }}
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    {%- else -%}
+      <p>{{ 'customer.orders.none' | t }}</p>
+    {%- endif -%}
+  {% endpaginate %}
+</div>

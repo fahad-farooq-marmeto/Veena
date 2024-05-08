@@ -1,0 +1,245 @@
+/* Two-column layout */
+.customer-account-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.main-content-wrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4rem;
+}
+
+.sidebar-menu-wrapper {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.styled-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+}
+
+.menu-item button,
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+}
+
+.menu-item button:hover,
+.menu-item a:hover,
+.menu-item.active button {
+    background-color: #007bff;
+    color: white;
+}
+
+.sign-out a {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.sign-out a:hover {
+    background-color: #ff4f5e;
+    color: white;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #000;
+    /* Adjust font size to your icon set */
+}
+
+.profile-heading,
+.greeting-message,
+.account-details-heading {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-heading {
+    font-weight: 700;
+    text-align: center;
+    font-size: 33px;
+    padding-bottom: 35px;
+    margin: 0;
+}
+
+
+.greeting-message {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+
+
+.logout-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.customer-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #d0d0d0;
+
+}
+
+.customer-info-table th,
+.customer-info-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.customer-info-table th {
+    background-color: #fff;
+    width: 150px;
+}
+
+.customer-info-table td {
+    color: #333;
+}
+
+.customer-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+#profile {
+    width: 90%;
+}
+
+.profile-heading,
+.greeting-message,
+.account-details-heading {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 20px;
+}
+
+/* Order history table styles */
+.order-history {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 18px;
+}
+
+.order-history,
+.order-history th,
+.order-history td {
+    border: 1px solid #e0e0e0;
+}
+
+.order-history th,
+.order-history td {
+    padding: 8px;
+    text-align: left;
+}
+
+.order-history thead {
+    background-color: #fff;
+}
+
+.order-history th {
+    font-weight: bold;
+}
+
+/* Address Book Section */
+#address-book {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#address-book h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.address-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.address-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.address-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.address-card p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.edit-button,
+.remove-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit-button:hover,
+.remove-button:hover {
+    background-color: #0056b3;
+}
+
+#add-new-address {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#add-new-address:hover {
+    background-color: #218838;
+}

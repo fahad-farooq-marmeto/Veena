@@ -1,128 +1,130 @@
-<!-- countdown-timer.liquid -->
-<div class="countdown-timer" style="width: 350px;">
-  <div class="timer">
-    <span class="days">0</span> : <span class="hours">0</span> : <span class="minutes">0</span> :
-    <span class="seconds">0</span>
+{% comment %}
+  <!-- countdown-timer.liquid -->
+  <div class="countdown-timer" style="width: 350px;">
+    <div class="timer">
+      <span class="days">0</span> : <span class="hours">0</span> : <span class="minutes">0</span> :
+      <span class="seconds">0</span>
+    </div>
+    <div class="labels">
+      <span class="label-days">Days</span>
+      <span class="label-hours">Hours</span>
+      <span class="label-minutes">Minutes</span>
+      <span class="label-seconds">Seconds</span>
+    </div>
   </div>
-  <div class="labels">
-    <span class="label-days">Days</span>
-    <span class="label-hours">Hours</span>
-    <span class="label-minutes">Minutes</span>
-    <span class="label-seconds">Seconds</span>
-  </div>
-</div>
-<style>
-  .countdown-timer {
-    text-align: center;
-    background-color: #f5f5f5;
-    border-radius: 16px;
-    padding: 16px;
-    display: inline-block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .timer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .labels {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    font-size: 9px;
-    color: #555;
-  }
-  .labels span {
-    width: 40px;
-    text-align: center;
-  }
-  .timer span {
-    width: 40px;
-    text-align: center;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Parse separate day, month, and year from Liquid settings
-    var day = parseInt('{{ section.settings.end_day }}', 10);
-    var month = parseInt('{{ section.settings.end_month }}', 10) - 1; // JavaScript months are zero-indexed
-    var year = parseInt('{{ section.settings.end_year }}', 10);
-    console.log(day);
-    console.log(month);
-    // Log the values to verify
-    console.log('Parsed Day:', day);
-    console.log('Parsed Month:', month);
-    console.log('Parsed Year:', year);
-    // Validate if the day, month, and year are integers
-    if (isNaN(day) || isNaN(month) || isNaN(year)) {
-      console.error('Invalid date values provided. Please check your settings.');
-      return;
+  <style>
+    .countdown-timer {
+      text-align: center;
+      background-color: #f5f5f5;
+      border-radius: 16px;
+      padding: 16px;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    // Build the end date at 23:59:59 (end of day)
-    var endDate = new Date(year, month, day, 23, 59, 59).getTime();
-    if (isNaN(endDate)) {
-      console.error('Unable to parse the provided date.');
-      return;
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
     }
-    // Elements to update
-    var daysSpan = document.querySelector('.days');
-    var hoursSpan = document.querySelector('.hours');
-    var minutesSpan = document.querySelector('.minutes');
-    var secondsSpan = document.querySelector('.seconds');
-    // Countdown function
-    function updateCountdown() {
-      var now = new Date().getTime();
-      var distance = endDate - now;
-      // Time calculations for days, hours, minutes, and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      // Update the display
-      daysSpan.textContent = days >= 0 ? days : 0;
-      hoursSpan.textContent = hours >= 0 ? hours : 0;
-      minutesSpan.textContent = minutes >= 0 ? minutes : 0;
-      secondsSpan.textContent = seconds >= 0 ? seconds : 0;
-      // Stop the countdown when it's done
-      if (distance < 0) {
-        clearInterval(countdownInterval);
+    .labels {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-size: 9px;
+      color: #555;
+    }
+    .labels span {
+      width: 40px;
+      text-align: center;
+    }
+    .timer span {
+      width: 40px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Parse separate day, month, and year from Liquid settings
+      var day = parseInt('{{ section.settings.end_day }}', 10);
+      var month = parseInt('{{ section.settings.end_month }}', 10) - 1; // JavaScript months are zero-indexed
+      var year = parseInt('{{ section.settings.end_year }}', 10);
+      console.log(day);
+      console.log(month);
+      // Log the values to verify
+      console.log('Parsed Day:', day);
+      console.log('Parsed Month:', month);
+      console.log('Parsed Year:', year);
+      // Validate if the day, month, and year are integers
+      if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        console.error('Invalid date values provided. Please check your settings.');
+        return;
       }
-    }
-    // Start the countdown interval
-    var countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call to set values right away
-  });
-</script>
-{% schema %}
-{
-  "name": "Countdown Timer",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "number",
-      "id": "end_day",
-      "label": "End Day",
-      "default": 10
-    },
-    {
-      "type": "number",
-      "id": "end_month",
-      "label": "End Month",
-      "default": 5
-    },
-    {
-      "type": "number",
-      "id": "end_year",
-      "label": "End Year",
-      "default": 2024
-    }
-  ],
-  "presets": [
-    {
-      "name": "Cart Timer"
-    }
-  ]
-}
-{% endschema %}
+      // Build the end date at 23:59:59 (end of day)
+      var endDate = new Date(year, month, day, 23, 59, 59).getTime();
+      if (isNaN(endDate)) {
+        console.error('Unable to parse the provided date.');
+        return;
+      }
+      // Elements to update
+      var daysSpan = document.querySelector('.days');
+      var hoursSpan = document.querySelector('.hours');
+      var minutesSpan = document.querySelector('.minutes');
+      var secondsSpan = document.querySelector('.seconds');
+      // Countdown function
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var distance = endDate - now;
+        // Time calculations for days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Update the display
+        daysSpan.textContent = days >= 0 ? days : 0;
+        hoursSpan.textContent = hours >= 0 ? hours : 0;
+        minutesSpan.textContent = minutes >= 0 ? minutes : 0;
+        secondsSpan.textContent = seconds >= 0 ? seconds : 0;
+        // Stop the countdown when it's done
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+        }
+      }
+      // Start the countdown interval
+      var countdownInterval = setInterval(updateCountdown, 1000);
+      updateCountdown(); // Initial call to set values right away
+    });
+  </script>
+  {% schema %}
+  {
+    "name": "Countdown Timer",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "number",
+        "id": "end_day",
+        "label": "End Day",
+        "default": 10
+      },
+      {
+        "type": "number",
+        "id": "end_month",
+        "label": "End Month",
+        "default": 5
+      },
+      {
+        "type": "number",
+        "id": "end_year",
+        "label": "End Year",
+        "default": 2024
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cart Timer"
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}

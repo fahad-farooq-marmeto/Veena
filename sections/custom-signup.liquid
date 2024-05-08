@@ -1,0 +1,147 @@
+{{ 'custom-signup.css' | asset_url | stylesheet_tag }}
+
+<div class="auth-signup">
+  <h1 class="auth-signup__title">{{ 'customer.register.title' | t }}</h1>
+  <div class="auth-signup__form-container">
+    {%- form 'create_customer', novalidate: 'novalidate' -%}
+      {%- if form.errors -%}
+        <h2 class="auth-signup__message" tabindex="-1" autofocus>
+          {{ 'templates.contact.form.error_heading' | t }}
+        </h2>
+        <ul>
+          {%- for field in form.errors -%}
+            <li>
+              {%- if field == 'form' -%}
+                {{ form.errors.messages[field] }}
+              {%- else -%}
+                <a href="#RegisterForm-{{ field }}">
+                  {{ form.errors.translated_fields[field] | capitalize }}
+                  {{ form.errors.messages[field] }}
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      <div class="auth-signup__field">
+        <label for="RegisterForm-FirstName" class="auth-signup__label">{{ 'customer.register.first_name' | t }}</label>
+        <input
+          type="text"
+          name="customer[first_name]"
+          id="RegisterForm-FirstName"
+          {% if form.first_name %}
+            value="{{ form.first_name }}"
+          {% endif %}
+          autocomplete="given-name"
+          placeholder="{{ 'customer.register.first_name' | t }}"
+          class="auth-signup__input"
+        >
+      </div>
+      <div class="auth-signup__field">
+        <label for="RegisterForm-LastName" class="auth-signup__label">{{ 'customer.register.last_name' | t }}</label>
+        <input
+          type="text"
+          name="customer[last_name]"
+          id="RegisterForm-LastName"
+          {% if form.last_name %}
+            value="{{ form.last_name }}"
+          {% endif %}
+          autocomplete="family-name"
+          placeholder="{{ 'customer.register.last_name' | t }}"
+          class="auth-signup__input"
+        >
+      </div>
+      <div class="auth-signup__field">
+        <label for="RegisterForm-email" class="auth-signup__label">{{ 'customer.register.email' | t }}</label>
+        <input
+          type="email"
+          name="customer[email]"
+          id="RegisterForm-email"
+          {% if form.email %}
+            value="{{ form.email }}"
+          {% endif %}
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="email"
+          aria-required="true"
+          class="auth-signup__input"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-email-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.email' | t }}"
+        >
+      </div>
+      {%- if form.errors contains 'email' -%}
+        <span id="RegisterForm-email-error" class="auth-signup__message">
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}.
+        </span>
+      {%- endif -%}
+      <div class="auth-signup__field">
+        <label for="RegisterForm-password" class="auth-signup__label">{{ 'customer.register.password' | t }}</label>
+        <input
+          type="password"
+          name="customer[password]"
+          id="RegisterForm-password"
+          aria-required="true"
+          class="auth-signup__input"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.password' | t }}"
+        >
+      </div>
+
+      <div class="auth-login__terms-conditions">
+        <input type="checkbox" id="termsConditions" class="auth-login__terms-checkbox" required>
+        <label for="termsConditions">
+          By clicking, I am confirming that I have read and agree with the
+          <a href="/policies/terms-of-service">Terms and Conditions</a>
+        </label>
+      </div>
+
+      {%- if form.errors contains 'password' -%}
+        <span id="RegisterForm-password-error" class="auth-signup__message">
+          {{ form.errors.translated_fields.password | capitalize }}
+          {{ form.errors.messages.password }}.
+        </span>
+      {%- endif -%}
+      <button type="submit" class="auth-signup__button">Create Account</button>
+    {%- endform -%}
+    <a href="{{ routes.account_login_url }}" class="auth-signup__login-link">Login</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sign Up Form",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "customSignup",
+      "category": "Signup"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+{{ 'customAccountPage.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'customAccountPage.js' | asset_url }}" defer></script>
+
+<h1 class="profile-heading">My Profile</h1>
+
+<div class="customer-account-page">
+  {% render 'sidebar-menu' %}
+
+  <div class="main-content-wrapper">
+    <!-- Orders Section -->
+    {% render 'orders-section' %}
+
+    <!-- Profile Section -->
+    {% render 'profile-section' %}
+
+    <!-- Profile Section -->
+    {% render 'address-book-section' %}
+  </div>
+</div>

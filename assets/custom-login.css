@@ -1,0 +1,111 @@
+/* Scoped Styles for the Auth Login Form */
+.auth-login {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.auth-login__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.auth-login__form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-login__field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.auth-login__label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.auth-login__input {
+    padding: 20px;
+    border: 1px solid #27272799;
+    border-radius: 0px;
+    margin-top: 5px;
+    background-color: #fff;
+
+}
+
+.auth-login__forgot-password {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: block;
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.auth-login__forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-login__terms-conditions {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000
+}
+
+.auth-login__terms-conditions a {
+    text-decoration: none;
+    color: #005BAA;
+    font-weight: 700;
+}
+
+.auth-login__terms-checkbox {
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.auth-login__button {
+    padding: 13px 32px;
+    background-color: #005BAA;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.auth-login__button:hover {
+    background-color: #0056b3;
+}
+
+.auth-login__create-account {
+    margin-top: 10px;
+    display: block;
+    color: #000;
+    text-decoration: underline;
+    font-weight: 699;
+}
+
+.auth-login__create-account:hover {
+    text-decoration: underline;
+}
+
+.auth-login__input {
+    outline: none;
+}
+
+.auth-login__input:focus {
+    border-color: #005baa;
+    box-shadow: 0 0 5px rgba(0, 91, 170, 0.5);
+}

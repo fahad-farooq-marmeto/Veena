@@ -1,0 +1,95 @@
+/* Scoped Styles for the Auth Signup Form */
+.auth-signup {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.auth-signup__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.auth-signup__form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-signup__field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.auth-signup__label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.auth-signup__input {
+    padding: 20px;
+    border: 1px solid #27272799;
+    border-radius: 0px;
+    margin-top: 5px;
+    background-color: #fff;
+    outline: none;
+}
+
+.auth-signup__input:focus {
+    border-color: #005baa;
+    box-shadow: 0 0 5px rgba(0, 91, 170, 0.5);
+}
+
+.auth-signup__message {
+    color: #eb001b;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.auth-signup__button {
+    padding: 13px 32px;
+    background-color: #005baa;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-signup__button:hover {
+    background-color: #0056b3;
+}
+
+
+.auth-login__terms-conditions {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000
+}
+
+.auth-login__terms-conditions a {
+    text-decoration: none;
+    color: #005BAA;
+    font-weight: 700;
+}
+
+.auth-login__terms-checkbox {
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.auth-signup__login-link {
+    margin-top: 1rem;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+}

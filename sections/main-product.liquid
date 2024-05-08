@@ -502,18 +502,6 @@
 
               {%- when 'buy_buttons' -%}
                 <!-- Add to Cart form -->
-                <form action="/cart/add" method="post" enctype="multipart/form-data">
-                  <input
-                    type="hidden"
-                    name="id"
-                    id="productSelect"
-                    value=""
-                  >
-                  <button type="submit" class="button">
-                    add to cart {{ product.selected_or_first_available_variant.price | money }}
-                    {{  }}
-                  </button>
-                </form>
                 {%- render 'buy-buttons',
                   block: block,
                   product: product,
@@ -521,6 +509,64 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+
+                {% comment %} custom usp like section {% endcomment %}
+                {% comment %}
+                {% endcomment %}
+                <div class="product-usp">
+                  <ul class="product-usp-container usp-items">
+                    {% for offer in product.metafields.custom.usp_image_caption.value %}
+                      <li class="usp-item">
+                        <img src="{{ offer | image_url }}" alt="usp image" class="usp-image" height="" width="">
+                      </li>
+                    {% endfor %}
+                  </ul>
+                  <ul class="product-usp-container usp-titles">
+                    {% for title in product.metafields.custom.usp_data_caption.value %}
+                      <li class="usp-title">
+                        {{ title }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                <style>
+                  .product-usp-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    padding: 0;
+                    list-style: none;
+                  }
+
+                  .product-usp-container img {
+                    height: 30px;
+                    width: 30px;
+                  }
+
+                  .usp-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0 10px;
+                    list-style: none;
+                  }
+
+                  .usp-image {
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 0.5rem;
+                  }
+
+                  .usp-title {
+                    font-size: 12px;
+                    text-align: center;
+                    margin-left: 34px;
+                  }
+                </style>
+
+                {% comment %} yor code here {% endcomment %}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -867,6 +913,53 @@
           "type": "text",
           "id": "progress-bar-title",
           "label": "progress-bar title"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "grid-w-bar",
+      "name": "grid-w-bar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image 1"
+        },
+        {
+          "type": "text",
+          "id": "caption1",
+          "label": "Caption 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "text",
+          "id": "caption2",
+          "label": "Caption 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image 3"
+        },
+        {
+          "type": "text",
+          "id": "caption3",
+          "label": "Caption 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image4",
+          "label": "Image 4"
+        },
+        {
+          "type": "text",
+          "id": "caption4",
+          "label": "Caption 4"
         }
       ],
       "limit": 1
