@@ -2,13 +2,22 @@
   "sections": {
     "main": {
       "type": "main-register",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_signup_JCkzax": {
+      "type": "custom-signup",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_signup_JCkzax"
   ]
 }
