@@ -2,13 +2,22 @@
   "sections": {
     "main": {
       "type": "main-login",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_login_Ny4Amh": {
+      "type": "custom-login",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_login_Ny4Amh"
   ]
 }
