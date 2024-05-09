@@ -2,8 +2,58 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_footer_D8HKqy": {
+      "type": "custom-footer",
+      "blocks": {
+        "footer_block_WdBYQy": {
+          "type": "footer-block",
+          "settings": {
+            "title": "Quick Links",
+            "list": "footer-quick-links"
+          }
+        },
+        "footer_block_F9JbNj": {
+          "type": "footer-block",
+          "settings": {
+            "title": "Information",
+            "list": "footer-inffo"
+          }
+        },
+        "footer_block_rRirEx": {
+          "type": "footer-block",
+          "settings": {
+            "title": "Extra",
+            "list": "extra"
+          }
+        }
+      },
+      "block_order": [
+        "footer_block_WdBYQy",
+        "footer_block_F9JbNj",
+        "footer_block_rRirEx"
+      ],
+      "settings": {
+        "store-image": "shopify:\/\/shop_images\/W_n_Veena.webp",
+        "contact-logo": "shopify:\/\/shop_images\/svgviewer-output_14.svg",
+        "contact-no": "959-6626-3332",
+        "address-icon": "shopify:\/\/shop_images\/svgviewer-output_17.svg",
+        "address": ": Bengaluru HSR Layout",
+        "email-icon": "shopify:\/\/shop_images\/svgviewer-output_18.svg",
+        "store-email": "marmeto@gmail.com",
+        "additional-info": "Additional Information About Store",
+        "enable-email-sub": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "icon-1": "shopify:\/\/shop_images\/svgviewer-output_20.svg",
+        "icon-2": "shopify:\/\/shop_images\/svgviewer-output_19.svg",
+        "icon-3": "shopify:\/\/shop_images\/svgviewer-output_18.svg",
+        "icon-4": "shopify:\/\/shop_images\/svgviewer-output_19.svg"
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -21,6 +71,7 @@
     }
   },
   "order": [
+    "custom_footer_D8HKqy",
     "footer"
   ]
 }
