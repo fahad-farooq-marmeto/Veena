@@ -357,13 +357,13 @@
             "hotspot1_product_name": "Winter Jacket",
             "hotspot1_product_price": "1999.99",
             "hotspot1_image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
-            "hotspot1_top": "15",
-            "hotspot1_left": "30",
+            "hotspot1_top": "20",
+            "hotspot1_left": "50",
             "hotspot2_label": "Black Jeans",
             "hotspot2_product_name": "Black Jeans",
             "hotspot2_product_price": "4999",
             "hotspot2_image": "shopify:\/\/shop_images\/5_c6bce303-0339-4ede-9d1b-4971a509a081.webp",
-            "hotspot2_top": "40",
+            "hotspot2_top": "60",
             "hotspot2_left": "40"
           }
         },
