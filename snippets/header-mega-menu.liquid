@@ -66,6 +66,12 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'Image' and link.title == block.settings.megamenu_name -%}
+                      {% render 'responsive-picture', desktopImage: block.settings.megamenu_image %}
+                    {%- endif -%}
+                  {%- endfor -%}
                 </ul>
               </div>
             </details>

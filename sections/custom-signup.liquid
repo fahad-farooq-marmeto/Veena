@@ -24,6 +24,13 @@
         </ul>
       {%- endif -%}
       <div class="auth-signup__field">
+        <label for="RegisterForm-CustomerType" class="auth-signup__label">Are you B2B or Customer?</label>
+        <select name="customer[tags]" id="RegisterForm-CustomerType" class="auth-signup__input">
+          <option value="B2B">B2B</option>
+          <option value="Customer">Customer</option>
+        </select>
+      </div>
+      <div class="auth-signup__field">
         <label for="RegisterForm-FirstName" class="auth-signup__label">{{ 'customer.register.first_name' | t }}</label>
         <input
           type="text"
