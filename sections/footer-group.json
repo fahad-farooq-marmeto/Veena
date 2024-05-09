@@ -41,7 +41,7 @@
         "email-icon": "shopify:\/\/shop_images\/svgviewer-output_18.svg",
         "store-email": "marmeto@gmail.com",
         "additional-info": "Additional Information About Store",
-        "enable-email-sub": true,
+        "enable-email-sub": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
