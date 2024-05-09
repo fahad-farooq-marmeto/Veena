@@ -290,6 +290,26 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "image_KVFCVP": {
+          "type": "Image",
+          "settings": {
+            "megamenu_name": "Trends",
+            "megamenu_image": "shopify:\/\/shop_images\/Rectangle_55.webp"
+          }
+        },
+        "image_tQQGAk": {
+          "type": "Image",
+          "settings": {
+            "megamenu_name": "Men's",
+            "megamenu_image": "shopify:\/\/shop_images\/5_1_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_KVFCVP",
+        "image_tQQGAk"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "menu": "shop",
