@@ -76,6 +76,7 @@
     right: 3.5px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+    border-radius: 16px 0px 0px 16px;
 }
 
 #customer-review-slider .splide__arrow:disabled {
@@ -86,6 +87,8 @@
     left: 3.5px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+
+    border-radius: 0px 16px 16px 0px;
 }
 
 #customer-review-slider .splide__arrow svg {
