@@ -142,7 +142,7 @@
             </a>
           </li>
 
-        {% when 'collection' and collection.handle %}
+        {% when 'collection' %}
           {% if current_tags %}
             <li class="tw-inline-block">{{ collection.title | link_to: collection.url }}</li>
             <li class="tw-inline-block">
@@ -227,3 +227,13 @@
     </ol>
   </nav>
 {% endunless %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'collection' and collection.handle %}"
+  to: "{% when 'collection' %}"
+  position: 3158..3181
+{% endcomment %}
